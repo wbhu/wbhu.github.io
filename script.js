@@ -1,4 +1,4 @@
-var fontColor = '#ffffff';
+var fontColor = 'black';
 
 $("#pub").hide();
 $("#act").hide();
