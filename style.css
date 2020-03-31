@@ -188,26 +188,26 @@ div#menu > ul li:hover {
 }
 
 .icon-github {
-    background: transparent url('./img/strips/github.png') top left no-repeat
+    background: transparent url('img/strips/github.png') top left no-repeat
 }
 
 .icon-youtube {
-    background: transparent url('./img/strips/youtube.png') top left no-repeat
+    background: transparent url('img/strips/youtube.png') top left no-repeat
 }
 
 .icon-linkedin {
-    background: transparent url('./img/strips/linkedin.png') top left no-repeat
+    background: transparent url('img/strips/linkedin.png') top left no-repeat
 }
 
 .icon-twitter {
-    background: transparent url('./img/strips/twitter.png') top left no-repeat
+    background: transparent url('img/strips/twitter.png') top left no-repeat
 }
 
 .icon-email {
-    background: transparent url('./img/strips/email.png') top left no-repeat
+    background: transparent url('img/strips/email.png') top left no-repeat
 }
 
 .icon-scholar {
-    background: transparent url('./img/strips/scholar.png') top left no-repeat
+    background: transparent url('img/strips/scholar.png') top left no-repeat
 }
 
