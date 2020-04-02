@@ -34,13 +34,14 @@ $("div#menu > ul li").mouseover(function () {
     }, 200)
 }).mouseout(function () {
     $(this).animate({
-        color: '#999',
+        color: fontColor,
         margin: '0'
     }, 200)
 });
 $("h1").mouseover(function () {
     $(this).animate({
         color: '#1C8FE1'
+        // color: '#972'
     }, 200)
 }).mouseout(function () {
     $(this).animate({
