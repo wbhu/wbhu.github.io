@@ -88,7 +88,7 @@ a {
 
 #mainBlock {
     /*width: 1400px;*/
-    width: 80%;
+    width: 87%;
     /*height: 1000px;*/
     height: 90%;
     margin: 0px auto;
@@ -107,9 +107,9 @@ a {
     height: 0%;
     /*background-color: grey;*/
     /*position: absolute;*/
-    font-style: oblique;
+    /*font-style: oblique;*/
     font-family: "Segoe UI Black";
-    color: #000;
+    font-weight: bolder;
 }
 
 div#menu > ul li {
@@ -119,6 +119,8 @@ div#menu > ul li {
     font-weight: bolder;
     font-family: "Segoe UI";
     /*font-family: "Arial Black";*/
+    color: #333333;
+    text-decoration: underline;
 }
 
 div#menu > ul li:hover {
