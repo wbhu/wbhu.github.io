@@ -47,21 +47,30 @@ body {
     font-size: 18px;
 }
 
+#header {
+    /*height: 200px;*/
+    height: 30%;
+    text-align: left;
+    /*background-color: green;*/
+}
+
 h1 {
-    font-size: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 160px;
-    /*margin-inline: 40px;*/
+    /*font-size: 40px;*/
+    font-size: 225%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    margin-left: 14%;
     cursor: default;
 }
 
 h2 {
-    margin-left: 160px;
+    font-size: 120%;
+    margin-left: 14%;
 }
 
 
 h3 {
+    font-weight: bolder;
     text-align: left;
     padding-left: 20px;
 }
@@ -78,8 +87,10 @@ a {
 }
 
 #mainBlock {
-    width: 1400px;
-    height: 1000px;
+    /*width: 1400px;*/
+    width: 80%;
+    /*height: 1000px;*/
+    height: 90%;
     margin: 0px auto;
     text-align: center;
     border-color: red;
@@ -87,18 +98,18 @@ a {
     /*background-color: red;*/
 }
 
-#header {
-    height: 200px;
-    text-align: left;
-    /*background-color: green;*/
-}
 
 #menu {
-    width: 180px;
-    height: 400px;
+    font-size: 120%;
+    line-height: 150%;
+    margin-top: 5%;
+    width: 20%;
+    height: 0%;
     /*background-color: grey;*/
-    position: absolute;
-    color: black;
+    /*position: absolute;*/
+    font-style: oblique;
+    font-family: "Segoe UI Black";
+    color: #000;
 }
 
 div#menu > ul li {
@@ -121,8 +132,9 @@ div#menu > ul li:hover {
 
 .mainText {
     /*width: 1243px;*/
-    width: 1100px;
-    height: 600px;
+    font-size: 110%;
+    width: 73%;
+
     margin: 0px auto;
     float: none;
 }
