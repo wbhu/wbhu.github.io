@@ -51,20 +51,20 @@
             </td>
         </tr>
 
-        <tr>
-            <td>
-                <p align="center">
-                    <img border="0" src="img/cuhk_logo.jpg">
-                </p>
-            </td>
-        </tr>
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <p align="center">-->
+<!--                            <img border="0" src="img/cuhk_logo.jpg">-->
+<!--                        </p>-->
+<!--                    </td>-->
+<!--                </tr>-->
 
         <tr>
             <td colspan="2" width="864" height="50">
                 <p align="center">
                     <b>
                         <font style="font-size: 13pt; font-weight: 700;" face="Arial"><i>ACM Transactions on Graphics
-                            (SIGGRAPH Asia 2020 issue)</i>, Vol. 39, No. 6, December 2020, pp. 228:1-228:16.
+                            (SIGGRAPH Asia 2020 issue)</i>, Vol. 39, No. 6, December 2020, pp. 228:1--228:16.
                         </font>
                     </b>
                 </p>
@@ -72,11 +72,18 @@
         </tr>
         <tr>
             <td width="924" height="314" colspan="2">
-                <p align="center">
+<!--                <p align="center">-->
+                <p align="justify">
                     <img border="0" src="img/teaser.jpg" style="width:100%">
+                    <font face="Cambria" color="#505050">
+                        Our method can effectively mono-nize a binocular video into a monocular video with the stereo information encoded in a nearly-imperceptible form.
+                        Note, the face of the little girl in the input right view (left); we can fuse it with the left view and encode (hide) it in the mononized frame (middle). Though the
+                        face is not observable in the mononized frame, we can restore it back in the restored binocular frame (right).We show PSNR/SSIM at the bottom of each result.
+                    </font>
                 </p>
             </td>
         </tr>
+
     </table>
 
     <br>
@@ -113,7 +120,7 @@
             <td width="13" height="400" rowspan="3"></td>
             <td width="105" height="105">
                 <p align="center">
-                    <a href="Mono3D.pdf">
+                    <a href="http://appsrv.cse.cuhk.edu.hk/~ttwong/cgi-bin/paper-download/download.cgi?path=invbino&dl=invbino.pdf">
                         <img border="1" src="img/thumb_paper.jpg" style="width:80%"></a>
             </td>
             <td height="105">
@@ -124,7 +131,7 @@
         <tr>
             <td width="105" height="105">
                 <p align="center">
-                    <a href="Mono3D_supp.pdf">
+                    <a href="http://appsrv.cse.cuhk.edu.hk/~ttwong/cgi-bin/paper-download/download.cgi?path=invbino&dl=invbino_supp.pdf">
                         <img border="1" src="img/thumb_supp.jpg" style="width:80%"></a>
             </td>
             <td height="105">
@@ -141,6 +148,7 @@
             </td>
             <td height="105">
                 <p style="margin-top: 0; margin-bottom: 0"><font face="Arial"><b>Source Code</b></font></p>
+                <p style="margin-top: 0; margin-bottom: 0"><font face="Arial">(To be released)</font></p>
             </td>
         </tr>
     </table>
@@ -184,7 +192,7 @@
 
                     <p align="left"><font face="Courier New" size="2" color="#666666">
 <pre>
-    @article{hu-2020-mono3d,
+    @article{hu-2020-mononizing,
         author   = {Wenbo Hu and Menghan Xia and Chi-Wing Fu and Tien-Tsin Wong},
         title    = {Mononizing Binocular Videos},
         journal  = {ACM Transactions on Graphics (SIGGRAPH Asia 2020 issue)},
@@ -192,7 +200,7 @@
         year     = {2020},
         volume   = {39},
         number   = {6},
-        pages    = {228:1-228:16}
+        pages    = {228:1--228:16}
     }
 </pre>
                     </p>
