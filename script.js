@@ -2,6 +2,8 @@ var fontColor = 'black';
 
 $("#pub").hide();
 $("#pat").hide();
+$("#exp").hide();
+$("#mis").hide();
 
 $("#aboutButton").click(function () {
     $("#pub").hide("slow");
