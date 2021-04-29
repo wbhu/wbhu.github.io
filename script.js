@@ -1,31 +1,42 @@
 var fontColor = 'black';
 
 $("#pub").hide();
-$("#act").hide();
-$("#contact").hide();
+$("#pat").hide();
+
 $("#aboutButton").click(function () {
     $("#pub").hide("slow");
-    $("#act").hide("slow");
-    $("#contact").hide("slow");
+    $("#exp").hide("slow");
+    $("#pat").hide("slow");
+    $("#mis").hide("slow");
     $("#about").show("slow");
 });
 $("#pubButton").click(function () {
     $("#about").hide("slow");
-    $("#act").hide("slow");
-    $("#contact").hide("slow");
+    $("#exp").hide("slow");
+    $("#pat").hide("slow");
+    $("#mis").hide("slow");
     $("#pub").show("slow");
 });
-$("#actButton").click(function () {
-    $("#pub").hide("slow");
+$("#expButton").click(function () {
     $("#about").hide("slow");
-    $("#contact").hide("slow");
-    $("#act").show("slow");
+    $("#pub").hide("slow");
+    $("#pat").hide("slow");
+    $("#mis").hide("slow");
+    $("#exp").show("slow");
 });
-$("#contactButton").click(function () {
-    $("#pub").hide("slow");
-    $("#act").hide("slow");
+$("#patButton").click(function () {
     $("#about").hide("slow");
-    $("#contact").show("slow");
+    $("#pub").hide("slow");
+    $("#exp").hide("slow");
+    $("#mis").hide("slow");
+    $("#pat").show("slow");
+});
+$("#misButton").click(function () {
+    $("#about").hide("slow");
+    $("#pub").hide("slow");
+    $("#exp").hide("slow");
+    $("#pat").hide("slow");
+    $("#mis").show("slow");
 });
 $("div#menu > ul li").mouseover(function () {
     $(this).animate({

@@ -87,7 +87,8 @@ a {
 }
 
 #mainBlock {
-    width: 1600px;
+    /*width: 1600px;*/
+    width: 1800px;
     /*width: 87%;*/
     height: 1000px;
     /*height: 90%;*/
@@ -135,6 +136,15 @@ div#menu > ul li:hover {
 .mainText {
     /*width: 1243px;*/
     font-size: 110%;
+    width: 73%;
+
+    margin: 0px auto;
+    float: none;
+}
+
+.pubText {
+    /*width: 1243px;*/
+    font-size: 100%;
     width: 73%;
 
     margin: 0px auto;

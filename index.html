@@ -1,24 +1,23 @@
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>HU, Wenbo's Homepage</title>
     <meta content="Wenbo Hu, wbhu.github.io" name="keywords">
-    <!--    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>-->
     <script src="jquery-latest.js"></script>
-    <!--    <script src="https://www.bitstorm.org/jquery/color-animation/jquery.animate-colors-min.js"></script>-->
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
+<!--  TITLE  -->
+
 <div id="mainBlock">
     <div id="header">
-        <img src="img/profile.jpg" width="160" align="left"/>
+        <img align="left" alt="HU Wenbo" src="img/profile.jpg" width="180"/>
 
         <h1>
-            HU, Wenbo (&#x80E1;&#x6587;&#x535A;)
+            HU Wenbo (&#x80E1;&#x6587;&#x535A;)
         </h1>
 
         <h2>
@@ -33,12 +32,13 @@
                    target="_blank"></a>
                 <a href="https://github.com/wbhu" class="icon-github" target="_blank"></a>
                 <!--            <a href="https://twitter.com/tunabrain" class="icon-twitter" target="_blank"></a>-->
-                <!--            <a href="https://www.youtube.com/user/Thunabrain" class="icon-youtube" target="_blank"></a>-->
+                            <a href="https://www.youtube.com/channel/UCneF7qC0iCQFccoR3c7_hfw" class="icon-youtube" target="_blank"></a>
                 <a href="https://hk.linkedin.com/in/huwenbo" class="icon-linkedin" target="_blank"></a>
             </p>
         </h2>
     </div>
 
+    <!--  MENU  -->
     <div id="menu">
         <ul>
             <a href="#" id="aboutButton">
@@ -50,8 +50,8 @@
             <a href="#" id="expButton">
                 <li>Experience</li>
             </a>
-            <a href="#" id="actButton">
-                <li>Activities</li>
+            <a href="#" id="patButton">
+                <li>Patents</li>
             </a>
             <a href="#" id="miscButton">
                 <li>Miscellaneous</li>
@@ -63,13 +63,9 @@
                     src="//rf.revolvermaps.com/0/0/6.js?i=0h7kmkjhde1&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1&amp;s=170"
                     async="async"></script>
         </div>
-
     </div>
 
-    <div align="left">
-
-    </div>
-
+    <!--  PROFILE  -->
     <div class="mainText" id="about">
         <h3>About Me</h3>
         <p align=left>
@@ -87,9 +83,9 @@
         <br/>
 
         <p align=left>
-            <font size="5"><em><b><span style=color:red>News!</span><br/></b></em></font>
+            <span style="font-size: large; "><em><b><span style=color:red>News!</span><br/></b></em></span>
         </p>
-        
+
         <p align=left>
             <b>[Mar. 2021]</b>
             One paper conditionally accepted to CVPR 2021 (Oral). <br/>
@@ -111,9 +107,52 @@
         </p>
 
     </div>
+
+
+    <!--  PUBLICATIONS  -->
     <div class="mainText" id="pub">
-        <h3>Publications</h3>
-        <p>
+        <h3><strong>Publications</strong> [<a href="https://scholar.google.com/citations?hl=en&user=xDuDhwcAAAAJ">Google Scholar</a>]</h3>
+        <hr class="line" />
+
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="projects/BPNet/img/bpnet.jpg"
+                    width="380" height="140"/>
+            </div>
+            <div class="post-content">
+                <b>Bidirectional Projection Network for Cross Dimensional Scene Understanding</b>
+                <br>
+                <I>Wenbo Hu*,</I> Hengshuang Zhao*, Li Jiang, Jiaya Jia, Tien-Tsin Wong (* joint 1st authors)
+                <br>
+                <em>IEEE Conference on Computer Vision and Pattern Recognition</em><b>(CVPR)</b>, 2021. <b>[Oral]</b></br>
+                &nbsp
+                [<a href="projects/BPNet/index.html"> Project</a>]
+                [<a href="https://arxiv.org/abs/2103.14326"> Paper</a>]
+                [<a href="https://github.com/wbhu/BPNet"> Code</a> ]
+
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="img/AFP.jpg"
+                    width="380" height="140"/>
+            </div>
+            <div class="post-content">
+                <b>Flow-aware Synthesis: a Generic Motion Model for Video Frame Interpolation</b>
+                <br>
+                &nbsp
+                Jinbo Xing*, <I>Wenbo Hu*,</I> Yuechen Zhang, Tien-Tsin Wong (* joint 1st authors)
+                <br>
+                <I>Computational Visual Media, <b>CVM,</b> 2021</I>
+                <br>
+                &nbsp
+                [<a href="https://link.springer.com/article/10.1007/s41095-021-0208-x"> Paper</a>]
+
+            </div>
+        </div>
+
         <div class="post-container">
             <div class="post-thumb"><img
                     src="projects/Mono3D/img/teaser.jpg"
@@ -195,32 +234,117 @@
                 &nbsp
                 [<a href="https://ieeexplore.ieee.org/abstract/document/8571234"> Paper</a>]
                 <!--                [<a href="bib/FRMC.bib"> Bib</a> ]-->
-
-
             </div>
         </div>
-        </p>
     </div>
-    <div class="mainText" id="act">
-        <h3>Activities</h3>
-        <p>
-        <ul>
-            <li>Hello World!</li>
-        </ul>
-        </p>
-    </div>
-    <div class="mainText" id="contact">
-        <h3>Contact</h3>
-        <p>
-            Email: wbhu@cse.cuhk.edu.hk. <br/>
-        </p>
-        <!--        <p>-->
-        <!--            <script type="text/javascript"-->
-        <!--                    src="//ra.revolvermaps.com/0/0/6.js?i=0h7kmkjhde1&m=7&s=320&c=e63100&cr1=ffffff&f=arial&l=0&bv=90&lx=-420&ly=420&hi=20&he=7&hc=a8ddff&rs=80"-->
-        <!--                    async="async"></script>-->
-        <!--        </p>-->
+
+
+    <!--  EXPERIENCE  -->
+    <div class="mainText" id="exp">
+        <h3>Education</h3>
+        <hr class="line" />
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="img/cuhk_logo.jpeg" width="500"/>
+            </div>
+            <div class="post-content">
+                <p><b>Aug. 2018 - Present</b></p>
+                <p>
+                    &nbsp
+                    The Chinese University of Hong Kong
+                    <br>
+                    &nbsp
+                    Dept of Computer Science & Engineering
+                    <br>
+                    <em>Ph.D. Candidate</em>
+                </p>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="img/dut_long.jpeg" width="500"/>
+            </div>
+            <div class="post-content">
+                <p><b>Sep. 2014 - Jun. 2018</b></p>
+                <p>
+                    &nbsp
+                    Dalian University of Technology
+                    <br>
+                    &nbsp
+                    Dept of Computer Science and Technology
+                    <br>
+                    <em>Bachelor</em> (Rank: 3/105, GPA: 90.3/100)
+                </p>
+            </div>
+        </div>
+
+        <br><br><br><br>
+        <h3>Work Experience</h3>
+        <hr class="line" />
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="img/DAMO.jpeg" width="350"/>
+            </div>
+            <div class="post-content">
+                <p><b>Sep. 2020 - Present</b></p>
+                <p>
+<!--                    &nbsp-->
+                    <a href="https://damo.alibaba.com/">DAMO Academy</a>, Alibaba Group
+                    <br>
+                    <em>Research Intern</em>
+                </p>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="img/sensetime.jpg" width="350"/>
+            </div>
+            <div class="post-content">
+                <p><b>Jan. 2018 - Jul. 2018</b></p>
+                <p>
+<!--                    &nbsp-->
+                    <a href="https://www.sensetime.com/">SenseTime</a>
+                    <br>
+                    <em>Research Intern</em>
+                </p>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="post-thumb"><img
+                    src="img/dji.jpg" width="350"/>
+            </div>
+            <div class="post-content">
+                <p><b>Jul. 2016 - Sep. 2016</b></p>
+                <p>
+<!--                    &nbsp-->
+                    <a href="https://www.dji.com/">DJI</a>
+                    <br>
+                    <em>Summer Intern</em>
+                </p>
+            </div>
+        </div>
 
     </div>
+
+    <!--  PATENTS  -->
+    <div class="mainText" id="pat">
+        <h3>Patents</h3>
+        <hr class="line" />
+
+        <ul>
+            <li>CN108827302A (In process), “Multi-rotor aerocraft air navigation aid based on rotor tachometric survey”.</li>
+            <li>CN107656227B (Issued Oct. 2019), “Magnetometer calibration method based on Levenberg-Marquardt algorithm”.</li>
+            <li>CN107655463B (Issued Oct. 2019), “Electronic compass calibration method based on simulated annealing”.</li>
+            <li>CN207400517U (Issued May. 2018), “Intelligent toothbrush system ”.</li>
+        </ul>
+    </div>
+
+
 </div>
 
 <script type="text/javascript" src="./script.js"></script>
