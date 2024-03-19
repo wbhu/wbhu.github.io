@@ -2,7 +2,7 @@ html, body, div, span, applet, object, iframe, h1, h2,h3, h4, h5, h6, p, blockqu
     border: 0;
     font-size: 100%;
     font: arial;
-    vertical-align: baseline;
+    /*vertical-align: baseline;*/
     margin: 1%;
     padding: 0
 }
@@ -138,7 +138,7 @@ div#menu > ul li:hover {
     font-size: 100%;
     width: 100%;
 
-    /* margin: 0px auto; */
+     /*margin: 0px auto;*/
     margin-left: 12%;
     max-width: 68%;
     float: inherit;
@@ -156,6 +156,13 @@ div#menu > ul li:hover {
 .mainText a {
     color: #1C8FE1;
     text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}
+
+.mainText b {
+    margin: 0;
+    padding: 0;
 }
 
 .mainText a:hover {
@@ -180,7 +187,8 @@ div#menu > ul li:hover {
 
 .post-container {
     overflow: auto;
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    text-align: left
 }
 
 .post-thumb {
@@ -194,7 +202,18 @@ div#menu > ul li:hover {
 
 .post-content {
     text-align: left;
-    line-height: 150%;
+    line-height: 180%;
+    font-size: medium;
+}
+
+.post-content sup {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.post-content em {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .post-title {
@@ -248,3 +267,29 @@ div#menu > ul li:hover {
     background: transparent url('img/strips/scholar.png') top left no-repeat
 }
 
+.paper-title {
+    font-weight: bold;
+    text-align: left;
+    font-size: large;
+    line-height: 250%;
+    margin-left: 0;
+}
+
+.remark {
+    font-weight: bold;
+    text-align: left;
+    font-size: large;
+    margin-left: 0;
+    color: #ef2e55;
+}
+
+.notation {
+    text-align: left;
+    font-weight: bold;
+    font-size: larger;
+}
+
+sup {
+    margin-left: 0;
+    margin-right: 0;
+}
