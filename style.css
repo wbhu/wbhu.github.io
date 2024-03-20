@@ -140,20 +140,37 @@ div#menu > ul li:hover {
 
      /*margin: 0px auto;*/
     margin-left: 12%;
+    /*max-width: 68%;*/
     max-width: 68%;
     float: inherit;
 }
 
 .pubText {
+    /*!*width: 1243px;*!*/
+    /*font-size: 100%;*/
+    /*width: 73%;*/
+
+    /*margin: 0px auto;*/
+    /*float: none;*/
     /*width: 1243px;*/
     font-size: 100%;
-    width: 73%;
+    width: 100%;
 
-    margin: 0px auto;
-    float: none;
+    /*margin: 0px auto;*/
+    margin-left: 12%;
+    /*max-width: 68%;*/
+    max-width: 70%;
+    float: inherit;
 }
 
 .mainText a {
+    color: #1C8FE1;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}
+
+.pubText a {
     color: #1C8FE1;
     text-decoration: underline;
     margin: 0;
@@ -165,11 +182,24 @@ div#menu > ul li:hover {
     padding: 0;
 }
 
+.pubText b {
+    margin: 0;
+    padding: 0;
+}
+
 .mainText a:hover {
     color: #E1899F;
 }
 
+.pubText a:hover {
+    color: #E1899F;
+}
+
 .mainText p {
+    text-align: justify;
+    padding-left: 20px;
+}
+.pubText p {
     text-align: justify;
     padding-left: 20px;
 }
