@@ -257,6 +257,7 @@ div#menu > ul li:hover {
 .icon-youtube,
 .icon-scholar,
 .icon-email,
+.icon-wechat,
 .icon-github {
     display: inline-block;
     width: 40px;
@@ -269,6 +270,7 @@ div#menu > ul li:hover {
 .icon-youtube:hover,
 .icon-scholar:hover,
 .icon-email:hover,
+.icon-wechat:hover,
 .icon-github:hover {
     background-position: bottom right
 }
@@ -283,6 +285,10 @@ div#menu > ul li:hover {
 
 .icon-linkedin {
     background: transparent url('img/strips/linkedin.png') top left no-repeat
+}
+
+.icon-wechat {
+    background: transparent url('img/strips/wechat.png') top left no-repeat
 }
 
 .icon-twitter {
