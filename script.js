@@ -33,7 +33,7 @@ $("#patButton").click(function () {
     $("#mis").hide("slow");
     $("#pat").show("slow");
 });
-$("#misButton").click(function () {
+$("#miscButton").click(function () {
     $("#about").hide("slow");
     $("#pub").hide("slow");
     $("#exp").hide("slow");
