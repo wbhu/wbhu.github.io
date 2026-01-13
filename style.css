@@ -83,7 +83,7 @@ video {
     font-size: 100%;
     font: arial;
     /*vertical-align: baseline;*/
-    margin: 1%;
+    margin: 0;
     padding: 0
 }
 
@@ -144,37 +144,111 @@ body {
     font-size: 18px;
 }
 
+/* 确保所有图片都是响应式的 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 #header {
-    /*height: 200px;*/
-    height: 14%;
-    text-align: left;
-    /*background-color: green;*/
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0;
+}
+
+#header-left {
+    width: 220px;
+    min-width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+#header-left img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#header-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0;
+    padding-left: 0;
+    margin-left: -5px;
+}
+
+#header-content h1 {
+    font-size: 2.3em;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    line-height: 1.25;
+}
+
+#header-content h1 br {
+    display: none;
+}
+
+#header-content h2 {
+    font-size: 1.15em;
+    margin: 6px 0 0 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+#header-content h2 br {
+    line-height: 0.8;
+    display: block;
+    margin: 3px 0;
+}
+
+#header-content h2 .icon-email,
+#header-content h2 .icon-scholar,
+#header-content h2 .icon-github,
+#header-content h2 .icon-x,
+#header-content h2 .icon-youtube,
+#header-content h2 .icon-linkedin,
+#header-content h2 .icon-wechat {
+    margin: 2px;
+    vertical-align: middle;
 }
 
 h1 {
-    /*font-size: 40px;*/
-    font-size: 225%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    margin-left: 14%;
+    font-size: 2.5em;
+    margin: 0;
     cursor: default;
+    flex: 1;
+    min-width: 200px;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: 120%;
-    margin-left: 14%;
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+    width: 100%;
+    flex-basis: 100%;
+    line-height: 1.6;
 }
 
 
 h3 {
-    font-weight: bolder;
+    font-weight: bold;
     text-align: left;
-    padding-left: 20px;
+    margin: 30px 0 20px 0;
+    font-size: 1.5em;
+    padding: 0;
 }
 
 p {
-    margin-top: 20px;
-    line-height: 150%;
+    margin: 15px 0;
+    line-height: 1.8;
 }
 
 a {
@@ -184,80 +258,105 @@ a {
 }
 
 #mainBlock {
-    /*width: 1600px;*/
-    width: 1800px;
-    /*width: 87%;*/
-    height: 1000px;
-    /*height: 90%;*/
-    margin: 0px auto;
-    text-align: center;
-    border-color: red;
-    border-width: 20px;
-    /*background-color: red;*/
+    width: 100%;
+    max-width: 1800px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#mainBlock>#header {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+
+#content-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    align-items: flex-start;
+}
+
+#content-area {
+    flex: 1;
+    min-width: 0;
 }
 
 
 #menu {
-    font-size: 120%;
-    line-height: 150%;
-    margin-top: 5%;
-    width: 20%;
-    height: 0%;
-    /*background-color: grey;*/
-    /*position: absolute;*/
-    /*font-style: oblique;*/
-    font-family: "Segoe UI Black";
-    font-weight: bolder;
+    font-size: 1.1em;
+    line-height: 1.5;
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    padding: 20px 0 20px 0;
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
+    position: sticky;
+    top: 20px;
+    box-sizing: border-box;
+}
+
+div#menu>ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
 }
 
 div#menu>ul li {
-    text-align: left;
-    padding: 10px 10px;
-    color: #000;
-    font-weight: bolder;
-    font-family: "Segoe UI";
-    /*font-family: "Arial Black";*/
-    color: #333333;
+    padding: 8px 0 8px 0;
+    color: #333;
+    font-weight: bold;
     text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 div#menu>ul li:hover {
-    /*font-family: "Arial Black";*/
-    /*border-bottom: 2px solid #1C8FE1;*/
-    /*font-style: italic;*/
+    color: #1C8FE1;
+    transform: translateX(5px);
     font-style: oblique;
     font-family: "Segoe UI Black";
-    color: #000;
+}
+
+@media (hover: none) {
+
+    /* 移动端触摸设备 */
+    div#menu>ul li:active {
+        opacity: 0.7;
+    }
 }
 
 .mainText {
-    /*width: 1243px;*/
-    font-size: 100%;
-    width: 100%;
-
-    /*margin: 0px auto;*/
-    margin-left: 12%;
-    /*max-width: 68%;*/
-    max-width: 68%;
-    float: inherit;
+    flex: 1;
+    padding: 20px 20px 20px 0;
+    font-size: 1em;
+    line-height: 1.8;
+    min-width: 0;
+    margin: 0;
+    margin-left: -5px;
 }
 
 .pubText {
-    /*!*width: 1243px;*!*/
-    /*font-size: 100%;*/
-    /*width: 73%;*/
-
-    /*margin: 0px auto;*/
-    /*float: none;*/
-    /*width: 1243px;*/
-    font-size: 100%;
-    width: 100%;
-
-    /*margin: 0px auto;*/
-    margin-left: 12%;
-    /*max-width: 68%;*/
-    max-width: 70%;
-    float: inherit;
+    flex: 1;
+    padding: 20px 20px 20px 0;
+    font-size: 1em;
+    line-height: 1.8;
+    min-width: 0;
+    margin: 0;
+    margin-left: -5px;
 }
 
 .mainText a {
@@ -294,19 +393,21 @@ div#menu>ul li:hover {
 
 .mainText p {
     text-align: justify;
-    padding-left: 20px;
+    margin: 15px 0;
+    padding: 0;
 }
 
 .pubText p {
     text-align: justify;
-    padding-left: 20px;
+    margin: 15px 0;
+    padding: 0;
 }
 
 .mainText li {
     text-align: left;
     padding-left: 20px;
-    line-height: 150%;
-    margin: 10px;
+    line-height: 1.8;
+    margin: 10px 0;
 }
 
 .mainText li:before {
@@ -314,24 +415,55 @@ div#menu>ul li:hover {
 }
 
 .post-container {
-    overflow: auto;
-    margin-bottom: 15px;
-    text-align: left
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+    align-items: flex-start;
+    overflow: visible;
 }
 
 .post-thumb {
-    margin-left: 20px;
-    float: left
+    display: flex;
+    align-items: flex-start;
+}
+
+.post-thumb {
+    flex-shrink: 0;
+    width: 300px;
+    max-width: 300px;
+    min-width: 300px;
 }
 
 .post-thumb img {
-    display: block
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    padding: 0 !important;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .post-content {
+    flex: 1;
     text-align: left;
-    line-height: 180%;
-    font-size: medium;
+    line-height: 1.8;
+    font-size: 1em;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.post-content br {
+    line-height: 0.1;
+    display: block;
+    margin: 0;
+    height: 0;
 }
 
 .post-content sup {
@@ -408,8 +540,10 @@ div#menu>ul li:hover {
     font-weight: bold;
     text-align: left;
     font-size: large;
-    line-height: 250%;
-    margin-left: 0;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .remark {
@@ -424,6 +558,13 @@ div#menu>ul li:hover {
     text-align: left;
     font-weight: bold;
     font-size: larger;
+}
+
+.line {
+    border: none;
+    border-top: 2px solid #e0e0e0;
+    margin: 20px 0;
+    width: 100%;
 }
 
 sup {
@@ -447,10 +588,240 @@ sup {
     .tweet-item {
         flex: 0 0 48%;
     }
+
+    .post-container {
+        flex-direction: column;
+    }
+
+    .post-thumb {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
     .tweet-item {
         flex: 0 0 100%;
+    }
+
+    #mainBlock {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    #header {
+        flex-direction: column;
+        padding-bottom: 20px;
+        align-items: center;
+    }
+
+    #header-left {
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    #header-left img {
+        max-width: 150px;
+    }
+
+    #header-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    #header-content h1 {
+        font-size: 1.8em;
+        margin: 0;
+        text-align: center;
+    }
+
+    #header-content h2 {
+        font-size: 1em;
+        margin: 10px 0 0 0;
+        text-align: center;
+    }
+
+    #content-wrapper {
+        flex-direction: column;
+    }
+
+    #menu {
+        width: 100%;
+        min-width: 100%;
+        position: static;
+        padding: 15px 0;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    #menu ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    #menu ul li {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    #content-area {
+        width: 100%;
+    }
+
+    .mainText,
+    .pubText {
+        padding: 15px;
+    }
+
+    .mainText p,
+    .pubText p {
+        font-size: 0.95em;
+    }
+
+    .post-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .post-thumb {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .post-content {
+        font-size: 0.95em;
+    }
+
+    .paper-title {
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    .icon-x,
+    .icon-linkedin,
+    .icon-youtube,
+    .icon-scholar,
+    .icon-email,
+    .icon-wechat,
+    .icon-github {
+        width: 35px;
+        height: 35px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+        margin: 20px 0 15px 0;
+    }
+
+    .notation {
+        font-size: 0.95em;
+    }
+
+    .spacing {
+        display: block;
+        margin-top: 5px;
+    }
+
+    /* 优化滚动区域在移动端的显示 */
+    div[style*="max-height"] {
+        max-height: 400px !important;
+    }
+
+    /* 优化新闻区域的图片 */
+    img[src*="bestpaper.jpg"] {
+        max-width: 60px !important;
+        margin-left: 5px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #mainBlock {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    #header {
+        padding-bottom: 15px;
+    }
+
+    #header-left img {
+        max-width: 120px;
+    }
+
+    #header-content {
+        gap: 10px;
+    }
+
+    #header-content h1 {
+        font-size: 1.5em;
+    }
+
+    #header-content h2 {
+        font-size: 0.9em;
+    }
+
+    #menu ul {
+        gap: 5px;
+    }
+
+    #menu ul li {
+        font-size: 0.85em;
+        padding: 5px 10px;
+    }
+
+    .mainText,
+    .pubText {
+        padding: 10px;
+    }
+
+    .mainText p,
+    .pubText p {
+        font-size: 0.9em;
+    }
+
+    .post-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .post-content {
+        font-size: 0.9em;
+    }
+
+    .paper-title {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .icon-x,
+    .icon-linkedin,
+    .icon-youtube,
+    .icon-scholar,
+    .icon-email,
+    .icon-wechat,
+    .icon-github {
+        width: 30px;
+        height: 30px;
     }
 }
