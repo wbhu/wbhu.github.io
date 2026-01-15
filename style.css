@@ -729,46 +729,54 @@ a {
         padding: 15px;
     }
 
-    /* Header becomes vertical on mobile */
+    /* Header stays horizontal on mobile, just smaller */
     #header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 25px 20px;
+        padding: 20px 15px;
         gap: 15px;
     }
 
-    #header-left {
-        width: auto;
-    }
-
     #header-left img {
-        width: 130px;
-        height: 130px;
-    }
-
-    #header-content {
-        align-items: center;
+        width: 100px;
+        height: 100px;
     }
 
     #header-content h1 {
-        font-size: 1.7em;
-        text-align: center;
+        font-size: 1.4em;
     }
 
     #header-content h2 {
-        text-align: center;
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     #header-content h2 .spacing {
         display: block;
-        margin-top: 5px;
+        margin-top: 3px;
     }
 
-    /* Center social icons on mobile */
     .social-icons {
-        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .icon-x,
+    .icon-linkedin,
+    .icon-youtube,
+    .icon-scholar,
+    .icon-email,
+    .icon-wechat,
+    .icon-github {
+        width: 34px;
+        height: 34px;
+        background-size: 68px 34px;
+    }
+
+    .icon-x:hover,
+    .icon-linkedin:hover,
+    .icon-youtube:hover,
+    .icon-scholar:hover,
+    .icon-email:hover,
+    .icon-wechat:hover,
+    .icon-github:hover {
+        background-position: -34px 0;
     }
 
     /* Content wrapper becomes vertical */
@@ -875,21 +883,49 @@ a {
     }
 
     #header {
-        padding: 20px 15px;
+        padding: 15px 12px;
+        gap: 12px;
         border-radius: 12px;
     }
 
     #header-left img {
-        width: 110px;
-        height: 110px;
+        width: 80px;
+        height: 80px;
     }
 
     #header-content h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     #header-content h2 {
-        font-size: 0.92em;
+        font-size: 0.85em;
+    }
+
+    .social-icons {
+        margin-top: 6px;
+        gap: 2px;
+    }
+
+    .icon-x,
+    .icon-linkedin,
+    .icon-youtube,
+    .icon-scholar,
+    .icon-email,
+    .icon-wechat,
+    .icon-github {
+        width: 30px;
+        height: 30px;
+        background-size: 60px 30px;
+    }
+
+    .icon-x:hover,
+    .icon-linkedin:hover,
+    .icon-youtube:hover,
+    .icon-scholar:hover,
+    .icon-email:hover,
+    .icon-wechat:hover,
+    .icon-github:hover {
+        background-position: -30px 0;
     }
 
     #menu {
@@ -968,20 +1004,49 @@ a {
     }
 
     #header {
-        padding: 15px 12px;
+        padding: 12px 10px;
+        gap: 10px;
     }
 
     #header-left img {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
 
     #header-content h1 {
-        font-size: 1.35em;
+        font-size: 1.1em;
     }
 
     #header-content h2 {
-        font-size: 0.85em;
+        font-size: 0.8em;
+        line-height: 1.4;
+    }
+
+    .social-icons {
+        margin-top: 5px;
+        gap: 1px;
+    }
+
+    .icon-x,
+    .icon-linkedin,
+    .icon-youtube,
+    .icon-scholar,
+    .icon-email,
+    .icon-wechat,
+    .icon-github {
+        width: 28px;
+        height: 28px;
+        background-size: 56px 28px;
+    }
+
+    .icon-x:hover,
+    .icon-linkedin:hover,
+    .icon-youtube:hover,
+    .icon-scholar:hover,
+    .icon-email:hover,
+    .icon-wechat:hover,
+    .icon-github:hover {
+        background-position: -28px 0;
     }
 
     div#menu>ul li {
@@ -1025,15 +1090,6 @@ a {
         box-shadow: none;
     }
 
-    .icon-x:active,
-    .icon-linkedin:active,
-    .icon-youtube:active,
-    .icon-scholar:active,
-    .icon-email:active,
-    .icon-wechat:active,
-    .icon-github:active {
-        background-position: -40px 0;
-    }
 }
 
 /* =====================================================
