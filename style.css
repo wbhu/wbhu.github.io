@@ -309,6 +309,7 @@ div#menu>ul {
 
 div#menu>ul a {
     text-decoration: none;
+    display: block;
 }
 
 div#menu>ul li {
@@ -321,6 +322,7 @@ div#menu>ul li {
     transition: all 0.25s ease;
     background: #f8f9fa;
     border-left: 3px solid transparent;
+    touch-action: manipulation;
 }
 
 div#menu>ul li:hover {
@@ -1368,6 +1370,17 @@ a {
    TOUCH DEVICE OPTIMIZATIONS
    ===================================================== */
 @media (hover: none) {
+    div#menu>ul a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    div#menu>ul li:hover {
+        color: #333;
+        background: #f8f9fa;
+        border-left-color: transparent;
+        transform: none;
+    }
+
     div#menu>ul li:active {
         opacity: 0.7;
         background: #d8e8f4;
