@@ -251,7 +251,7 @@ img {
 }
 
 /* Social Icons Container */
-#header-content h2 br + a,
+#header-content h2 br+a,
 #header-content h2 a.icon-email {
     margin-top: 12px;
 }
@@ -291,7 +291,7 @@ img {
     font-family: 'Segoe UI', sans-serif;
 }
 
-div#menu > ul {
+div#menu>ul {
     margin: 0;
     padding: 0;
     display: flex;
@@ -300,11 +300,11 @@ div#menu > ul {
     list-style: none;
 }
 
-div#menu > ul a {
+div#menu>ul a {
     text-decoration: none;
 }
 
-div#menu > ul li {
+div#menu>ul li {
     padding: 12px 16px;
     color: #333;
     font-weight: 600;
@@ -316,7 +316,7 @@ div#menu > ul li {
     border-left: 3px solid transparent;
 }
 
-div#menu > ul li:hover {
+div#menu>ul li:hover {
     color: #1C8FE1;
     background: #e8f4fc;
     border-left-color: #1C8FE1;
@@ -685,7 +685,7 @@ a {
         padding: 20px;
     }
 
-    div#menu > ul li {
+    div#menu>ul li {
         padding: 10px 14px;
         font-size: 0.9em;
     }
@@ -776,20 +776,20 @@ a {
         border-radius: 12px;
     }
 
-    div#menu > ul {
+    div#menu>ul {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
     }
 
-    div#menu > ul li {
+    div#menu>ul li {
         padding: 10px 16px;
         font-size: 0.88em;
         flex: 0 0 auto;
     }
 
-    div#menu > ul li:hover {
+    div#menu>ul li:hover {
         transform: translateY(-2px);
     }
 
@@ -895,11 +895,11 @@ a {
         padding: 12px 15px;
     }
 
-    div#menu > ul {
+    div#menu>ul {
         gap: 6px;
     }
 
-    div#menu > ul li {
+    div#menu>ul li {
         padding: 8px 12px;
         font-size: 0.82em;
     }
@@ -995,7 +995,7 @@ a {
         font-size: 0.85em;
     }
 
-    div#menu > ul li {
+    div#menu>ul li {
         padding: 7px 10px;
         font-size: 0.78em;
     }
@@ -1036,7 +1036,7 @@ a {
    TOUCH DEVICE OPTIMIZATIONS
    ===================================================== */
 @media (hover: none) {
-    div#menu > ul li:active {
+    div#menu>ul li:active {
         opacity: 0.7;
         background: #d8e8f4;
     }
@@ -1116,7 +1116,8 @@ a {
 /* =====================================================
    HIGH DPI SCREENS
    ===================================================== */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
     /* Icons use sprite sheets, no special handling needed */
 }
 
@@ -1124,6 +1125,7 @@ a {
    ACCESSIBILITY: REDUCED MOTION
    ===================================================== */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
