@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<urlset xmlns="http://www.google.com/schemas/sitemap/0.84" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-		<url>
-			<loc>https://wbhu.github.io</loc>
-			<changefreq>daily</changefreq>
-		</url>
-
-		<url>
-			<loc>https://wbhu.github.io/mailto:wbhu@cse.cuhk.edu.hk</loc>
-			<changefreq>daily</changefreq>
-		</url>
-
-		<url>
-			<loc>https://wbhu.github.io/#</loc>
-			<changefreq>daily</changefreq>
-		</url>
-
-		<url>
-			<loc>https://wbhu.github.io/projects/mono3d/index.html</loc>
-			<changefreq>daily</changefreq>
-		</url>
-
-		<url>
-			<loc>https://wbhu.github.io/bib/demc.bib</loc>
-			<changefreq>daily</changefreq>
-		</url>
-
-		<url>
-			<loc>https://wbhu.github.io/bib/frmc.bib</loc>
-			<changefreq>daily</changefreq>
-		</url>
-
-	</urlset>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://wbhu.github.io/</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/projects/Tri-MipRF/index.html</loc>
+        <lastmod>2023-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/projects/BPNet/index.html</loc>
+        <lastmod>2021-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/projects/CondDGConv/index.html</loc>
+        <lastmod>2021-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/projects/Mono3D/index.html</loc>
+        <lastmod>2020-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>
