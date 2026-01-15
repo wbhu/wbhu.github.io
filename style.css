@@ -556,24 +556,96 @@ a {
 .paper-title {
     font-weight: 600;
     text-align: left;
-    font-size: 1.05em;
-    line-height: 1.5;
-    margin: 0 0 8px 0;
+    font-size: 1.08em;
+    line-height: 1.45;
+    margin: 0 0 6px 0;
     padding: 0;
     display: block;
     color: #1a1a2e;
+    letter-spacing: -0.01em;
+}
+
+.paper-title:hover {
+    color: #1C8FE1;
+}
+
+.paper-authors {
+    font-size: 0.92em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 4px;
+}
+
+.paper-authors b {
+    color: #1a1a2e;
+}
+
+.paper-venue {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.paper-venue em {
+    color: #333;
+}
+
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.paper-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    font-size: 0.82em;
+    font-weight: 500;
+    color: #1C8FE1;
+    background: #f0f7fc;
+    border: 1px solid #d4e8f7;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.paper-links a:hover {
+    background: #1C8FE1;
+    color: white;
+    border-color: #1C8FE1;
+    transform: translateY(-1px);
+}
+
+.github-stars {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: -2px;
+}
+
+.github-stars img {
+    height: 18px;
+    border-radius: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.github-stars img:hover {
+    opacity: 0.8;
 }
 
 .remark {
     font-weight: 600;
     text-align: left;
-    font-size: 0.9em;
+    font-size: 0.82em;
     color: #e74c3c;
-    background: #fdf2f2;
-    padding: 2px 8px;
+    background: #fef5f5;
+    padding: 3px 8px;
     border-radius: 4px;
     display: inline-block;
-    margin: 4px 0;
+    margin: 2px 0;
+    border: 1px solid #fce0e0;
 }
 
 /* Highlight colors for News section */
@@ -601,9 +673,25 @@ a {
 
 .notation {
     text-align: left;
-    font-weight: 600;
-    font-size: 1.05em;
+    font-weight: 500;
+    font-size: 0.95em;
     color: #555;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+    border-radius: 8px;
+    border-left: 3px solid #1C8FE1;
+    margin-bottom: 5px;
+}
+
+.notation a {
+    font-weight: 600;
+}
+
+.notation-legend {
+    font-size: 0.88em;
+    color: #666;
+    margin-top: 6px;
+    display: block;
 }
 
 /* =====================================================
@@ -884,6 +972,23 @@ a {
 
     .paper-title {
         font-size: 1em;
+    }
+
+    .paper-authors {
+        font-size: 0.88em;
+    }
+
+    .paper-venue {
+        font-size: 0.85em;
+    }
+
+    .paper-links {
+        gap: 5px;
+    }
+
+    .paper-links a {
+        padding: 3px 8px;
+        font-size: 0.78em;
     }
 
     .notation {
