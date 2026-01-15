@@ -136,28 +136,9 @@
 
                 <div class="visitor-map">
                     <div class="visitor-map-hint" id="visitorMapHint"></div>
-                    <!-- 使用图片方式嵌入ClustrMaps，更稳定可靠 -->
-                    <a href="https://clustrmaps.com/site/1c7jy" title="Visit tracker">
-                        <img src="//www.clustrmaps.com/map_v2.png?d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw&w=120&t=n&cl=000000&co=ffffff&cmo=1C8FE1&cmn=1C8FE1&ct=000000"
-                            alt="ClustrMaps Visitor Map" />
+                    <a href="https://clustrmaps.com/site/1c2pj" title="ClustrMaps"><img
+                            src="//www.clustrmaps.com/map_v2.png?d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw&cl=ffffff" />
                     </a>
-                    <script>
-                        (function () {
-                            var isLocal = location.protocol === "file:" ||
-                                location.hostname === "localhost" ||
-                                location.hostname === "127.0.0.1";
-                            if (!isLocal) {
-                                return;
-                            }
-                            var hint = document.getElementById("visitorMapHint");
-                            if (!hint) {
-                                return;
-                            }
-                            hint.textContent = "ClustrMaps 仅在部署域名上显示，本地预览不会加载。";
-                            hint.style.display = "block";
-                            hint.setAttribute("aria-hidden", "false");
-                        })();
-                    </script>
                 </div>
             </div>
 
