@@ -576,6 +576,29 @@ a {
     margin: 4px 0;
 }
 
+/* Highlight colors for News section */
+.highlight-news {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.highlight-award {
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.highlight-hiring {
+    color: #d3610f;
+}
+
+/* Section title styling */
+.section-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
 .notation {
     text-align: left;
     font-weight: 600;
