@@ -330,6 +330,13 @@ div#menu>ul li:hover {
     transform: translateX(3px);
 }
 
+div#menu>ul li.active {
+    color: #1C8FE1;
+    background: #d8ecf9;
+    border-left-color: #1C8FE1;
+    font-weight: 700;
+}
+
 /* Visitor Map in Menu */
 .visitor-map {
     margin-top: 25px;
@@ -810,6 +817,13 @@ a {
 
     div#menu>ul li:hover {
         transform: translateY(-2px);
+    }
+
+    div#menu>ul li.active {
+        color: #1C8FE1;
+        background: #d8ecf9;
+        border-left-color: transparent;
+        border-bottom: 2px solid #1C8FE1;
     }
 
     /* Hide visitor map on mobile */
