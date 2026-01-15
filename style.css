@@ -251,9 +251,16 @@ img {
 }
 
 /* Social Icons Container */
-#header-content h2 br+a,
-#header-content h2 a.icon-email {
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
     margin-top: 12px;
+}
+
+.social-icons a {
+    display: inline-block;
 }
 
 /* =====================================================
@@ -505,8 +512,7 @@ a {
 .icon-email:hover,
 .icon-wechat:hover,
 .icon-github:hover {
-    background-position: bottom right;
-    transform: scale(1.05);
+    background-position: -40px 0;
 }
 
 .icon-github {
@@ -760,6 +766,11 @@ a {
         margin-top: 5px;
     }
 
+    /* Center social icons on mobile */
+    .social-icons {
+        justify-content: center;
+    }
+
     /* Content wrapper becomes vertical */
     #content-wrapper {
         flex-direction: column;
@@ -849,16 +860,6 @@ a {
         margin-left: 5px !important;
     }
 
-    .icon-x,
-    .icon-linkedin,
-    .icon-youtube,
-    .icon-scholar,
-    .icon-email,
-    .icon-wechat,
-    .icon-github {
-        width: 36px;
-        height: 36px;
-    }
 }
 
 /* =====================================================
@@ -948,18 +949,6 @@ a {
         max-height: 500px !important;
     }
 
-    .icon-x,
-    .icon-linkedin,
-    .icon-youtube,
-    .icon-scholar,
-    .icon-email,
-    .icon-wechat,
-    .icon-github {
-        width: 34px;
-        height: 34px;
-        margin: 2px;
-    }
-
     /* Best paper image */
     img[src*="bestpaper.jpg"] {
         max-width: 40px !important;
@@ -1020,16 +1009,6 @@ a {
         font-size: 0.9em;
     }
 
-    .icon-x,
-    .icon-linkedin,
-    .icon-youtube,
-    .icon-scholar,
-    .icon-email,
-    .icon-wechat,
-    .icon-github {
-        width: 32px;
-        height: 32px;
-    }
 }
 
 /* =====================================================
@@ -1053,7 +1032,7 @@ a {
     .icon-email:active,
     .icon-wechat:active,
     .icon-github:active {
-        background-position: bottom right;
+        background-position: -40px 0;
     }
 }
 
