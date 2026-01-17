@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Homepage -->
     <url>
         <loc>https://wbhu.github.io/</loc>
-        <lastmod>2026-01-15</lastmod>
+        <lastmod>2026-01-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
+
+    <!-- Featured Projects -->
     <url>
         <loc>https://wbhu.github.io/projects/Tri-MipRF/index.html</loc>
         <lastmod>2023-10-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://wbhu.github.io/projects/BPNet/index.html</loc>
@@ -29,5 +32,25 @@
         <lastmod>2020-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- PDF Resources -->
+    <url>
+        <loc>https://wbhu.github.io/pdf/Tri-MipRF.pdf</loc>
+        <lastmod>2023-10-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/pdf/CondDGConv_update.pdf</loc>
+        <lastmod>2021-07-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/pdf/PBR-NeRF.pdf</loc>
+        <lastmod>2024-02-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>
