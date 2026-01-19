@@ -404,6 +404,25 @@ div#menu>ul li.active {
     font-weight: 600;
 }
 
+/* Visitor Map */
+.visitor-map {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity var(--transition);
+}
+
+.visitor-map:hover {
+    opacity: 1;
+}
+
+.visitor-map script + * {
+    border-radius: var(--radius-sm) !important;
+}
+
 /* =====================================================
    TYPOGRAPHY
    ===================================================== */
@@ -1124,6 +1143,10 @@ a {
     div#menu>ul li.active {
         border-left: none;
         border-bottom-color: var(--primary);
+    }
+
+    .visitor-map {
+        display: none;
     }
 
     #content-area {
