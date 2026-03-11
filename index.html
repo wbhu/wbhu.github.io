@@ -68,12 +68,14 @@
         ]
     }
     </script>
-
-    <script src="jquery-latest.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="icon" href="img/icon.svg">
+    <link rel="preload" as="image" href="img/profile.jpeg" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -82,7 +84,7 @@
     <div id="mainBlock">
         <div id="header">
             <div id="header-left">
-                <img alt="HU Wenbo" src="img/profile.jpeg" />
+                <img alt="HU Wenbo" src="img/profile.jpeg" width="150" height="150" fetchpriority="high" loading="eager" decoding="async" />
             </div>
             <div id="header-content">
                 <h1>
@@ -91,8 +93,13 @@
 
                 <h2>
                     Ph.D. @ CUHK,
-                    <span class="spacing">Senior researcher @ Tencent ARC Lab</span>
+                    <span class="spacing">Senior Researcher @ Tencent ARC Lab</span>
                 </h2>
+                <div class="hero-chips" aria-label="Research highlights">
+                    <span>Generative World Models</span>
+                    <span>3D Vision</span>
+                    <span>Video Generation</span>
+                </div>
                 <div class="social-icons">
                     <a href="mailto:huwenbodut@gmail.com" class="icon-email" target="_blank" aria-label="Email"
                         title="Email"></a>
@@ -135,8 +142,7 @@
                 </ul>
 
                 <div class="visitor-map">
-                    <script type='text/javascript' id='clustrmaps'
-                        src='//cdn.clustrmaps.com/map_v2.js?cl=f8fafc&w=150&t=tt&d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw&co=f8fafc&cmo=3b82f6&cmn=2563eb&ct=64748b'></script>
+                    <div id="visitor-map-anchor" aria-label="Visitor map"></div>
                 </div>
             </div>
 
@@ -161,11 +167,14 @@
                         <!--            <a href="https://www.picoxr.com/global">-->
                         PICO Mixed Reality, Bytedance.
                         <!--            </a>.-->
-                        Since November 2023, he joined Tencent as a senior researcher, leading an effort to
-                        <b>Generative World
-                            Model</b>, including 3D from Images/Videos, Novel View Synthesis, and Video Generation.
+                        Since November 2023, he joined Tencent as a <span class="key-phrase key-role">senior researcher</span>,
+                        leading an effort on <span class="key-phrase key-focus"><b>Generative World Models</b></span>,
+                        including <span class="key-phrase key-focus">3D from Images/Videos</span>,
+                        <span class="key-phrase key-focus">Novel View Synthesis</span>, and
+                        <span class="key-phrase key-focus">Video Generation</span>.
                         <br><br>
-                        His works have been selected as <b>Best Paper Finalist</b> in ICCV'2023, and <b>Best Paper</b>
+                        His works have been selected as <span class="key-phrase key-award"><b>Best Paper Finalist</b></span> in ICCV'2023,
+                        and <span class="key-phrase key-award"><b>Best Paper</b></span>
                         at
                         PixFoundation workshop in CVPR'2025.
                         He received the <em>CCF Elite Collegiate Award</em> in 2017.
@@ -179,75 +188,72 @@
 
                         <em class="highlight-hiring">
                             We have several open positions for <a
-                                href="https://x.com/yshan2u/status/1897179915201732979">research interns and full-time
-                                researchers</a>. Feel free to drop me an email if you are interested.
+                                href="https://x.com/yshan2u/status/1897179915201732979"><span class="key-phrase key-focus">research interns</span> and <span class="key-phrase key-focus">full-time researchers</span></a>. Feel free to <span class="key-phrase key-role">drop me an email</span> if you are interested.
                         </em>
                     </p>
 
 
                     <h3 class="section-title">News!</h3>
 
-                    <div class="news-scroll" style="max-height: 420px; overflow-y: auto; scrollbar-width: thin;">
+                    <div class="news-scroll">
 
                         <p align=left>
                             <b>[01/2026]</b>
-                            Invited to give a talk at <em>Winter3DV</em>, a closed-door workshop on 3D vision.
+                            Invited to give a talk at <em><span class="key-phrase key-news">Winter3DV</span></em>, a closed-door workshop on 3D vision.
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[10/2025]</b>
-                            Serving as Program Committee for <em>Mini3DV 2025</em> (a high-quality closed-door
+                            Serving as Program Committee for <em><span class="key-phrase key-news">Mini3DV 2025</span></em> (a high-quality closed-door
                             workshop), on
                             World Modeling session.
                         </p>
 
                         <p align=left>
                             <b>[09/2025]</b>
-                            <a href="https://drexubery.github.io/ViewCrafter">ViewCrafter</a> is accepted to
-                            <em>TPAMI</em>!
+                            <a href="https://drexubery.github.io/ViewCrafter">ViewCrafter</a> is accepted to <em><span class="key-phrase key-news">TPAMI</span></em>!
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[06/2025]</b>
-                            Three papers (one is Oral) accepted to ICCV'25. <br />
+                            <span class="key-phrase key-news">Three papers (one is Oral)</span> accepted to ICCV'25. <br />
                         </p>
 
                         <p align=left>
                             <b>[06/2025]</b>
-                            Our DepthCrafter is selected as <span class="highlight-award">Best Paper</span> at
+                            Our <span class="key-phrase key-news">DepthCrafter</span> is selected as <span class="highlight-award">Best Paper</span> at
                             PixFoundation
                             workshop in CVPR'25!
-                            <img src="img/bestpaper.jpg" alt="Best Paper Award"
-                                style="max-width: 10%; margin-left: 10px; vertical-align: middle; display: inline-block;" />
+                            <img src="img/bestpaper.jpg" alt="Best Paper Award" loading="lazy" decoding="async"
+                                class="bestpaper-thumb" />
                         </p>
 
                         <p align=left>
                             <b>[06/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/6qsd9xAu8rP3n214Fkr6Xg">CSIG</a> about
+                            Invited talk by <a href="https://mp.weixin.qq.com/s/6qsd9xAu8rP3n214Fkr6Xg"><span class="key-phrase key-news">CSIG</span></a> about
                             "基于视频生成模型的场景演变生成最新进展".
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[04/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/SM4ZalAAuRweLGq5TiyKqQ">China3DV
-                                2025</a> about
+                            Invited talk by <a href="https://mp.weixin.qq.com/s/SM4ZalAAuRweLGq5TiyKqQ"><span class="key-phrase key-news">China3DV 2025</span></a> about
                             "GenConstruction".
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[03/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/wCaVMO0ZVHJx-BC_1hbHng">GAMES</a> about
+                            Invited talk by <a href="https://mp.weixin.qq.com/s/wCaVMO0ZVHJx-BC_1hbHng"><span class="key-phrase key-news">GAMES</span></a> about
                             "Generative Novel View Synthesis".
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[03/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/rjV969BoL6MzhQj1xR_ecQ">AnySyn3D</a>
+                            Invited talk by <a href="https://mp.weixin.qq.com/s/rjV969BoL6MzhQj1xR_ecQ"><span class="key-phrase key-news">AnySyn3D</span></a>
                             about
                             "Video Diffusion for 3D".
                             <br />
@@ -256,18 +262,18 @@
                         <p align=left>
                             <b>[03/2025]</b>
                             We released code and models for <a
-                                href="https://trajectorycrafter.github.io/">TrajectoryCrafter</a>.
+                                href="https://trajectorycrafter.github.io/"><span class="key-phrase key-news">TrajectoryCrafter</span></a>.
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[02/2025]</b>
-                            Three papers accepted to CVPR'25. <br />
+                            Three papers accepted to <span class="key-phrase key-news">CVPR'25</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[10/2024]</b>
-                            Invited talks by <a href="https://chinagraph2024.hsu.edu.cn/panels.html">Chinagraph</a>
+                            Invited talks by <a href="https://chinagraph2024.hsu.edu.cn/panels.html"><span class="key-phrase key-news">Chinagraph</span></a>
                             about:
                             [<a href="https://depthcrafter.github.io/">DepthCrafter</a>, <a
                                 href="https://stereocrafter.github.io/">StereoCrafter</a>,
@@ -280,94 +286,93 @@
 
                         <p align=left>
                             <b>[09/2024]</b>
-                            One paper accepted to NeurIPS'24. <br />
+                            One paper accepted to <span class="key-phrase key-news">NeurIPS'24</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[07/2024]</b>
-                            Four papers accepted to ECCV'24. <br />
+                            Four papers accepted to <span class="key-phrase key-news">ECCV'24</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[05/2024]</b>
-                            Invited talk by NeRF/GS & Beyond about <I>Anti-Aliasing in Neural Rendering</I>. <a
+                            Invited talk by <span class="key-phrase key-news">NeRF/GS & Beyond</span> about <I>Anti-Aliasing in Neural Rendering</I>. <a
                                 href="slides/AntiAliasingInNR_full.pdf">[Slides]</a><br />
                         </p>
 
                         <p align=left>
                             <b>[04/2024]</b>
-                            Invited talk by China3DV 2024 about <I>Anti-Aliasing in Neural Rendering</I>. <br />
+                            Invited talk by <span class="key-phrase key-news">China3DV 2024</span> about <I>Anti-Aliasing in Neural Rendering</I>. <br />
                         </p>
 
                         <p align=left>
                             <b>[03/2024]</b>
-                            One paper conditionally accepted to SIGGRAPH'24. <br />
+                            One paper conditionally accepted to <span class="key-phrase key-news">SIGGRAPH'24</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[02/2024]</b>
-                            One paper accepted to CVPR'24. <br />
+                            One paper accepted to <span class="key-phrase key-news">CVPR'24</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[10/2023]</b>
-                            Our Tri-MipRF was selected in ICCV'23 <span class="highlight-award">Best Paper
+                            Our <span class="key-phrase key-news">Tri-MipRF</span> was selected in ICCV'23 <span class="highlight-award">Best Paper
                                 Finalist</span>!
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[08/2023]</b>
-                            Invited talk by <a href="https://games-cn.org/games-webinar-20230831-290/">GAMES</a> about
+                            Invited talk by <a href="https://games-cn.org/games-webinar-20230831-290/"><span class="key-phrase key-news">GAMES</span></a> about
                             our <a href="./projects/Tri-MipRF/index.html">Tri-MipRF</a>. <br />
                         </p>
 
                         <p align=left>
                             <b>[07/2023]</b>
-                            Our Tri-MipRF was accepted to ICCV'23 as ORAL presentation. <br />
+                            Our Tri-MipRF was accepted to ICCV'23 as <span class="key-phrase key-news">ORAL presentation</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[07/2023]</b>
-                            One paper on invertile image downscaling accepted to TIP'23. <br />
+                            One paper on invertile image downscaling accepted to <span class="key-phrase key-news">TIP'23</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[08/2022]</b>
-                            One paper conditionally accepted to SIGGRAPH Asia'22 (Journal Track). <br />
+                            One paper conditionally accepted to <span class="key-phrase key-news">SIGGRAPH Asia'22</span> (Journal Track). <br />
                         </p>
 
                         <p align=left>
                             <b>[05/2022]</b>
-                            Passed the oral defense and became a Dr. <br />
+                            <span class="key-phrase key-news">Passed the oral defense</span> and became a Dr. <br />
                         </p>
 
                         <p align=left>
                             <b>[08/2021]</b>
-                            Invited talk by <a href="https://course.zhidx.com/c/MTkzZGQxOGUwNzhiOGE5Njg4ZDM=">智东西</a>
+                            Invited talk by <a href="https://course.zhidx.com/c/MTkzZGQxOGUwNzhiOGE5Njg4ZDM="><span class="key-phrase key-news">智东西</span></a>
                             about our <a href="./projects/BPNet/index.html">BPNet</a>.
                             <br />
                         </p>
 
                         <p align=left>
                             <b>[07/2021]</b>
-                            One paper on lighting estimation accepted to TIP'22. <br />
+                            One paper on lighting estimation accepted to <span class="key-phrase key-news">TIP'22</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[07/2021]</b>
-                            Two papers accepted to ICCV'21. <br />
+                            Two papers accepted to <span class="key-phrase key-news">ICCV'21</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[07/2021]</b>
-                            One paper on 3D human pose estimation accepted to ACM MM'21. <br />
+                            One paper on 3D human pose estimation accepted to <span class="key-phrase key-news">ACM MM'21</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[06/2021]</b>
-                            Invited talk at <a href="http://www.scan-net.org/cvpr2021workshop">ScanNet CVPR'21
-                                Workshop</a> about
+                            Invited talk at <a href="http://www.scan-net.org/cvpr2021workshop"><span class="key-phrase key-news">ScanNet CVPR'21 Workshop</span></a> about
                             our <a href="./projects/BPNet/index.html">BPNet</a> (<a
                                 href="https://youtu.be/jr_bKmh6YUY?t=4141">Recording</a>).
                             <br />
@@ -375,27 +380,27 @@
 
                         <p align=left>
                             <b>[06/2021]</b>
-                            Code of <a href="./projects/BPNet/index.html">BPNet</a> is released now.<br />
+                            Code released for <a href="./projects/BPNet/index.html"><span class="key-phrase key-news">BPNet</span></a>.<br />
                         </p>
 
                         <p align=left>
                             <b>[03/2021]</b>
-                            One paper conditionally accepted to CVPR 2021 (Oral). <br />
+                            One paper conditionally accepted to <span class="key-phrase key-news">CVPR 2021 (Oral)</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[08/2020]</b>
-                            One paper conditionally accepted to SIGGRAPH Asia 2020. <br />
+                            One paper conditionally accepted to <span class="key-phrase key-news">SIGGRAPH Asia 2020</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[08/2018]</b>
-                            I start my Ph.D study at CUHK. <br />
+                            Started my Ph.D study at <span class="key-phrase key-news">CUHK</span>. <br />
                         </p>
 
                         <p align=left>
                             <b>[01/2018]</b>
-                            I will work as a research intern at <a href="https://www.sensetime.com/">SenseTime</a>.
+                            Research intern at <a href="https://www.sensetime.com/"><span class="key-phrase key-news">SenseTime</span></a>.
                         </p>
 
                     </div>
@@ -417,15 +422,15 @@
 
                     <hr class="line" />
 
-                    <div class="pub-scroll" style="max-height: 850px; overflow-y: auto; scrollbar-width: thin;">
+                    <div class="pub-scroll">
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/versecrafter_record.gif" /></div>
+                            <div class="post-thumb"><img src="img/versecrafter_record.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">VerseCrafter: Dynamic Realistic Video World Model with 4D
                                     Geometric Control</span>
                                 <div class="paper-authors">
-                                    Sixiao Zheng, Minghao Yin, <b>Wenbo Hu<sup>&dagger;</sup></b>, Xiaoyu Li, Ying Shan,
+                                    Sixiao Zheng, Minghao Yin, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Xiaoyu Li, Ying Shan,
                                     Yanwei Fu<sup>&dagger;</sup>
                                 </div>
                                 <div class="paper-venue">
@@ -444,12 +449,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/rollingforcing.gif" /></div>
+                            <div class="post-thumb"><img src="img/rollingforcing.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Rolling Forcing: Autoregressive Long Video Diffusion in
                                     Real-Time</span>
                                 <div class="paper-authors">
-                                    Kunhao Liu, <b>Wenbo Hu<sup>&dagger;</sup></b>, Jiale Xu, Ying Shan, Shijian
+                                    Kunhao Liu, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Jiale Xu, Ying Shan, Shijian
                                     Lu<sup>&dagger;</sup>
                                 </div>
                                 <div class="paper-venue">
@@ -468,12 +473,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/geometrycrafter.gif" /></div>
+                            <div class="post-thumb"><img src="img/geometrycrafter.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">GeometryCrafter: Consistent Geometry Estimation for Open-world
                                     Videos with Diffusion Priors</span>
                                 <div class="paper-authors">
-                                    Tian-Xing Xu, Xiangjun Gao, <b>Wenbo Hu<sup>&dagger;</sup></b>, Xiaoyu Li, Song-Hai
+                                    Tian-Xing Xu, Xiangjun Gao, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Xiaoyu Li, Song-Hai
                                     Zhang<sup>&dagger;</sup>, Ying Shan
                                 </div>
                                 <div class="paper-venue">
@@ -492,12 +497,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/normalcrafter.gif" /></div>
+                            <div class="post-thumb"><img src="img/normalcrafter.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">NormalCrafter: Learning Temporally Consistent Normals from
                                     Video Diffusion Priors</span>
                                 <div class="paper-authors">
-                                    Yanrui Bin, <b>Wenbo Hu<sup>‡</sup></b>, Haoyuan Wang, Xinya Chen, Bing
+                                    Yanrui Bin, <b class="self-name">Wenbo Hu<sup>‡</sup></b>, Haoyuan Wang, Xinya Chen, Bing
                                     Wang<sup>&dagger;</sup>
                                 </div>
                                 <div class="paper-venue">
@@ -516,12 +521,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/TrajectoryCrafter.gif" /></div>
+                            <div class="post-thumb"><img src="img/TrajectoryCrafter.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">TrajectoryCrafter: Redirecting Camera Trajectory for Monocular
                                     Videos via Diffusion Models</span>
                                 <div class="paper-authors">
-                                    Mark YU, <b>Wenbo Hu<sup>&dagger;</sup></b>, Jinbo Xing, Ying Shan
+                                    Mark YU, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Jinbo Xing, Ying Shan
                                 </div>
                                 <div class="paper-venue">
                                     <em>IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), 2025
@@ -541,12 +546,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/depthcrafter.gif" /></div>
+                            <div class="post-thumb"><img src="img/depthcrafter.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">DepthCrafter: Generating Consistent Long Depth Sequences for
                                     Open-world Videos</span>
                                 <div class="paper-authors">
-                                    <b>Wenbo Hu<sup>*&dagger;</sup></b>, Xiangjun Gao<sup>*</sup>, Xiaoyu
+                                    <b class="self-name">Wenbo Hu<sup>*&dagger;</sup></b>, Xiangjun Gao<sup>*</sup>, Xiaoyu
                                     Li<sup>*&dagger;</sup>, Sijie Zhao, Xiaodong Cun, Yong Zhang, Long Quan, Ying Shan
                                 </div>
                                 <div class="paper-venue">
@@ -568,12 +573,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/viewcrafter.gif" /></div>
+                            <div class="post-thumb"><img src="img/viewcrafter.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">ViewCrafter: Taming Video Diffusion Models for High-fidelity
                                     Novel View Synthesis</span>
                                 <div class="paper-authors">
-                                    Wangbo Yu<sup>*</sup>, Jinbo Xing<sup>*</sup>, Li Yuan<sup>*</sup>, <b>Wenbo
+                                    Wangbo Yu<sup>*</sup>, Jinbo Xing<sup>*</sup>, Li Yuan<sup>*</sup>, <b class="self-name">Wenbo
                                         Hu<sup>&dagger;</sup></b>, Xiaoyu Li, Zhipeng Huang, Xiangjun Gao, Tien-Tsin
                                     Wong, Ying Shan, Yonghong Tian<sup>&dagger;</sup>
                                 </div>
@@ -595,12 +600,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/stereocrafter.png" /></div>
+                            <div class="post-thumb"><img src="img/stereocrafter.png" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">StereoCrafter: Diffusion-based Generation of Long and
                                     High-fidelity Stereoscopic 3D from Monocular Videos</span>
                                 <div class="paper-authors">
-                                    Sijie Zhao<sup>*</sup>, <b>Wenbo Hu<sup>*</sup></b>, Xiaodong Cun<sup>*</sup>, Yong
+                                    Sijie Zhao<sup>*</sup>, <b class="self-name">Wenbo Hu<sup>*</sup></b>, Xiaodong Cun<sup>*</sup>, Yong
                                     Zhang<sup>&dagger;</sup>, Xiaoyu Li<sup>&dagger;</sup>, Zhe Kong, Xiangjun Gao,
                                     Muyao Niu, Ying Shan
                                 </div>
@@ -619,12 +624,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/pixel-gs.png" /></div>
+                            <div class="post-thumb"><img src="img/pixel-gs.png" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Pixel-GS: Density Control with Pixel-aware Gradient for 3D
                                     Gaussian Splatting</span>
                                 <div class="paper-authors">
-                                    Zheng Zhang, <b>Wenbo Hu<sup>&dagger;</sup></b>, Yixing Lao, Tong He, Hengshuang
+                                    Zheng Zhang, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Yixing Lao, Tong He, Hengshuang
                                     Zhao<sup>&dagger;</sup>
                                 </div>
                                 <div class="paper-venue">
@@ -642,12 +647,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/analytic-splatting.jpg" /></div>
+                            <div class="post-thumb"><img src="img/analytic-splatting.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Analytic-Splatting: Anti-Aliased 3D Gaussian Splatting via
                                     Analytic Integration</span>
                                 <div class="paper-authors">
-                                    Zhihao Liang, Qi Zhang, <b>Wenbo Hu</b>, Lei Zhu, Ying Feng, Kui Jia
+                                    Zhihao Liang, Qi Zhang, <b class="self-name">Wenbo Hu</b>, Lei Zhu, Ying Feng, Kui Jia
                                 </div>
                                 <div class="paper-venue">
                                     <em>European Conference on Computer Vision</em> (<b>ECCV</b>), 2024
@@ -665,12 +670,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/texture-gs.jpg" /></div>
+                            <div class="post-thumb"><img src="img/texture-gs.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Texture-GS: Disentangling the Geometry and Texture for 3D
                                     Gaussian Splatting Editing</span>
                                 <div class="paper-authors">
-                                    Tian-Xing Xu, <b>Wenbo Hu<sup>&dagger;</sup></b>, Yu-Kun Lai, Ying Shan, Song-Hai
+                                    Tian-Xing Xu, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Yu-Kun Lai, Ying Shan, Song-Hai
                                     Zhang<sup>&dagger;</sup>
                                 </div>
                                 <div class="paper-venue">
@@ -688,12 +693,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/ripnerf.jpg" /></div>
+                            <div class="post-thumb"><img src="img/ripnerf.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Rip-NeRF: Anti-aliasing Radiance Fields with Ripmap-Encoded
                                     Platonic Solids</span>
                                 <div class="paper-authors">
-                                    Junchen Liu<sup>*</sup>, <b>Wenbo Hu<sup>*</sup></b>, Zhuo Yang<sup>*</sup>,
+                                    Junchen Liu<sup>*</sup>, <b class="self-name">Wenbo Hu<sup>*</sup></b>, Zhuo Yang<sup>*</sup>,
                                     Jianteng Chen, Guoliang Wang, Xiaoxue Chen, Yantong Cai, Huan-ang Gao, Hao Zhao
                                 </div>
                                 <div class="paper-venue">
@@ -712,12 +717,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/pbr-nerf.jpg" /></div>
+                            <div class="post-thumb"><img src="img/pbr-nerf.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Inverse Rendering of Glossy Objects via the Neural Plenoptic
                                     Function and Radiance Fields</span>
                                 <div class="paper-authors">
-                                    Haoyuan Wang, <b>Wenbo Hu<sup>&dagger;</sup></b>, Lei Zhu, Rynson W.H.
+                                    Haoyuan Wang, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Lei Zhu, Rynson W.H.
                                     Lau<sup>&dagger;</sup>
                                 </div>
                                 <div class="paper-venue">
@@ -737,12 +742,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/trimip.jpg" /></div>
+                            <div class="post-thumb"><img src="img/trimip.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Tri-MipRF: Tri-Mip Representation for Efficient Anti-Aliasing
                                     Neural Radiance Fields</span>
                                 <div class="paper-authors">
-                                    <b>Wenbo Hu</b>, Yuling Wang, Lin Ma, Bangbang Yang, Lin Gao, Xiao Liu, Yuewen Ma
+                                    <b class="self-name">Wenbo Hu</b>, Yuling Wang, Lin Ma, Bangbang Yang, Lin Gao, Xiao Liu, Yuewen Ma
                                 </div>
                                 <div class="paper-venue">
                                     <em>IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), 2023
@@ -762,11 +767,11 @@
 
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/aidn.gif" /></div>
+                            <div class="post-thumb"><img src="img/aidn.gif" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Scale-arbitrary Invertible Image Downscaling</span>
                                 <div class="paper-authors">
-                                    Jinbo Xing<sup>*</sup>, <b>Wenbo Hu<sup>*</sup></b>, Menghan Xia, Tien-Tsin Wong
+                                    Jinbo Xing<sup>*</sup>, <b class="self-name">Wenbo Hu<sup>*</sup></b>, Menghan Xia, Tien-Tsin Wong
                                 </div>
                                 <div class="paper-venue">
                                     <em>IEEE Transactions on Image Processing</em> (<b>TIP</b>), 2023
@@ -783,11 +788,11 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/disColor.jpeg" /></div>
+                            <div class="post-thumb"><img src="img/disColor.jpeg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Disentangled Image Colorization via Global Anchors</span>
                                 <div class="paper-authors">
-                                    Menghan Xia, <b>Wenbo Hu</b>, Tien-Tsin Wong, Jue Wang
+                                    Menghan Xia, <b class="self-name">Wenbo Hu</b>, Tien-Tsin Wong, Jue Wang
                                 </div>
                                 <div class="paper-venue">
                                     <em>ACM Transactions on Graphics</em> (<b>TOG</b>), 2022
@@ -806,11 +811,11 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/invHalftone.jpeg" /></div>
+                            <div class="post-thumb"><img src="img/invHalftone.jpeg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Deep Halftoning with Reversible Binary Pattern</span>
                                 <div class="paper-authors">
-                                    Menghan Xia, <b>Wenbo Hu</b>, Xueting Liu, Tien-Tsin Wong
+                                    Menghan Xia, <b class="self-name">Wenbo Hu</b>, Xueting Liu, Tien-Tsin Wong
                                 </div>
                                 <div class="paper-venue">
                                     <em>IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), 2021
@@ -830,12 +835,12 @@
                         </div>
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="img/CondDGConv.jpg" /></div>
+                            <div class="post-thumb"><img src="img/CondDGConv.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Conditional Directed Graph Convolution for 3D Human Pose
                                     Estimation</span>
                                 <div class="paper-authors">
-                                    <b>Wenbo Hu</b>, Changgong Zhang, Fangneng Zhan, Lei Zhang, Tien-Tsin Wong
+                                    <b class="self-name">Wenbo Hu</b>, Changgong Zhang, Fangneng Zhan, Lei Zhang, Tien-Tsin Wong
                                 </div>
                                 <div class="paper-venue">
                                     <em>ACM International Conference on Multimedia</em> (<b>ACM MM</b>), 2021
@@ -849,12 +854,12 @@
 
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="projects/BPNet/img/bpnet.jpg" /></div>
+                            <div class="post-thumb"><img src="projects/BPNet/img/bpnet.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Bidirectional Projection Network for Cross Dimensional Scene
                                     Understanding</span>
                                 <div class="paper-authors">
-                                    <b>Wenbo Hu</b>, Hengshuang Zhao, Li Jiang, Jiaya Jia, Tien-Tsin Wong
+                                    <b class="self-name">Wenbo Hu</b>, Hengshuang Zhao, Li Jiang, Jiaya Jia, Tien-Tsin Wong
                                 </div>
                                 <div class="paper-venue">
                                     <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>),
@@ -874,11 +879,11 @@
 
 
                         <div class="post-container">
-                            <div class="post-thumb"><img src="projects/Mono3D/img/teaser.jpg" /></div>
+                            <div class="post-thumb"><img src="projects/Mono3D/img/teaser.jpg" loading="lazy" decoding="async" /></div>
                             <div class="post-content">
                                 <span class="paper-title">Mononizing Binocular Videos</span>
                                 <div class="paper-authors">
-                                    <b>Wenbo Hu</b>, Menghan Xia, Chi-Wing Fu, Tien-Tsin Wong
+                                    <b class="self-name">Wenbo Hu</b>, Menghan Xia, Chi-Wing Fu, Tien-Tsin Wong
                                 </div>
                                 <div class="paper-venue">
                                     <em>ACM Transactions on Graphics</em> (<b>TOG</b>), 2020
@@ -971,7 +976,7 @@
                     <hr class="line" />
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/cuhk_logo.jpeg" alt="CUHK" /></div>
+                        <div class="exp-logo"><img src="img/cuhk_logo.jpeg" alt="CUHK" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Aug. 2018 - May. 2022</div>
                             <div class="exp-org">The Chinese University of Hong Kong</div>
@@ -981,7 +986,7 @@
                     </div>
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/dut_long.jpeg" alt="DUT" /></div>
+                        <div class="exp-logo"><img src="img/dut_long.jpeg" alt="DUT" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Sep. 2014 - Jun. 2018</div>
                             <div class="exp-org">Dalian University of Technology</div>
@@ -996,7 +1001,7 @@
                     <hr class="line" />
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/TencentAILab.jpeg" alt="Tencent" /></div>
+                        <div class="exp-logo"><img src="img/TencentAILab.jpeg" alt="Tencent" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Dec. 2023 - Present</div>
                             <div class="exp-org"><a href="https://ai.tencent.com">Tencent AI Lab (ARC)</a></div>
@@ -1005,7 +1010,7 @@
                     </div>
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/PICO.jpg" alt="PICO" /></div>
+                        <div class="exp-logo"><img src="img/PICO.jpg" alt="PICO" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Sep. 2022 - Nov. 2023</div>
                             <div class="exp-org"><a href="https://www.picoxr.com/global">PICO Mixed Reality,
@@ -1015,7 +1020,7 @@
                     </div>
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/TencentAILab.jpeg" alt="Tencent" /></div>
+                        <div class="exp-logo"><img src="img/TencentAILab.jpeg" alt="Tencent" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Nov. 2021 - May. 2022</div>
                             <div class="exp-org"><a href="https://ai.tencent.com">Tencent AI Lab</a></div>
@@ -1024,7 +1029,7 @@
                     </div>
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/DAMO.jpeg" alt="DAMO" /></div>
+                        <div class="exp-logo"><img src="img/DAMO.jpeg" alt="DAMO" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Sep. 2020 - Nov. 2021</div>
                             <div class="exp-org"><a href="https://damo.alibaba.com/">DAMO Academy, Alibaba Group</a>
@@ -1034,7 +1039,7 @@
                     </div>
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/sensetime.jpg" alt="SenseTime" /></div>
+                        <div class="exp-logo"><img src="img/sensetime.jpg" alt="SenseTime" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Jan. 2018 - Jul. 2018</div>
                             <div class="exp-org"><a href="https://www.sensetime.com/">SenseTime</a></div>
@@ -1043,7 +1048,7 @@
                     </div>
 
                     <div class="exp-container">
-                        <div class="exp-logo"><img src="img/dji.jpg" alt="DJI" /></div>
+                        <div class="exp-logo"><img src="img/dji.jpg" alt="DJI" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Jul. 2016 - Sep. 2016</div>
                             <div class="exp-org"><a href="https://www.dji.com/">DJI</a></div>
@@ -1115,7 +1120,6 @@
                                 <a href="https://twitter.com/wbhu_cuhk/status/1898988354143674423?ref_src=twsrc%5Etfw">March
                                     10, 2025</a>
                             </blockquote>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
                         <div class="tweet-item">
@@ -1134,7 +1138,6 @@
                                     href="https://twitter.com/Double47685693/status/1831517092606308703?ref_src=twsrc%5Etfw">September
                                     5, 2024</a>
                             </blockquote>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
                         <div class="tweet-item">
@@ -1152,7 +1155,6 @@
                                     18,
                                     2024</a>
                             </blockquote>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
                         <div class="tweet-item">
@@ -1171,7 +1173,6 @@
                                     href="https://twitter.com/yshan2u/status/1834126260341277024?ref_src=twsrc%5Etfw">September
                                     12, 2024</a>
                             </blockquote>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
                         <div class="tweet-item">
@@ -1187,7 +1188,6 @@
                                     4,
                                     2024</a>
                             </blockquote>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
                         <div class="tweet-item">
@@ -1198,7 +1198,6 @@
                                     4,
                                     2023</a>
                             </blockquote>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
                     </div>
@@ -1208,7 +1207,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./script.js" defer></script>
 
 </body>
 
