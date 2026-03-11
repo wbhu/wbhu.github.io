@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const sectionOrder = Object.keys(sectionMap);
-    const buttons = document.querySelectorAll('#menu > ul > a');
+    const buttons = document.querySelectorAll('#menu > ul > li > a');
     const contentArea = document.getElementById('content-area');
     let activeKey = 'about';
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         buttons.forEach((button) => {
-            const li = button.querySelector('li');
+            const li = button.parentElement;
             if (!li) {
                 return;
             }
@@ -93,6 +93,29 @@ document.addEventListener('DOMContentLoaded', () => {
     bindMenuClick('expButton', 'exp');
     bindMenuClick('patButton', 'pat');
     bindMenuClick('miscButton', 'mis');
+
+    // Publication year filter
+    const yearFilter = document.getElementById('pub-year-filter');
+    if (yearFilter) {
+        const yearButtons = yearFilter.querySelectorAll('.pub-year-btn');
+        const pubCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
+
+        yearFilter.addEventListener('click', (e) => {
+            const btn = e.target.closest('.pub-year-btn');
+            if (!btn) return;
+
+            const year = btn.dataset.year;
+            yearButtons.forEach((b) => b.classList.toggle('active', b === btn));
+
+            pubCards.forEach((card) => {
+                if (year === 'all' || card.dataset.year === year) {
+                    card.classList.remove('year-hidden');
+                } else {
+                    card.classList.add('year-hidden');
+                }
+            });
+        });
+    }
 
     const initialKey = resolveHash(window.location.hash);
     setActiveSection(initialKey, { animate: false, updateHash: false, scroll: false });

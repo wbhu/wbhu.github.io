@@ -116,8 +116,6 @@ section {
     --ink-300: #97a2bf;
     --mist-100: #f3f5fa;
     --mist-200: #e8ebf4;
-    --paper: #fffdf8;
-
     --brand-700: #005e63;
     --brand-500: #0e8f91;
     --brand-200: #d9f1ef;
@@ -308,34 +306,41 @@ img {
     gap: 7px;
 }
 
-#menu ul a {
-    display: block;
+#menu ul li {
+    border-radius: 11px;
+    border: 1px solid transparent;
+    transition: all var(--ease);
 }
 
-#menu ul li {
+#menu ul li a {
+    display: block;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     color: var(--ink-700);
-    border-radius: 11px;
     padding: 10px 12px;
-    border: 1px solid transparent;
-    transition: all var(--ease);
+    text-decoration: none;
 }
 
 #menu ul li:hover {
     transform: translateX(3px);
-    color: var(--brand-700);
     background: var(--brand-100);
     border-color: var(--brand-200);
 }
 
+#menu ul li:hover a {
+    color: var(--brand-700);
+}
+
 #menu ul li.active {
-    color: #ffffff;
     border-color: transparent;
     background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
     box-shadow: 0 10px 16px -14px rgba(5, 80, 84, 0.85);
+}
+
+#menu ul li.active a {
+    color: #ffffff;
 }
 
 .visitor-map {
@@ -377,14 +382,9 @@ img {
     color: var(--ink-700);
 }
 
-.mainText p[align='left'],
-.pubText p[align='left'] {
-    text-align: left;
-}
-
 .mainText a,
 .pubText a {
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 94, 99, 0.28);
 }
 
 .mainText a:hover,
@@ -474,8 +474,8 @@ h3 {
 .highlight-hiring {
     display: block;
     margin-top: 16px;
-    border-left: 3px solid var(--brand-500);
     border: 1px solid rgba(14, 143, 145, 0.18);
+    border-left: 3px solid var(--brand-500);
     background: linear-gradient(110deg, rgba(14, 143, 145, 0.12), rgba(255, 255, 255, 0.9));
     color: var(--ink-900);
     padding: 12px 14px;
@@ -492,26 +492,51 @@ h3 {
     border: 1px solid rgba(217, 136, 0, 0.34);
 }
 
+.pub-year-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.pub-year-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--mist-200);
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--ink-700);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--ease);
+}
+
+.pub-year-btn:hover {
+    border-color: var(--brand-200);
+    background: var(--brand-100);
+    color: var(--brand-700);
+}
+
+.pub-year-btn.active {
+    border-color: transparent;
+    background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 12px -8px rgba(5, 80, 84, 0.7);
+}
+
+.post-container.year-hidden {
+    display: none;
+}
+
 .news-scroll,
 .pub-scroll {
-    max-height: 74vh;
-    overflow-y: auto;
-    scrollbar-width: thin;
     background: linear-gradient(180deg, rgba(239, 244, 252, 0.42) 0%, rgba(255, 255, 255, 0.58) 100%);
     border: 1px solid #dde6f5;
     border-radius: var(--radius);
     padding: 16px;
-}
-
-.news-scroll::-webkit-scrollbar,
-.pub-scroll::-webkit-scrollbar {
-    width: 8px;
-}
-
-.news-scroll::-webkit-scrollbar-thumb,
-.pub-scroll::-webkit-scrollbar-thumb {
-    background: #c3cbde;
-    border-radius: 8px;
 }
 
 .notation {
@@ -533,7 +558,7 @@ h3 {
 .post-container {
     display: grid;
     content-visibility: auto;
-    contain-intrinsic-size: 320px;
+    contain-intrinsic-size: auto 320px;
     grid-template-columns: 252px 1fr;
     gap: 18px;
     align-items: start;
@@ -644,7 +669,7 @@ h3 {
 .exp-container {
     display: grid;
     content-visibility: auto;
-    contain-intrinsic-size: 120px;
+    contain-intrinsic-size: auto 120px;
     grid-template-columns: 74px 1fr;
     gap: 14px;
     align-items: center;
@@ -728,6 +753,56 @@ h3 {
     margin: 22px 0 18px;
 }
 
+.patent-list {
+    display: grid;
+    gap: 10px;
+}
+
+.patent-item {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 16px;
+    border-radius: var(--radius);
+    border: 1px solid #e3e9f6;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.patent-id {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--ink-900);
+    letter-spacing: 0.01em;
+}
+
+.patent-status {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 2px 10px;
+}
+
+.patent-issued {
+    background: var(--brand-100);
+    color: var(--brand-700);
+    border: 1px solid var(--brand-200);
+}
+
+.patent-pending {
+    background: var(--sun-200);
+    color: var(--sun-600);
+    border: 1px solid rgba(217, 136, 0, 0.22);
+}
+
+.patent-title {
+    font-size: 0.9rem;
+    color: var(--ink-700);
+    margin: 0;
+}
+
 .tweet-container {
     margin-top: 14px;
     display: grid;
@@ -738,7 +813,7 @@ h3 {
 .tweet-item {
     min-width: 0;
     content-visibility: auto;
-    contain-intrinsic-size: 360px;
+    contain-intrinsic-size: auto 360px;
     border-radius: var(--radius);
     border: 1px solid #e6ecf7;
     background: rgba(255, 255, 255, 0.88);
@@ -765,59 +840,29 @@ h3 {
     }
 }
 
-.icon-x,
-.icon-linkedin,
-.icon-youtube,
-.icon-scholar,
-.icon-email,
-.icon-wechat,
-.icon-github {
+[class^="icon-"] {
     display: inline-block;
-    width: 38px;
-    height: 38px;
+    width: var(--icon-size, 38px);
+    height: var(--icon-size, 38px);
     margin: 0;
     transition: transform var(--ease);
     vertical-align: middle;
-    background-size: 76px 38px;
+    background-size: calc(var(--icon-size, 38px) * 2) var(--icon-size, 38px);
+    background-position: 0 0;
+    background-repeat: no-repeat;
 }
 
-.icon-x:hover,
-.icon-linkedin:hover,
-.icon-youtube:hover,
-.icon-scholar:hover,
-.icon-email:hover,
-.icon-wechat:hover,
-.icon-github:hover {
-    background-position: -38px 0;
+[class^="icon-"]:hover {
+    background-position: calc(var(--icon-size, 38px) * -1) 0;
 }
 
-.icon-github {
-    background: transparent url('img/strips/github.png') top left no-repeat;
-}
-
-.icon-youtube {
-    background: transparent url('img/strips/youtube.png') top left no-repeat;
-}
-
-.icon-linkedin {
-    background: transparent url('img/strips/linkedin.png') top left no-repeat;
-}
-
-.icon-wechat {
-    background: transparent url('img/strips/wechat.png') top left no-repeat;
-}
-
-.icon-x {
-    background: transparent url('img/strips/x.png') top left no-repeat;
-}
-
-.icon-email {
-    background: transparent url('img/strips/email.png') top left no-repeat;
-}
-
-.icon-scholar {
-    background: transparent url('img/strips/scholar.png') top left no-repeat;
-}
+.icon-github { background-image: url('img/strips/github.png'); }
+.icon-youtube { background-image: url('img/strips/youtube.png'); }
+.icon-linkedin { background-image: url('img/strips/linkedin.png'); }
+.icon-wechat { background-image: url('img/strips/wechat.png'); }
+.icon-x { background-image: url('img/strips/x.png'); }
+.icon-email { background-image: url('img/strips/email.png'); }
+.icon-scholar { background-image: url('img/strips/scholar.png'); }
 
 @media (max-width: 1200px) {
     #content-wrapper {
@@ -857,6 +902,10 @@ h3 {
         justify-content: center;
     }
 
+    .social-icons {
+        justify-content: center;
+    }
+
     #content-wrapper {
         grid-template-columns: 1fr;
     }
@@ -870,7 +919,7 @@ h3 {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
 
-    #menu ul li {
+    #menu ul li a {
         text-align: center;
         padding: 9px 8px;
         font-size: 0.82rem;
@@ -901,6 +950,10 @@ h3 {
         margin-left: 0;
         margin-top: 4px;
     }
+
+    .patent-item {
+        grid-template-columns: auto auto 1fr;
+    }
 }
 
 @media (max-width: 680px) {
@@ -918,7 +971,6 @@ h3 {
 
     .news-scroll,
     .pub-scroll {
-        max-height: 64vh;
         padding: 12px;
     }
 
@@ -930,27 +982,23 @@ h3 {
         grid-template-columns: 1fr;
     }
 
-    .social-icons a,
-    .icon-x,
-    .icon-linkedin,
-    .icon-youtube,
-    .icon-scholar,
-    .icon-email,
-    .icon-wechat,
-    .icon-github {
-        width: 34px;
-        height: 34px;
-        background-size: 68px 34px;
+    .social-icons {
+        --icon-size: 34px;
     }
 
-    .icon-x:hover,
-    .icon-linkedin:hover,
-    .icon-youtube:hover,
-    .icon-scholar:hover,
-    .icon-email:hover,
-    .icon-wechat:hover,
-    .icon-github:hover {
-        background-position: -34px 0;
+    .social-icons a {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        border-radius: 7px;
+    }
+
+    .patent-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .patent-title {
+        margin-top: 2px;
     }
 }
 
