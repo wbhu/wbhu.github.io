@@ -127,6 +127,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // News collapse: show first 8, toggle rest
+    const newsScroll = document.querySelector('.news-scroll');
+    if (newsScroll) {
+        const NEWS_LIMIT = 8;
+        const newsItems = newsScroll.querySelectorAll(':scope > p');
+        const toggleBtn = document.getElementById('news-toggle');
+
+        if (newsItems.length > NEWS_LIMIT && toggleBtn) {
+            newsItems.forEach((item, i) => {
+                if (i >= NEWS_LIMIT) item.classList.add('news-hidden');
+            });
+
+            let expanded = false;
+            toggleBtn.addEventListener('click', () => {
+                expanded = !expanded;
+                newsItems.forEach((item, i) => {
+                    if (i >= NEWS_LIMIT) item.classList.toggle('news-hidden', !expanded);
+                });
+                toggleBtn.textContent = expanded ? 'Show less ▴' : 'Show more ▾';
+                toggleBtn.setAttribute('aria-expanded', String(expanded));
+            });
+        } else if (toggleBtn) {
+            toggleBtn.style.display = 'none';
+        }
+    }
+
     const title = document.querySelector('#header-content h1');
     if (title) {
         title.addEventListener('mouseenter', () => {

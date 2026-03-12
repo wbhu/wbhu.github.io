@@ -449,8 +449,8 @@ h3 {
 }
 
 .key-news {
-    background: linear-gradient(118deg, rgba(59, 130, 246, 0.16), rgba(14, 143, 145, 0.1));
-    color: #1f3d7a;
+    background: none;
+    color: var(--ink-900);
 }
 
 .paper-authors .self-name {
@@ -529,6 +529,31 @@ h3 {
 
 .post-container.year-hidden {
     display: none;
+}
+
+/* News collapse */
+.news-scroll p.news-hidden {
+    display: none;
+}
+
+.news-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 6px;
+    padding: 4px 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--brand-700);
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: color var(--ease);
+}
+
+.news-toggle:hover {
+    color: var(--brand-500);
 }
 
 .news-scroll,
