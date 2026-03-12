@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
         about: { id: 'about', button: 'aboutButton', hash: 'home' },
         pub: { id: 'pub', button: 'pubButton', hash: 'publications' },
         exp: { id: 'exp', button: 'expButton', hash: 'experience' },
-        pat: { id: 'pat', button: 'patButton', hash: 'patents' },
         mis: { id: 'mis', button: 'miscButton', hash: 'misc' }
     };
 
@@ -16,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         '#pub': 'pub',
         '#experience': 'exp',
         '#exp': 'exp',
-        '#patents': 'pat',
-        '#pat': 'pat',
         '#misc': 'mis',
         '#miscellaneous': 'mis'
     };
@@ -65,9 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
             history.replaceState(null, '', `#${newHash}`);
         }
 
-        if (scroll && contentArea) {
-            const y = contentArea.getBoundingClientRect().top + window.scrollY - 18;
-            window.scrollTo({ top: y, behavior: 'smooth' });
+        if (scroll) {
+            if (key === 'about') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (contentArea) {
+                const menu = document.getElementById('menu');
+                const menuH = menu ? menu.offsetHeight : 0;
+                const y = contentArea.getBoundingClientRect().top + window.scrollY - menuH - 24;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
         }
 
         activeKey = key;
@@ -81,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         button.addEventListener('click', (event) => {
             event.preventDefault();
-            if (activeKey === targetKey) {
+            if (activeKey === targetKey && targetKey !== 'about') {
                 return;
             }
             setActiveSection(targetKey, { animate: true, updateHash: true, scroll: true });
@@ -91,8 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
     bindMenuClick('aboutButton', 'about');
     bindMenuClick('pubButton', 'pub');
     bindMenuClick('expButton', 'exp');
-    bindMenuClick('patButton', 'pat');
     bindMenuClick('miscButton', 'mis');
+
+    // Set sticky top for pub year filter based on actual menu height
+    const menuEl = document.getElementById('menu');
+    const pubYearFilterEl = document.querySelector('.pub-year-filter');
+    if (menuEl && pubYearFilterEl) {
+        const updateStickyTop = () => {
+            pubYearFilterEl.style.top = menuEl.offsetHeight + 'px';
+        };
+        updateStickyTop();
+        window.addEventListener('resize', updateStickyTop);
+    }
 
     // Publication year filter
     const yearFilter = document.getElementById('pub-year-filter');
@@ -153,6 +166,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Move visitor map from sidebar to about section
+    const vMap = document.querySelector('#menu .visitor-map');
+    const aboutSection = document.getElementById('about');
+    if (vMap && aboutSection) {
+        vMap.style.display = '';
+        aboutSection.appendChild(vMap);
+    }
+
     const title = document.querySelector('#header-content h1');
     if (title) {
         title.addEventListener('mouseenter', () => {
@@ -163,24 +184,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    
+    // Lazy-load clustrmaps after visitor map is in visible DOM
     const clustrAnchor = document.getElementById('visitor-map-anchor');
     if (clustrAnchor) {
-        const mapObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                    return;
-                }
-                const mapScript = document.createElement('script');
-                mapScript.id = 'clustrmaps';
-                mapScript.src = '//cdn.clustrmaps.com/map_v2.js?cl=f8fafc&w=150&t=tt&d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw&co=f8fafc&cmo=3b82f6&cmn=2563eb&ct=64748b';
-                mapScript.async = true;
-                clustrAnchor.appendChild(mapScript);
-                observer.disconnect();
-            });
-        }, { rootMargin: '180px 0px' });
-
-        mapObserver.observe(clustrAnchor);
+        requestAnimationFrame(() => {
+            const mapObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    const mapScript = document.createElement('script');
+                    mapScript.id = 'clustrmaps';
+                    mapScript.src = '//cdn.clustrmaps.com/map_v2.js?cl=f8fafc&w=150&t=tt&d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw&co=f8fafc&cmo=3b82f6&cmn=2563eb&ct=64748b';
+                    mapScript.async = true;
+                    clustrAnchor.appendChild(mapScript);
+                    observer.disconnect();
+                });
+            }, { rootMargin: '180px 0px' });
+            mapObserver.observe(clustrAnchor);
+        });
     }
 
     const tweetContainer = document.querySelector('.tweet-container');

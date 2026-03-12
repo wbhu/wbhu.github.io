@@ -285,25 +285,28 @@ img {
 
 #content-wrapper {
     display: grid;
-    grid-template-columns: 210px 1fr;
-    gap: 24px;
-    align-items: start;
+    gap: 18px;
 }
 
 #menu {
     position: sticky;
-    top: 24px;
-    padding: 18px;
+    top: 0;
+    z-index: 100;
+    padding: 10px 16px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 253, 255, 0.95) 100%);
     border: 1px solid var(--mist-200);
     box-shadow: var(--shadow-card);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 #menu ul {
     list-style: none;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 7px;
+    justify-content: center;
 }
 
 #menu ul li {
@@ -324,7 +327,7 @@ img {
 }
 
 #menu ul li:hover {
-    transform: translateX(3px);
+    transform: translateY(-1px);
     background: var(--brand-100);
     border-color: var(--brand-200);
 }
@@ -341,6 +344,10 @@ img {
 
 #menu ul li.active a {
     color: #ffffff;
+}
+
+#menu .visitor-map {
+    display: none;
 }
 
 .visitor-map {
@@ -496,7 +503,18 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
+    position: sticky;
+    top: 58px;
+    z-index: 50;
+    background: linear-gradient(180deg, rgba(248, 250, 255, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 8px 12px;
+    margin-left: -8px;
+    margin-right: -8px;
+    border-bottom: 1.5px solid var(--mist-200);
+    box-shadow: 0 6px 16px -4px rgba(24, 32, 58, 0.10), 0 2px 4px -2px rgba(24, 32, 58, 0.06);
 }
 
 .pub-year-btn {
@@ -564,6 +582,10 @@ h3 {
     padding: 16px;
 }
 
+.pub-scroll {
+    margin-top: 12px;
+}
+
 .notation {
     background: linear-gradient(120deg, rgba(14, 143, 145, 0.08), rgba(217, 136, 0, 0.1));
     border: 1px solid rgba(14, 143, 145, 0.18);
@@ -582,8 +604,6 @@ h3 {
 
 .post-container {
     display: grid;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 320px;
     grid-template-columns: 252px 1fr;
     gap: 18px;
     align-items: start;
@@ -778,56 +798,6 @@ h3 {
     margin: 22px 0 18px;
 }
 
-.patent-list {
-    display: grid;
-    gap: 10px;
-}
-
-.patent-item {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 16px;
-    border-radius: var(--radius);
-    border: 1px solid #e3e9f6;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-.patent-id {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.84rem;
-    font-weight: 700;
-    color: var(--ink-900);
-    letter-spacing: 0.01em;
-}
-
-.patent-status {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.74rem;
-    font-weight: 600;
-    border-radius: 999px;
-    padding: 2px 10px;
-}
-
-.patent-issued {
-    background: var(--brand-100);
-    color: var(--brand-700);
-    border: 1px solid var(--brand-200);
-}
-
-.patent-pending {
-    background: var(--sun-200);
-    color: var(--sun-600);
-    border: 1px solid rgba(217, 136, 0, 0.22);
-}
-
-.patent-title {
-    font-size: 0.9rem;
-    color: var(--ink-700);
-    margin: 0;
-}
-
 .tweet-container {
     margin-top: 14px;
     display: grid;
@@ -890,10 +860,6 @@ h3 {
 .icon-scholar { background-image: url('img/strips/scholar.png'); }
 
 @media (max-width: 1200px) {
-    #content-wrapper {
-        grid-template-columns: 180px 1fr;
-    }
-
     .post-container {
         grid-template-columns: 220px 1fr;
     }
@@ -931,29 +897,6 @@ h3 {
         justify-content: center;
     }
 
-    #content-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    #menu {
-        position: static;
-        padding: 12px;
-    }
-
-    #menu ul {
-        grid-template-columns: repeat(5, minmax(0, 1fr));
-    }
-
-    #menu ul li a {
-        text-align: center;
-        padding: 9px 8px;
-        font-size: 0.82rem;
-    }
-
-    .visitor-map {
-        display: none;
-    }
-
     #content-area {
         padding: 18px;
     }
@@ -975,19 +918,11 @@ h3 {
         margin-left: 0;
         margin-top: 4px;
     }
-
-    .patent-item {
-        grid-template-columns: auto auto 1fr;
-    }
 }
 
 @media (max-width: 680px) {
     body {
         line-height: 1.62;
-    }
-
-    #menu ul {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     #content-area {
@@ -1015,15 +950,6 @@ h3 {
         width: var(--icon-size);
         height: var(--icon-size);
         border-radius: 7px;
-    }
-
-    .patent-item {
-        grid-template-columns: 1fr;
-        gap: 4px;
-    }
-
-    .patent-title {
-        margin-top: 2px;
     }
 }
 
