@@ -3,7 +3,7 @@
     <!-- Main Homepage -->
     <url>
         <loc>https://wbhu.github.io/</loc>
-        <lastmod>2026-01-17</lastmod>
+        <lastmod>2026-03-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -50,6 +50,12 @@
     <url>
         <loc>https://wbhu.github.io/pdf/PBR-NeRF.pdf</loc>
         <lastmod>2024-02-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://wbhu.github.io/pdf/DEMC.pdf</loc>
+        <lastmod>2022-01-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>

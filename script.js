@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const isActive = sectionKey === key;
             section.classList.toggle('section-active', isActive);
-            section.hidden = !isActive;
+            section.classList.toggle('section-inactive', !isActive);
 
             if (animate) {
                 section.classList.toggle('section-transition', true);
@@ -166,12 +166,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Move visitor map from sidebar to about section
-    const vMap = document.querySelector('#menu .visitor-map');
-    const aboutSection = document.getElementById('about');
-    if (vMap && aboutSection) {
-        vMap.style.display = '';
-        aboutSection.appendChild(vMap);
+    // WeChat QR modal
+    const wechatTrigger = document.getElementById('wechat-trigger');
+    const wechatModal = document.getElementById('wechat-modal');
+    if (wechatTrigger && wechatModal) {
+        wechatTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            wechatModal.showModal();
+        });
+        wechatModal.querySelector('.qr-modal-close').addEventListener('click', () => {
+            wechatModal.close();
+        });
+        wechatModal.addEventListener('click', (e) => {
+            if (e.target === wechatModal) wechatModal.close();
+        });
     }
 
     const title = document.querySelector('#header-content h1');
