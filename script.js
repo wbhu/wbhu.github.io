@@ -192,23 +192,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lazy-load clustrmaps after visitor map is in visible DOM
-    const clustrAnchor = document.getElementById('visitor-map-anchor');
-    if (clustrAnchor) {
-        requestAnimationFrame(() => {
-            const mapObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    const mapScript = document.createElement('script');
-                    mapScript.id = 'clustrmaps';
-                    mapScript.src = '//cdn.clustrmaps.com/map_v2.js?cl=f8fafc&w=150&t=tt&d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw&co=f8fafc&cmo=3b82f6&cmn=2563eb&ct=64748b';
-                    mapScript.async = true;
-                    clustrAnchor.appendChild(mapScript);
-                    observer.disconnect();
-                });
-            }, { rootMargin: '180px 0px' });
-            mapObserver.observe(clustrAnchor);
-        });
+    // Lazy-load ClustrMaps 3D globe when visitor section enters viewport
+    const globeWrap = document.getElementById('visitor-globe-wrap');
+    if (globeWrap) {
+        const globeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                observer.disconnect();
+
+                const injectGlobe = () => {
+                    const s = document.createElement('script');
+                    s.id = 'clstr_globe';
+                    s.src = '//clustrmaps.com/globe.js?d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw';
+                    s.async = true;
+                    globeWrap.appendChild(s);
+                };
+
+                if (window.jQuery) {
+                    injectGlobe();
+                } else {
+                    const jq = document.createElement('script');
+                    jq.src = 'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js';
+                    jq.onload = injectGlobe;
+                    document.head.appendChild(jq);
+                }
+            });
+        }, { rootMargin: '180px 0px' });
+        globeObserver.observe(globeWrap);
     }
 
     const tweetContainer = document.querySelector('.tweet-container');
@@ -233,5 +243,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { rootMargin: '240px 0px' });
 
         tweetObserver.observe(tweetContainer);
+    }
+
+    // Nav sticky sentinel: toggle .nav-stuck when nav sticks to top
+    const navEl = document.getElementById('menu');
+    if (navEl) {
+        const sentinel = document.createElement('div');
+        sentinel.style.height = '0';
+        sentinel.setAttribute('aria-hidden', 'true');
+        navEl.parentNode.insertBefore(sentinel, navEl);
+        const navObserver = new IntersectionObserver(([entry]) => {
+            navEl.classList.toggle('nav-stuck', !entry.isIntersecting);
+        });
+        navObserver.observe(sentinel);
     }
 });

@@ -288,17 +288,45 @@ img {
     gap: 18px;
 }
 
+/* --- Nav: transparent by default, frosted when stuck --- */
 #menu {
     position: sticky;
     top: 0;
     z-index: 100;
     padding: 10px 16px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 253, 255, 0.95) 100%);
-    border: 1px solid var(--mist-200);
-    box-shadow: var(--shadow-card);
+    background: transparent;
+    border: 1px solid transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    transition: background var(--ease), border-color var(--ease),
+                box-shadow var(--ease);
+}
+
+#menu::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--brand-500), var(--brand-200));
+    opacity: 0;
+    transition: opacity 260ms ease;
+}
+
+#menu.nav-stuck {
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(252,253,255,0.95) 100%);
+    border-color: rgba(14, 143, 145, 0.15);
+    box-shadow: var(--shadow-card), 0 4px 12px -2px rgba(14, 143, 145, 0.10);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+}
+
+#menu.nav-stuck::after {
+    opacity: 1;
 }
 
 #menu ul {
@@ -312,11 +340,14 @@ img {
 #menu ul li {
     border-radius: 11px;
     border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.45);
     transition: all var(--ease);
 }
 
 #menu ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
@@ -324,6 +355,22 @@ img {
     color: var(--ink-700);
     padding: 10px 12px;
     text-decoration: none;
+}
+
+/* Nav icon (inline SVG) */
+.nav-icon {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+#menu ul li.active .nav-icon {
+    stroke: #ffffff;
 }
 
 #menu ul li:hover {
@@ -346,24 +393,36 @@ img {
     color: #ffffff;
 }
 
-.visitor-map {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px dashed var(--mist-200);
-    min-height: 140px;
+/* --- Visitor Map --- */
+.visitor-map-section {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--mist-200);
 }
 
-#visitor-map-anchor {
-    min-height: 120px;
-    display: grid;
-    place-items: center;
-    color: var(--ink-500);
+.visitor-map-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-300);
 }
 
-#visitor-map-anchor:empty::before {
-    content: 'Loading visitor map...';
+.visitor-map-icon {
+    font-size: 1rem;
 }
+
+.visitor-globe-wrap {
+    width: 160px;
+    margin: 0 auto;
+}
+
 
 #content-area {
     padding: 28px 30px;
@@ -999,6 +1058,10 @@ img {
         width: var(--icon-size);
         height: var(--icon-size);
         border-radius: 7px;
+    }
+
+    .visitor-globe-wrap {
+        width: 120px;
     }
 }
 

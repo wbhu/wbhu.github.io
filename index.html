@@ -140,12 +140,19 @@
             <!--  MENU  -->
             <nav id="menu" aria-label="Main navigation">
                 <ul>
-                    <li><a href="#home" id="aboutButton">Home</a></li>
-                    <li><a href="#publications" id="pubButton">Publications</a></li>
-                    <li><a href="#experience" id="expButton">Experience</a></li>
-                    <li><a href="#misc" id="miscButton">Misc.</a></li>
+                    <li><a href="#home" id="aboutButton">
+                        <svg class="nav-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5L1.5 7v7h4.75v-4.5h3.5V14h4.75V7L8 1.5z"/></svg>
+                        Home</a></li>
+                    <li><a href="#publications" id="pubButton">
+                        <svg class="nav-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 1.5h7l3 3V14a.5.5 0 01-.5.5h-9A.5.5 0 013 14V2a.5.5 0 01.5-.5z"/><path d="M5.5 8h5M5.5 10.5h5M5.5 5.5h2"/></svg>
+                        Publications</a></li>
+                    <li><a href="#experience" id="expButton">
+                        <svg class="nav-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 5.5h13v8h-13zM5.5 5.5V3.5a1 1 0 011-1h3a1 1 0 011 1v2"/></svg>
+                        Experience</a></li>
+                    <li><a href="#misc" id="miscButton">
+                        <svg class="nav-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l1.5 3.5L13 6l-2.5 2.5L11 12.5 8 10.5l-3 2L5.5 8.5 3 6l3.5-.5z"/></svg>
+                        Misc.</a></li>
                 </ul>
-
             </nav>
 
             <div id="content-area">
@@ -423,8 +430,13 @@
 
                     </div>
 
-                    <div class="visitor-map">
-                        <div id="visitor-map-anchor" aria-label="Visitor map"></div>
+                    <div class="visitor-map-section">
+                        <div class="visitor-map-heading">
+                            <span class="visitor-map-icon">🌍</span>
+                            <span>Visitors around the world</span>
+                        </div>
+                        <div class="visitor-globe-wrap" id="visitor-globe-wrap">
+                        </div>
                     </div>
 
                 </div>
