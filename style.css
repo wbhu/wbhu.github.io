@@ -150,7 +150,7 @@ body {
     line-height: 1.7;
     background:
         radial-gradient(circle at 16% 12%, rgba(14, 143, 145, 0.16), transparent 34%),
-        radial-gradient(circle at 84% 5%, rgba(217, 136, 0, 0.14), transparent 30%),
+        radial-gradient(circle at 84% 5%, rgba(217, 136, 0, 0.07), transparent 30%),
         linear-gradient(180deg, #f3f5fa 0%, #f8fafd 55%, #f1f4fb 100%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -181,7 +181,7 @@ img {
 
 #header {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     gap: 28px;
     align-items: center;
     padding: 30px;
@@ -238,7 +238,8 @@ img {
 
 #header-content h2 .spacing {
     display: inline;
-    color: var(--sun-600);
+    color: var(--ink-700);
+    font-weight: 600;
 }
 
 .hero-chips {
@@ -281,6 +282,53 @@ img {
 .social-icons a:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 14px -10px rgba(0, 70, 83, 0.55);
+}
+
+/* --- Header credentials aside (fills the right third, front-loads awards) --- */
+.header-aside {
+    align-self: center;
+    justify-self: end;
+    display: grid;
+    gap: 11px;
+    text-align: right;
+    position: relative;
+    z-index: 1;
+}
+
+.header-cred {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-900);
+    line-height: 1.25;
+}
+
+.header-cred .cred-icon {
+    order: 2;
+    flex-shrink: 0;
+    font-size: 0.92rem;
+    width: 1.3em;
+    text-align: center;
+}
+
+.header-cred .cred-text small {
+    display: block;
+    font-weight: 500;
+    font-size: 0.72rem;
+    color: var(--ink-500);
+}
+
+.header-cred-link {
+    color: var(--brand-700);
+    border-bottom: 0;
+}
+
+.header-cred-link:hover {
+    color: var(--brand-500);
 }
 
 #content-wrapper {
@@ -409,8 +457,8 @@ img {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 0.82rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
+    text-transform: none;
+    letter-spacing: 0.01em;
     color: var(--ink-300);
 }
 
@@ -435,7 +483,7 @@ img {
 
 .mainText,
 .pubText {
-    font-size: 1rem;
+    font-size: 1.02rem;
 }
 
 .mainText p,
@@ -456,7 +504,7 @@ img {
 
 .section-heading {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.32rem;
+    font-size: 1.5rem;
     letter-spacing: -0.02em;
     font-weight: 700;
     margin: 18px 0 14px;
@@ -495,19 +543,18 @@ img {
     -webkit-box-decoration-break: clone;
 }
 
+/* Emphasis system: TEAL = topic keyword (flat, survives line-wraps),
+   GOLD = award only (via .award-badge / .highlight-award), plain <b> = everything else. */
 .key-focus {
-    background: linear-gradient(118deg, rgba(14, 143, 145, 0.18), rgba(14, 143, 145, 0.07));
-    color: #0b585a;
-}
-
-.key-award {
-    background: linear-gradient(118deg, rgba(255, 235, 201, 0.95), rgba(255, 219, 160, 0.62));
-    color: #7d4c00;
+    background: none;
+    color: var(--brand-700);
+    padding: 0;
+    font-weight: 600;
 }
 
 .key-role {
-    border-bottom: 2px solid rgba(191, 61, 83, 0.32);
     color: var(--ink-900);
+    font-weight: 600;
 }
 
 .key-news {
@@ -516,18 +563,17 @@ img {
 }
 
 .paper-authors .self-name {
-    font-weight: 900;
+    font-weight: 700;
     color: #06112b;
-    letter-spacing: 0.01em;
-    border-bottom: 1px solid rgba(6, 17, 43, 0.35);
     background: none;
     border-radius: 0;
     padding: 0;
 }
 
 .highlight-award {
-    color: var(--sun-600);
-    background: linear-gradient(120deg, rgba(255, 235, 201, 0.95), rgba(255, 219, 160, 0.58));
+    color: #6b3e00;
+    background: linear-gradient(135deg, #f7d889 0%, #ecbb58 100%);
+    border: 1px solid rgba(217, 136, 0, 0.4);
     border-radius: 999px;
     padding: 2px 10px;
     font-weight: 700;
@@ -543,6 +589,173 @@ img {
     padding: 12px 14px;
     border-radius: 0 var(--radius) var(--radius) 0;
     font-style: normal;
+}
+
+/* ────────── Research Vision card ────────── */
+.research-vision {
+    margin: 28px 0 0;
+    padding: 22px 24px 20px;
+    background: linear-gradient(135deg, rgba(14, 143, 145, 0.06) 0%, rgba(217, 136, 0, 0.04) 100%);
+    border: 1px solid rgba(14, 143, 145, 0.18);
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px -18px rgba(0, 94, 99, 0.35);
+}
+
+.research-vision::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--brand-500) 0%, var(--sun-400) 100%);
+}
+
+.vision-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brand-700);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vision-icon {
+    color: var(--sun-400);
+    font-size: 1.1rem;
+    transform: rotate(0deg);
+    display: inline-block;
+}
+
+.vision-tagline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--ink-900);
+    margin: 0 0 14px;
+}
+
+.vision-tagline b {
+    color: var(--brand-700);
+    font-weight: 700;
+}
+
+.vision-tagline em {
+    font-style: italic;
+    color: var(--brand-700);
+    font-weight: 600;
+}
+
+.vision-rationale {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--ink-700);
+    margin: 0 0 12px;
+}
+
+.vision-pillars {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    counter-reset: pillar-counter;
+    display: grid;
+    gap: 10px;
+}
+
+.vision-pillars > li {
+    counter-increment: pillar-counter;
+    position: relative;
+    padding: 10px 14px 10px 46px;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(14, 143, 145, 0.18);
+    border-radius: 12px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--ink-900);
+    transition: all var(--ease);
+}
+
+.vision-pillars > li::before {
+    content: counter(pillar-counter);
+    position: absolute;
+    left: 12px;
+    top: 11px;
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 2px 6px -2px rgba(5, 80, 84, 0.5);
+}
+
+.vision-pillars > li:hover {
+    border-color: rgba(14, 143, 145, 0.4);
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateY(-1px);
+}
+
+.pillar-tag {
+    display: inline-block;
+    padding: 2px 10px;
+    margin-right: 8px;
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: 1px;
+    border: 1px solid transparent;
+}
+
+.pillar-tag.pillar-perceive,
+.pillar-tag.pillar-generate,
+.pillar-tag.pillar-represent {
+    background: rgba(14, 143, 145, 0.10);
+    color: var(--brand-700);
+    border-color: rgba(14, 143, 145, 0.26);
+}
+
+.pillar-papers {
+    display: block;
+    margin-top: 6px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-500);
+    letter-spacing: 0.01em;
+}
+
+.vision-longterm {
+    margin: 0;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink-700);
+    border-top: 1px dashed rgba(14, 143, 145, 0.2);
+    padding-top: 12px;
+}
+
+.vision-longterm b {
+    color: var(--brand-700);
+    font-weight: 700;
+}
+
+.vision-longterm em {
+    font-style: italic;
+    color: var(--ink-900);
+    font-weight: 600;
 }
 
 .bestpaper-thumb {
@@ -565,11 +778,11 @@ img {
     background: linear-gradient(180deg, rgba(248, 250, 255, 0.98) 0%, rgba(255, 255, 255, 0.96) 100%);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 10px 8px 12px;
-    margin-left: -8px;
-    margin-right: -8px;
+    padding: 10px 0 12px;
+    margin-left: 0;
+    margin-right: 0;
     border-bottom: 1.5px solid var(--mist-200);
-    box-shadow: 0 6px 16px -4px rgba(24, 32, 58, 0.10), 0 2px 4px -2px rgba(24, 32, 58, 0.06);
+    box-shadow: 0 6px 14px -10px rgba(24, 32, 58, 0.18);
 }
 
 .pub-year-btn {
@@ -604,6 +817,411 @@ img {
     display: none;
 }
 
+/* ────────── View toggle (Year ↔ Theme) ────────── */
+.pub-view-toggle {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+    padding: 4px 0;
+}
+
+.view-toggle-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink-500);
+    text-transform: none;
+    letter-spacing: 0.01em;
+    margin-right: 6px;
+}
+
+.view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: 1.5px solid var(--mist-200);
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--ink-700);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--ease);
+}
+
+.view-btn:hover {
+    border-color: var(--brand-200);
+    color: var(--brand-700);
+}
+
+.view-btn.active {
+    border-color: var(--brand-500);
+    background: var(--brand-100);
+    color: var(--brand-700);
+    box-shadow: 0 4px 10px -8px rgba(5, 80, 84, 0.5);
+}
+
+/* Theme view: flexbox layout for order-based reordering */
+body.view-theme .pub-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+body.view-theme .pub-year-filter {
+    display: none;
+}
+
+body.view-theme .post-container {
+    order: var(--theme-order, 99);
+    margin-bottom: 16px;
+}
+
+/* Theme group headers — JS injects them with data-theme-id */
+.theme-group-header {
+    display: none;
+    /* hidden by default; only shown in theme view */
+}
+
+body.view-theme .theme-group-header {
+    order: var(--theme-order, 99);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--brand-700);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 18px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid rgba(14, 143, 145, 0.22);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.view-theme .theme-group-header:first-of-type {
+    margin-top: 4px;
+}
+
+.theme-group-header::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, var(--brand-500), var(--sun-400));
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.theme-group-header .theme-count {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-500);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: auto;
+}
+
+/* Show-earlier toggle removed — earlier non-Wenbo-led publications dropped intentionally */
+
+/* ────────── Year-group headers (By-Year view landmarks) ────────── */
+.year-group-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--brand-700);
+    letter-spacing: 0.02em;
+    margin: 22px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid rgba(14, 143, 145, 0.22);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.year-group-header:first-child {
+    margin-top: 2px;
+}
+
+.year-group-header .year-count {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink-500);
+    letter-spacing: 0;
+    margin-left: auto;
+}
+
+body.view-theme .year-group-header,
+.year-group-header.year-hidden {
+    display: none;
+}
+
+/* ────────── Flagship papers: one subtle tier of visual weight ────────── */
+.post-container.flagship {
+    border-left: 3px solid var(--brand-500);
+}
+
+.post-container.flagship:hover {
+    border-left-color: var(--brand-500);
+}
+
+/* ────────── Award badges (Best Paper / Finalist) ────────── */
+.award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 9px;
+    margin-left: 6px;
+    border-radius: 999px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    white-space: nowrap;
+    background: linear-gradient(135deg, #f8dd92 0%, #edc063 100%);
+    color: #4a2700;
+    box-shadow: 0 1px 3px -1px rgba(217, 136, 0, 0.32);
+    border: 1px solid rgba(217, 136, 0, 0.4);
+}
+
+.award-badge::before {
+    content: '🏆';
+    font-size: 0.72rem;
+    margin-right: 1px;
+    filter: saturate(1.1);
+}
+
+/* GitHub stars badge — CSS-native pill, JS-fed live count from shields.io JSON. */
+.gh-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 9px 2px 8px;
+    margin-left: 4px;
+    border-radius: 999px;
+    border: 1px solid var(--mist-200);
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--ink-700);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: all var(--ease);
+    box-shadow: 0 1px 2px -1px rgba(24, 32, 58, 0.08);
+}
+
+.gh-stars:hover {
+    border-color: rgba(14, 143, 145, 0.3);
+    background: var(--brand-100);
+    color: var(--brand-700);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px -3px rgba(14, 143, 145, 0.32);
+}
+
+.gh-stars-icon {
+    color: #b86b00;
+    font-size: 0.86rem;
+    line-height: 1;
+    margin-right: 1px;
+}
+
+.gh-stars-logo {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--ink-700);
+    transition: color var(--ease);
+}
+
+.gh-stars:hover .gh-stars-logo {
+    color: var(--brand-700);
+}
+
+.gh-stars-count {
+    font-variant-numeric: tabular-nums;
+    min-width: 2.1ch;
+    text-align: right;
+}
+
+.gh-stars-count:empty {
+    min-width: 0;
+}
+
+/* Tier-1K (≥1000): quiet teal-tinted pill — gold is reserved for awards only */
+.gh-stars.tier1k {
+    border: 1px solid rgba(14, 143, 145, 0.4);
+    background: var(--brand-100);
+    color: var(--brand-700);
+    font-weight: 700;
+}
+
+.gh-stars.tier1k .gh-stars-logo {
+    color: var(--brand-700);
+}
+
+/* ────────── BibTeX cite button + modal ────────── */
+.cite-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(14, 143, 145, 0.32);
+    background: rgba(14, 143, 145, 0.08);
+    color: var(--brand-700);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--ease);
+}
+
+.cite-btn:hover {
+    background: var(--brand-500);
+    color: #ffffff;
+    border-color: var(--brand-500);
+    transform: translateY(-1px);
+}
+
+.bibtex-modal {
+    border: 1px solid rgba(14, 143, 145, 0.3);
+    border-radius: 14px;
+    padding: 0;
+    max-width: 640px;
+    width: 92vw;
+    box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.4);
+}
+
+.bibtex-modal::backdrop {
+    background: rgba(20, 28, 50, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.bibtex-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--mist-200);
+    background: linear-gradient(180deg, var(--brand-100) 0%, rgba(238, 249, 248, 0.4) 100%);
+}
+
+.bibtex-modal-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: var(--brand-700);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.bibtex-close-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--ink-700);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.bibtex-close-btn:hover {
+    background: var(--mist-200);
+    color: var(--ink-900);
+}
+
+.bibtex-modal pre {
+    margin: 0;
+    padding: 16px 18px;
+    background: #f8fafe;
+    color: var(--ink-900);
+    font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    max-height: 50vh;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.bibtex-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 18px;
+    border-top: 1px solid var(--mist-200);
+    background: rgba(248, 250, 254, 0.6);
+}
+
+.bibtex-copy-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--ease);
+}
+
+.bibtex-copy-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px -8px rgba(5, 80, 84, 0.6);
+}
+
+.bibtex-copy-btn.copied {
+    background: linear-gradient(135deg, #16a085 0%, #0e7c5e 100%);
+}
+
+/* ────────── Video play/pause overlay ────────── */
+.post-thumb {
+    position: relative;
+}
+
+.post-thumb video {
+    cursor: pointer;
+}
+
+.post-thumb .video-overlay {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 0.78rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s var(--ease);
+    backdrop-filter: blur(4px);
+    z-index: 2;
+}
+
+.post-thumb:hover .video-overlay {
+    opacity: 1;
+}
+
+.post-thumb .video-overlay.is-paused {
+    opacity: 1;
+    background: rgba(14, 143, 145, 0.85);
+}
+
 /* News collapse */
 .news-scroll p.news-hidden {
     display: none;
@@ -629,12 +1247,13 @@ img {
     color: var(--brand-500);
 }
 
+/* De-framed: cards sit directly on #content-area (no box-in-box).
+   Padding kept so the sticky year-filter's full-bleed offset still lines up. */
 .news-scroll,
 .pub-scroll {
-    background: linear-gradient(180deg, rgba(239, 244, 252, 0.42) 0%, rgba(255, 255, 255, 0.58) 100%);
-    border: 1px solid #dde6f5;
-    border-radius: var(--radius);
-    padding: 16px;
+    background: none;
+    border: 0;
+    padding: 14px 0 0;
 }
 
 .pub-scroll {
@@ -679,30 +1298,37 @@ img {
 .post-thumb {
     width: 100%;
     min-width: 0;
+    aspect-ratio: 16 / 9;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 1px solid #dde5f4;
+    background: var(--mist-100);
 }
 
+.post-thumb picture,
 .post-thumb img,
 .post-thumb video {
     width: 100%;
-    height: auto;
-    border-radius: 11px;
-    border: 1px solid #dde5f4;
+    height: 100%;
     display: block;
+    object-fit: cover;
+    border-radius: 0;
+    border: 0;
 }
 
 .post-content {
     font-size: 0.93rem;
     color: var(--ink-700);
-    max-width: 120ch;
+    max-width: 74ch;
 }
 
 .paper-title {
     display: block;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.38;
-    margin-bottom: 7px;
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.34;
+    margin-bottom: 9px;
     color: var(--ink-900);
 }
 
@@ -765,27 +1391,66 @@ img {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     border-radius: 999px;
-    color: var(--rose-500);
-    background: var(--rose-100);
+    color: #0b585a;
+    background: rgba(14, 143, 145, 0.10);
+}
+
+/* Vertical timeline rail — chronology becomes the visual story */
+.exp-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    bottom: 14px;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, rgba(14, 143, 145, 0.4) 0%, rgba(14, 143, 145, 0.12) 100%);
 }
 
 .exp-container {
+    position: relative;
     display: grid;
-    content-visibility: auto;
-    contain-intrinsic-size: auto 120px;
-    grid-template-columns: 74px 1fr;
+    grid-template-columns: 54px 1fr;
     gap: 14px;
     align-items: center;
-    margin-bottom: 10px;
-    padding: 13px 14px;
+    margin-bottom: 4px;
+    padding: 11px 8px 11px 0;
+    border: 0;
+    background: transparent;
     border-radius: var(--radius);
-    border: 1px solid #e3e9f6;
-    background: rgba(255, 255, 255, 0.9);
+    transition: background var(--ease);
+}
+
+.exp-container:hover {
+    background: rgba(14, 143, 145, 0.04);
+}
+
+.exp-container::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--brand-500);
+    box-shadow: 0 0 0 3px #ffffff;
+}
+
+.exp-container.current::before {
+    background: var(--brand-700);
+    box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px rgba(14, 143, 145, 0.20);
 }
 
 .exp-logo {
-    width: 74px;
-    height: 74px;
+    width: 54px;
+    height: 54px;
     display: grid;
     place-items: center;
 }
@@ -823,8 +1488,8 @@ img {
 .exp-role .highlight {
     font-style: normal;
     margin-left: 5px;
-    background: var(--sun-200);
-    color: var(--sun-600);
+    background: var(--brand-100);
+    color: var(--brand-700);
     border-radius: 999px;
     padding: 1px 8px;
 }
@@ -858,13 +1523,14 @@ img {
 
 .tweet-container {
     margin-top: 14px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
+    column-count: 3;
+    column-gap: 14px;
 }
 
 .tweet-item {
     min-width: 0;
+    break-inside: avoid;
+    margin-bottom: 14px;
     content-visibility: auto;
     contain-intrinsic-size: auto 360px;
     border-radius: var(--radius);
@@ -973,7 +1639,19 @@ img {
     }
 
     .tweet-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-count: 2;
+    }
+}
+
+/* Hide the header credentials aside before the 3-column header gets cramped;
+   the awards still appear in the bio below. */
+@media (max-width: 980px) {
+    #header {
+        grid-template-columns: auto 1fr;
+    }
+
+    .header-aside {
+        display: none;
     }
 }
 
@@ -1047,7 +1725,7 @@ img {
     }
 
     .tweet-container {
-        grid-template-columns: 1fr;
+        column-count: 1;
     }
 
     .social-icons {
@@ -1062,6 +1740,88 @@ img {
 
     .visitor-globe-wrap {
         width: 120px;
+    }
+
+    /* Stack publication cards vertically on phones */
+    .post-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .post-thumb {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-height: none;
+    }
+
+    .post-thumb video,
+    .post-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pub-view-toggle,
+    .pub-year-filter {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .paper-links {
+        gap: 8px;
+    }
+
+    .paper-links a,
+    .cite-btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .view-btn,
+    .pub-year-btn {
+        font-size: 0.78rem;
+        padding: 8px 12px;
+    }
+
+    .research-vision {
+        margin: 22px -8px 0;
+        padding: 18px 16px 16px;
+        border-radius: 14px;
+    }
+
+    .vision-pillars > li {
+        padding: 10px 12px 10px 40px;
+        font-size: 0.88rem;
+    }
+
+    .pillar-tag {
+        display: block;
+        margin: 0 0 5px;
+    }
+
+    .bibtex-modal {
+        width: 96vw;
+        max-width: 96vw;
+    }
+
+    .bibtex-modal pre {
+        font-size: 0.74rem;
+        max-height: 60vh;
+    }
+
+    /* Show pause/play overlay always on touch devices (no hover) */
+    .post-thumb .video-overlay {
+        opacity: 0.7;
+    }
+
+    .award-badge {
+        font-size: 0.62rem;
+        padding: 2px 7px;
+    }
+
+    .gh-stars {
+        font-size: 0.7rem;
+        padding: 2px 8px 2px 7px;
     }
 }
 

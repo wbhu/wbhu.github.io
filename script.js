@@ -127,6 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.classList.add('year-hidden');
                 }
             });
+
+            // Show only the matching year-group header (or all when "All")
+            document.querySelectorAll('.year-group-header').forEach((h) => {
+                h.classList.toggle('year-hidden', !(year === 'all' || h.dataset.year === year));
+            });
         });
     }
 
@@ -257,4 +262,230 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         navObserver.observe(sentinel);
     }
+
+    // ────────── Publication view toggle (Year ↔ Theme) ──────────
+    const viewToggle = document.querySelector('.pub-view-toggle');
+    const pubScroll = document.querySelector('.pub-scroll');
+    if (viewToggle && pubScroll) {
+        const THEMES = [
+            { id: 'perceive',  label: 'Perceiving Worlds: depth, geometry & motion from video', order: 10 },
+            { id: 'generate',  label: 'Generating Worlds: controllable 4D content & video',     order: 20 },
+            { id: 'represent', label: 'Representing Worlds: neural 3D substrates',              order: 30 },
+            { id: 'earlier',   label: 'Earlier Work',                                            order: 40 }
+        ];
+
+        const cards = pubScroll.querySelectorAll('.post-container[data-theme]');
+        const themeCounts = {};
+        cards.forEach((c) => {
+            const t = c.dataset.theme;
+            themeCounts[t] = (themeCounts[t] || 0) + 1;
+        });
+
+        // Inject one header per theme above its first card (for theme view); kept hidden in year view
+        THEMES.forEach((theme) => {
+            const count = themeCounts[theme.id] || 0;
+            if (count === 0) return;
+            const h = document.createElement('div');
+            h.className = 'theme-group-header';
+            h.dataset.themeId = theme.id;
+            // header uses (theme.order - 1) so it appears above its cards (cards have order >= theme.order)
+            h.style.setProperty('--theme-order', theme.order - 1);
+            h.innerHTML = `<span class="theme-label">${theme.label}</span><span class="theme-count">${count} paper${count > 1 ? 's' : ''}</span>`;
+            pubScroll.appendChild(h);
+        });
+
+        // Inject year-group headers (By-Year view landmarks); hidden in theme view via CSS.
+        // Cards are in descending-year DOM order, so insert a header before each year's first card.
+        const yearCounts = {};
+        cards.forEach((c) => {
+            const y = c.dataset.year;
+            yearCounts[y] = (yearCounts[y] || 0) + 1;
+        });
+        let lastYear = null;
+        cards.forEach((card) => {
+            const y = card.dataset.year;
+            if (y !== lastYear) {
+                const yh = document.createElement('div');
+                yh.className = 'year-group-header';
+                yh.dataset.year = y;
+                yh.innerHTML = `<span>${y}</span><span class="year-count">${yearCounts[y]} paper${yearCounts[y] > 1 ? 's' : ''}</span>`;
+                pubScroll.insertBefore(yh, card);
+                lastYear = y;
+            }
+        });
+
+        const viewButtons = viewToggle.querySelectorAll('.view-btn');
+        const yearFilter = document.getElementById('pub-year-filter');
+        const yearButtons = yearFilter ? yearFilter.querySelectorAll('.pub-year-btn') : [];
+        const allCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
+
+        const resetYearFilter = () => {
+            // Show every card and year header; mark "All" as the active year button
+            allCards.forEach((c) => c.classList.remove('year-hidden'));
+            document.querySelectorAll('.year-group-header').forEach((h) => h.classList.remove('year-hidden'));
+            yearButtons.forEach((b) => b.classList.toggle('active', b.dataset.year === 'all'));
+        };
+
+        const setView = (mode) => {
+            document.body.classList.toggle('view-theme', mode === 'theme');
+            viewButtons.forEach((b) => {
+                const active = b.dataset.view === mode;
+                b.classList.toggle('active', active);
+                b.setAttribute('aria-selected', String(active));
+            });
+            // Whenever the view mode changes, reset the year filter to a clean "All" state.
+            // Prevents previously-applied year filtering from hiding cards in the other view.
+            resetYearFilter();
+            try { localStorage.setItem('pubView', mode); } catch (_) {}
+        };
+
+        viewToggle.addEventListener('click', (e) => {
+            const btn = e.target.closest('.view-btn');
+            if (!btn) return;
+            setView(btn.dataset.view);
+        });
+
+        // Restore preference
+        let savedView = 'year';
+        try { savedView = localStorage.getItem('pubView') || 'year'; } catch (_) {}
+        if (savedView === 'theme') setView('theme');
+    }
+
+    // ────────── BibTeX modal ──────────
+    const bibModal = document.getElementById('bibtex-modal');
+    if (bibModal) {
+        const codeEl = bibModal.querySelector('.bibtex-content');
+        const titleEl = bibModal.querySelector('.bibtex-modal-title');
+        const copyBtn = bibModal.querySelector('.bibtex-copy-btn');
+        const closeBtn = bibModal.querySelector('.bibtex-close-btn');
+
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.cite-btn');
+            if (!btn) return;
+            const id = btn.dataset.paperId;
+            const entry = (window.PAPER_BIBTEX || {})[id];
+            if (!entry) {
+                console.warn(`BibTeX missing for paper id="${id}"`);
+                return;
+            }
+            codeEl.textContent = entry.trim();
+            if (titleEl) titleEl.textContent = btn.dataset.paperTitle || 'BibTeX';
+            if (copyBtn) {
+                copyBtn.classList.remove('copied');
+                copyBtn.textContent = 'Copy';
+            }
+            bibModal.showModal();
+        });
+
+        if (copyBtn) {
+            copyBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.clipboard.writeText(codeEl.textContent);
+                    copyBtn.classList.add('copied');
+                    copyBtn.textContent = 'Copied!';
+                } catch (_) {
+                    // Fallback: select range
+                    const range = document.createRange();
+                    range.selectNode(codeEl);
+                    const sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+                    document.execCommand('copy');
+                    sel.removeAllRanges();
+                    copyBtn.classList.add('copied');
+                    copyBtn.textContent = 'Copied!';
+                }
+            });
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => bibModal.close());
+        }
+        bibModal.addEventListener('click', (e) => {
+            if (e.target === bibModal) bibModal.close();
+        });
+    }
+
+    // ────────── GitHub stars (live count via shields.io JSON, 6h cache) ──────────
+    const ghStarAnchors = document.querySelectorAll('.gh-stars[data-repo]');
+    if (ghStarAnchors.length) {
+        const CACHE_KEY = 'ghStarsCache_v1';
+        const TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
+        let cache = {};
+        try {
+            cache = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
+        } catch (_) { cache = {}; }
+        const now = Date.now();
+        const fresh = (entry) => entry && (now - entry.t) < TTL_MS;
+
+        const setCount = (anchor, value) => {
+            const el = anchor.querySelector('.gh-stars-count');
+            if (el) el.textContent = value;
+        };
+
+        const fetchStars = async (anchor) => {
+            const repo = anchor.dataset.repo;
+            const cached = cache[repo];
+            if (fresh(cached)) {
+                setCount(anchor, cached.v);
+                return;
+            }
+            try {
+                const r = await fetch(`https://img.shields.io/github/stars/${repo}.json`, { cache: 'force-cache' });
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                const json = await r.json();
+                const value = json.message || json.value || '?';
+                setCount(anchor, value);
+                cache[repo] = { v: value, t: now };
+            } catch (e) {
+                // Fallback to last cached value if any; else leave empty so the
+                // static ★ icon isn't doubled (the pill still links to the repo).
+                if (cached) {
+                    setCount(anchor, cached.v);
+                } else {
+                    setCount(anchor, '');
+                }
+            }
+        };
+
+        Promise.all(Array.from(ghStarAnchors).map(fetchStars)).then(() => {
+            try { localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); } catch (_) {}
+        });
+    }
+
+    // ────────── Video play/pause overlays ──────────
+    const PAUSE_SVG = '<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><rect x="3.5" y="2.5" width="3" height="11" rx="1"/><rect x="9.5" y="2.5" width="3" height="11" rx="1"/></svg>';
+    const PLAY_SVG = '<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M4.6 2.7v10.6a.6.6 0 0 0 .92.5l8.3-5.3a.6.6 0 0 0 0-1L5.52 2.2a.6.6 0 0 0-.92.5z"/></svg>';
+    document.querySelectorAll('.post-thumb video').forEach((video) => {
+        const overlay = document.createElement('span');
+        overlay.className = 'video-overlay';
+        overlay.setAttribute('aria-hidden', 'true');
+        overlay.innerHTML = PAUSE_SVG;
+        video.parentElement.appendChild(overlay);
+
+        const sync = () => {
+            if (video.paused) {
+                overlay.classList.add('is-paused');
+                overlay.innerHTML = PLAY_SVG;
+            } else {
+                overlay.classList.remove('is-paused');
+                overlay.innerHTML = PAUSE_SVG;
+            }
+        };
+
+        video.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (video.paused) {
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+            }
+        });
+
+        video.addEventListener('play', sync);
+        video.addEventListener('pause', sync);
+
+        // preload metadata for faster first frame (was preload="none")
+        if (video.preload === 'none') video.preload = 'metadata';
+    });
 });

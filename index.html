@@ -5,10 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>HU Wenbo (&#x80E1;&#x6587;&#x535A;)</title>
-    <meta content="Wenbo Hu, wbhu.github.io, 3D vision, video generation, depth estimation, NeRF, Gaussian Splatting"
+    <meta content="Wenbo Hu, 胡文博, wbhu.github.io, World Models, Generative World Models, 4D Reconstruction, 4D Generation, Video Diffusion, Diffusion Models, Generative AI, 3D Vision, Video Generation, Depth Estimation, Novel View Synthesis, NeRF, Gaussian Splatting, Tencent ARC Lab, DepthCrafter, ViewCrafter, TrajectoryCrafter, MotionCrafter"
         name="keywords">
     <meta name="description"
-        content="Wenbo Hu's personal academic homepage - Senior Researcher at Tencent ARC Lab, Ph.D. from CUHK. Research on Generative World Models, 3D Vision, and Video Generation.">
+        content="Wenbo Hu, Senior Researcher at Tencent ARC Lab, Ph.D. from CUHK. Building Generative World Models for 4D reconstruction, video diffusion, and novel view synthesis (DepthCrafter / ViewCrafter / TrajectoryCrafter / MotionCrafter).">
     <meta name="author" content="Wenbo Hu">
     <meta name="theme-color" content="#0e8f91">
 
@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://wbhu.github.io/">
     <meta property="og:title" content="HU Wenbo - Academic Homepage">
     <meta property="og:description"
-        content="Senior Researcher at Tencent ARC Lab. Research on Generative World Models, 3D Vision, and Video Generation.">
+        content="Senior Researcher at Tencent ARC Lab. Building Generative World Models for 4D reconstruction, video diffusion, and novel view synthesis.">
     <meta property="og:image" content="https://wbhu.github.io/img/profile.jpeg">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="HU Wenbo - Academic Homepage">
@@ -27,7 +27,7 @@
     <meta name="twitter:site" content="@wbhu_cuhk">
     <meta name="twitter:title" content="HU Wenbo - Academic Homepage">
     <meta name="twitter:description"
-        content="Senior Researcher at Tencent ARC Lab. Research on Generative World Models, 3D Vision, and Video Generation.">
+        content="Senior Researcher at Tencent ARC Lab. Building Generative World Models for 4D reconstruction, video diffusion, and novel view synthesis.">
     <meta name="twitter:image" content="https://wbhu.github.io/img/profile.jpeg">
 
     <!-- Canonical URL -->
@@ -60,7 +60,7 @@
                 "url": "https://www.dlut.edu.cn"
             }
         ],
-        "knowsAbout": ["Generative World Models", "3D Vision", "Video Generation", "NeRF", "Gaussian Splatting", "Depth Estimation"],
+        "knowsAbout": ["Generative World Models", "4D Reconstruction", "4D Generation", "Video Diffusion", "Diffusion Models", "Novel View Synthesis", "3D Vision", "Video Generation", "Depth Estimation", "NeRF", "Gaussian Splatting"],
         "sameAs": [
             "https://scholar.google.com/citations?hl=en&user=xDuDhwcAAAAJ",
             "https://github.com/wbhu",
@@ -128,12 +128,28 @@
                         title="WeChat QR Code" id="wechat-trigger"></a>
                 </div>
             </div>
+            <div class="header-aside" aria-label="Highlights">
+                <span class="header-cred"><span class="cred-icon">🏆</span><span class="cred-text">Best Paper<small>PixFoundation, CVPR 2025</small></span></span>
+                <span class="header-cred"><span class="cred-icon">🏅</span><span class="cred-text">Best Paper Finalist<small>ICCV 2023</small></span></span>
+                <a class="header-cred header-cred-link" href="https://scholar.google.com/citations?hl=en&user=xDuDhwcAAAAJ" target="_blank" rel="noopener noreferrer"><span class="cred-icon">↗</span><span class="cred-text">Google Scholar</span></a>
+            </div>
         </div>
 
         <dialog id="wechat-modal" class="qr-modal">
             <button class="qr-modal-close" aria-label="Close">&times;</button>
             <img src="img/wechat.jpeg" alt="WeChat QR Code" width="240" height="240" loading="lazy">
             <p>Scan to add on WeChat</p>
+        </dialog>
+
+        <dialog id="bibtex-modal" class="bibtex-modal" aria-labelledby="bibtex-modal-title">
+            <div class="bibtex-modal-header">
+                <h3 class="bibtex-modal-title" id="bibtex-modal-title">BibTeX</h3>
+                <button class="bibtex-close-btn" aria-label="Close">&times;</button>
+            </div>
+            <pre><code class="bibtex-content"></code></pre>
+            <div class="bibtex-modal-footer">
+                <button class="bibtex-copy-btn">Copy</button>
+            </div>
         </dialog>
 
         <div id="content-wrapper">
@@ -151,7 +167,7 @@
                         Experience</a></li>
                     <li><a href="#misc" id="miscButton">
                         <svg class="nav-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l1.5 3.5L13 6l-2.5 2.5L11 12.5 8 10.5l-3 2L5.5 8.5 3 6l3.5-.5z"/></svg>
-                        Misc.</a></li>
+                        Community</a></li>
                 </ul>
             </nav>
 
@@ -160,46 +176,68 @@
                 <div class="mainText" id="about">
                     <!--        <h3>Bio</h3>-->
                     <p>
-
-                        He was born in 1996 in Henan, China.
-                        He graduated from Dalian University of Technology (DUT) in 2018 with a bachelor's degree in
-                        computer
-                        science
-                        and technology (Outstanding Graduates of Liaoning Province), supervised by Prof. <a
-                            href="https://xinyangdut.github.io/">YANG, Xin</a>.
-                        He obtained his Ph.D. degree in Computer Science and Engineering from The Chinese University of
-                        Hong
-                        Kong
-                        (CUHK) in 2022, supervised by Prof. <a href="https://ttwong12.github.io/myself.html">WONG,
-                            Tien-Tsin</a>.
-                        From 2022 to 2023, he was a researcher and developer at
-                        <!--            <a href="https://www.picoxr.com/global">-->
-                        PICO Mixed Reality, Bytedance.
-                        <!--            </a>.-->
-                        Since November 2023, he joined Tencent as a <span class="key-phrase key-role">senior researcher</span>,
-                        leading an effort on <span class="key-phrase key-focus"><b>Generative World Models</b></span>,
-                        including <span class="key-phrase key-focus">3D from Images/Videos</span>,
-                        <span class="key-phrase key-focus">Novel View Synthesis</span>, and
-                        <span class="key-phrase key-focus">Video Generation</span>.
+                        <b class="self-name">Wenbo Hu</b> is a <b>Senior Researcher</b> at <b>Tencent ARC Lab</b>,
+                        where he leads a team working on <span class="key-focus"><b>Generative World Models</b></span>.
+                        His group develops the <b>Crafter family</b> of video models, including
+                        <a href="https://depthcrafter.github.io/">DepthCrafter</a>,
+                        <a href="https://drexubery.github.io/ViewCrafter">ViewCrafter</a>,
+                        <a href="https://trajectorycrafter.github.io/">TrajectoryCrafter</a>, and
+                        <a href="https://ruijiezhu94.github.io/MotionCrafter_Page/">MotionCrafter</a>,
+                        for 3D from images and videos, novel view synthesis, and video generation.
+                        His work received the
+                        <span class="award-badge" title="ICCV 2023 Best Paper Finalist">Best Paper Finalist</span>
+                        at ICCV&nbsp;2023 and the
+                        <span class="award-badge" title="Best Paper, PixFoundation workshop, CVPR 2025">Best Paper</span>
+                        at the PixFoundation workshop, CVPR&nbsp;2025.
                         <br><br>
-                        His works have been selected as <span class="key-phrase key-award"><b>Best Paper Finalist</b></span> in ICCV'2023,
-                        and <span class="key-phrase key-award"><b>Best Paper</b></span>
-                        at
-                        PixFoundation workshop in CVPR'2025.
-                        He received the <em>CCF Elite Collegiate Award</em> in 2017.
-                        He has served as a reviewer for top-tier conferences and journals, including SIGGRAPH, SIGGRAPH
-                        Asia,
-                        CVPR,
-                        ICCV, ECCV, NeurIPS, ICML, EG, TVCG, IJCV, etc.
+                        He earned his Ph.D. in Computer Science and Engineering from
+                        <b>The Chinese University of Hong Kong</b> (CUHK) in 2022, advised by Prof.
+                        <a href="https://ttwong12.github.io/myself.html">Tien-Tsin Wong</a>.
+                        Before joining Tencent, he was a researcher at PICO Mixed Reality, ByteDance.
+                        He regularly reviews for SIGGRAPH, SIGGRAPH Asia, CVPR, ICCV, ECCV, NeurIPS, ICML, EG, TVCG,
+                        and IJCV.
                         <br><br>
-                        <!--His research interests lie in the interface of Computer Graphics, Computer Vision, and AI, with a focus on 3D learning, including <b>Reconstruction, Rendering, Understanding, and Generation</b>.-->
-                        <!--He is particularly interested in exploring how new-generation AI technologies benefit fundamental problems in computer vision and graphics.-->
-
                         <em class="highlight-hiring">
-                            We have several open positions for <a
-                                href="https://x.com/yshan2u/status/1897179915201732979"><span class="key-phrase key-focus">research interns</span> and <span class="key-phrase key-focus">full-time researchers</span></a>. Feel free to <span class="key-phrase key-role">drop me an email</span> if you are interested.
+                            His team is <b>hiring</b> <a
+                                href="https://x.com/yshan2u/status/1897179915201732979">research interns and full-time
+                            researchers</a> on Generative World Models (video diffusion, 4D perception and generation).
+                            Feel free to <a href="mailto:huwenbodut@gmail.com">email him</a> with a short note on what
+                            you'd like to build.
                         </em>
                     </p>
+
+                    <aside class="research-vision" aria-labelledby="vision-heading">
+                        <h3 class="vision-heading" id="vision-heading">
+                            <span class="vision-icon" aria-hidden="true">◇</span>
+                            Research Vision
+                        </h3>
+                        <p class="vision-tagline">
+                            He builds <b>Generative World Models</b>, machines that can <em>perceive</em>, <em>simulate</em>, and <em>interact with</em> the physical world from raw video.
+                        </p>
+                        <p class="vision-rationale">
+                            A world model needs three layers, and his research builds each:
+                        </p>
+                        <ol class="vision-pillars">
+                            <li>
+                                <span class="pillar-tag pillar-perceive">Perceive</span>
+                                Recover dense, temporally consistent state from open-world video, including depth, geometry, normals, motion, and tracking.
+                                <span class="pillar-papers">DepthCrafter &middot; MotionCrafter &middot; GeometryCrafter &middot; NormalCrafter &middot; Track4World</span>
+                            </li>
+                            <li>
+                                <span class="pillar-tag pillar-generate">Generate</span>
+                                Synthesize controllable, dynamic 4D content that respects physical structure, such as novel views, camera trajectories, long videos, and 4D shapes.
+                                <span class="pillar-papers">ViewCrafter &middot; VerseCrafter &middot; TrajectoryCrafter &middot; Rolling Forcing &middot; Sculpt4D</span>
+                            </li>
+                            <li>
+                                <span class="pillar-tag pillar-represent">Represent</span>
+                                Neural 3D substrates, such as NeRF and Gaussian Splatting variants, that everything above stands on.
+                                <span class="pillar-papers">Tri-MipRF &middot; Pixel-GS &middot; Analytic-Splatting &middot; Rip-NeRF</span>
+                            </li>
+                        </ol>
+                        <p class="vision-longterm">
+                            <b>Long-term:</b> bridging perception, simulation, and interaction so machines can <em>predict</em> and <em>act</em> in real, persistent worlds, building toward embodied intelligence and realistic simulation.
+                        </p>
+                    </aside>
 
 
                     <h2 class="section-heading section-title">News!</h2>
@@ -259,28 +297,28 @@
 
                         <p>
                             <b>[06/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/6qsd9xAu8rP3n214Fkr6Xg"><span class="key-phrase key-news">CSIG</span></a> about
+                            Invited talk at <a href="https://mp.weixin.qq.com/s/6qsd9xAu8rP3n214Fkr6Xg"><span class="key-phrase key-news">CSIG</span></a> about
                             "基于视频生成模型的场景演变生成最新进展".
                             <br />
                         </p>
 
                         <p>
                             <b>[04/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/SM4ZalAAuRweLGq5TiyKqQ"><span class="key-phrase key-news">China3DV 2025</span></a> about
+                            Invited talk at <a href="https://mp.weixin.qq.com/s/SM4ZalAAuRweLGq5TiyKqQ"><span class="key-phrase key-news">China3DV 2025</span></a> about
                             "GenConstruction".
                             <br />
                         </p>
 
                         <p>
                             <b>[03/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/wCaVMO0ZVHJx-BC_1hbHng"><span class="key-phrase key-news">GAMES</span></a> about
+                            Invited talk at <a href="https://mp.weixin.qq.com/s/wCaVMO0ZVHJx-BC_1hbHng"><span class="key-phrase key-news">GAMES</span></a> about
                             "Generative Novel View Synthesis".
                             <br />
                         </p>
 
                         <p>
                             <b>[03/2025]</b>
-                            Invited talk by <a href="https://mp.weixin.qq.com/s/rjV969BoL6MzhQj1xR_ecQ"><span class="key-phrase key-news">AnySyn3D</span></a>
+                            Invited talk at <a href="https://mp.weixin.qq.com/s/rjV969BoL6MzhQj1xR_ecQ"><span class="key-phrase key-news">AnySyn3D</span></a>
                             about
                             "Video Diffusion for 3D".
                             <br />
@@ -300,7 +338,7 @@
 
                         <p>
                             <b>[10/2024]</b>
-                            Invited talks by <a href="https://chinagraph2024.hsu.edu.cn/panels.html"><span class="key-phrase key-news">Chinagraph</span></a>
+                            Invited talks at <a href="https://chinagraph2024.hsu.edu.cn/panels.html"><span class="key-phrase key-news">Chinagraph</span></a>
                             about:
                             [<a href="https://depthcrafter.github.io/">DepthCrafter</a>, <a
                                 href="https://stereocrafter.github.io/">StereoCrafter</a>,
@@ -323,13 +361,13 @@
 
                         <p>
                             <b>[05/2024]</b>
-                            Invited talk by <span class="key-phrase key-news">NeRF/GS & Beyond</span> about <I>Anti-Aliasing in Neural Rendering</I>. <a
+                            Invited talk at <span class="key-phrase key-news">NeRF/GS & Beyond</span> about <I>Anti-Aliasing in Neural Rendering</I>. <a
                                 href="slides/AntiAliasingInNR_full.pdf">[Slides]</a><br />
                         </p>
 
                         <p>
                             <b>[04/2024]</b>
-                            Invited talk by <span class="key-phrase key-news">China3DV 2024</span> about <I>Anti-Aliasing in Neural Rendering</I>. <br />
+                            Invited talk at <span class="key-phrase key-news">China3DV 2024</span> about <I>Anti-Aliasing in Neural Rendering</I>. <br />
                         </p>
 
                         <p>
@@ -351,7 +389,7 @@
 
                         <p>
                             <b>[08/2023]</b>
-                            Invited talk by <a href="https://games-cn.org/games-webinar-20230831-290/"><span class="key-phrase key-news">GAMES</span></a> about
+                            Invited talk at <a href="https://games-cn.org/games-webinar-20230831-290/"><span class="key-phrase key-news">GAMES</span></a> about
                             our <a href="./projects/Tri-MipRF/index.html">Tri-MipRF</a>. <br />
                         </p>
 
@@ -362,7 +400,7 @@
 
                         <p>
                             <b>[07/2023]</b>
-                            One paper on invertile image downscaling accepted to <span class="key-phrase key-news">TIP'23</span>. <br />
+                            One paper on invertible image downscaling accepted to <span class="key-phrase key-news">TIP'23</span>. <br />
                         </p>
 
                         <p>
@@ -372,12 +410,12 @@
 
                         <p>
                             <b>[05/2022]</b>
-                            <span class="key-phrase key-news">Passed the oral defense</span> and became a Dr. <br />
+                            <span class="key-phrase key-news">Defended my Ph.D. dissertation</span>. <br />
                         </p>
 
                         <p>
                             <b>[08/2021]</b>
-                            Invited talk by <a href="https://course.zhidx.com/c/MTkzZGQxOGUwNzhiOGE5Njg4ZDM="><span class="key-phrase key-news">智东西</span></a>
+                            Invited talk at <a href="https://course.zhidx.com/c/MTkzZGQxOGUwNzhiOGE5Njg4ZDM="><span class="key-phrase key-news">智东西</span></a>
                             about our <a href="./projects/BPNet/index.html">BPNet</a>.
                             <br />
                         </p>
@@ -462,6 +500,14 @@
 
                     <hr class="line" />
 
+                    <div class="pub-view-toggle" role="tablist" aria-label="Group publications by">
+                        <span class="view-toggle-label" id="view-toggle-label">View:</span>
+                        <button class="view-btn active" data-view="year" role="tab"
+                            aria-selected="true">By Year</button>
+                        <button class="view-btn" data-view="theme" role="tab"
+                            aria-selected="false">By Research Theme</button>
+                    </div>
+
                     <div class="pub-year-filter" id="pub-year-filter">
                         <button class="pub-year-btn active" data-year="all">All</button>
                         <button class="pub-year-btn" data-year="2026">2026</button>
@@ -475,7 +521,7 @@
 
                     <div class="pub-scroll">
 
-                        <div class="post-container" data-year="2026">
+                        <div class="post-container" data-year="2026" data-theme="generate" style="--theme-order: 25;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/pixal3d-poster.jpg"><source src="img/video/pixal3d.webm" type="video/webm"><source src="img/video/pixal3d.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Pixal3D: Pixel-Aligned 3D Generation from Images</h3>
@@ -485,19 +531,19 @@
                                 </div>
                                 <div class="paper-venue">
                                     <em>ACM SIGGRAPH</em>, 2026
+                                    <span class="remark">SIGGRAPH</span>
                                 </div>
                                 <div class="paper-links">
                                     <a href="https://ldyang694.github.io/projects/pixal3d/">Project</a>
                                     <a href="https://arxiv.org/abs/2605.10922">Paper</a>
                                     <a href="https://github.com/TencentARC/Pixal3D">Code</a>
-                                    <a href="https://github.com/TencentARC/Pixal3D" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/Pixal3D?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/Pixal3D" class="gh-stars tier1k" data-repo="TencentARC/Pixal3D" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="pixal3d">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2026">
+                        <div class="post-container" data-year="2026" data-theme="perceive" style="--theme-order: 14;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/track4world-poster.jpg"><source src="img/video/track4world.webm" type="video/webm"><source src="img/video/track4world.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Track4World: Feedforward World-Centric Dense 3D Tracking of All
@@ -513,15 +559,14 @@
                                     <a href="https://jiah-cloud.github.io/Track4World.github.io/">Project</a>
                                     <a href="https://arxiv.org/abs/2603.02573">Paper</a>
                                     <a href="https://github.com/TencentARC/Track4World">Code</a>
-                                    <a href="https://github.com/TencentARC/Track4World" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/Track4World?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/Track4World" class="gh-stars" data-repo="TencentARC/Track4World" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://jiah-cloud.github.io/Track4World.github.io/#interactive-demos">Demo</a>
+                                    <button class="cite-btn" data-paper-id="track4world">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2026">
+                        <div class="post-container" data-year="2026" data-theme="generate" style="--theme-order: 21;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/versecrafter_record-poster.jpg"><source src="img/video/versecrafter_record.webm" type="video/webm"><source src="img/video/versecrafter_record.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">VerseCrafter: Dynamic Realistic Video World Model with 4D
@@ -537,15 +582,14 @@
                                     <a href="https://sixiaozheng.github.io/VerseCrafter_page/">Project</a>
                                     <a href="https://arxiv.org/abs/2601.05138">Paper</a>
                                     <a href="https://github.com/TencentARC/VerseCrafter">Code</a>
-                                    <a href="https://github.com/TencentARC/VerseCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/VerseCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/VerseCrafter" class="gh-stars" data-repo="TencentARC/VerseCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/TencentARC/VerseCrafter">Model</a>
+                                    <button class="cite-btn" data-paper-id="versecrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2026">
+                        <div class="post-container" data-year="2026" data-theme="perceive" style="--theme-order: 11;">
                             <div class="post-thumb"><picture><source srcset="img/thumb/motioncrafter.webp" type="image/webp"><img src="img/thumb/motioncrafter.jpg" alt="MotionCrafter overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">MotionCrafter: Dense Geometry and Motion Reconstruction with a
@@ -562,15 +606,33 @@
                                     <a href="https://ruijiezhu94.github.io/MotionCrafter_Page/">Project</a>
                                     <a href="https://arxiv.org/abs/2602.08961">Paper</a>
                                     <a href="https://github.com/TencentARC/MotionCrafter">Code</a>
-                                    <a href="https://github.com/TencentARC/MotionCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/MotionCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/MotionCrafter" class="gh-stars" data-repo="TencentARC/MotionCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/TencentARC/MotionCrafter">Model</a>
+                                    <button class="cite-btn" data-paper-id="motioncrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2026">
+                        <div class="post-container" data-year="2026" data-theme="generate" style="--theme-order: 24;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/sculpt4d.webp" type="image/webp"><img src="img/thumb/sculpt4d.jpg" alt="Sculpt4D overview" loading="lazy" decoding="async" /></picture></div>
+                            <div class="post-content">
+                                <h3 class="paper-title">Sculpt4D: Generating 4D Shapes via Sparse-Attention Diffusion
+                                    Transformers</h3>
+                                <div class="paper-authors">
+                                    Minghao Yin, <b class="self-name">Wenbo Hu<sup>&dagger;</sup></b>, Jiale Xu, Ying Shan, Kai Han<sup>&dagger;</sup>
+                                </div>
+                                <div class="paper-venue">
+                                    <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>), 2026
+                                </div>
+                                <div class="paper-links">
+                                    <a href="https://visual-ai.github.io/sculpt4d/">Project</a>
+                                    <a href="https://arxiv.org/abs/2604.21592">Paper</a>
+                                    <button class="cite-btn" data-paper-id="sculpt4d">Cite</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="post-container" data-year="2026" data-theme="generate" style="--theme-order: 23;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/rollingforcing-poster.jpg"><source src="img/video/rollingforcing.webm" type="video/webm"><source src="img/video/rollingforcing.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Rolling Forcing: Autoregressive Long Video Diffusion in
@@ -586,15 +648,14 @@
                                     <a href="https://kunhao-liu.github.io/Rolling_Forcing_Webpage">Project</a>
                                     <a href="https://arxiv.org/abs/2509.25161">Paper</a>
                                     <a href="https://github.com/TencentARC/RollingForcing">Code</a>
-                                    <a href="https://github.com/TencentARC/RollingForcing" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/RollingForcing?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/RollingForcing" class="gh-stars" data-repo="TencentARC/RollingForcing" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/spaces/TencentARC/RollingForcing">Demo</a>
+                                    <button class="cite-btn" data-paper-id="rollingforcing">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2025">
+                        <div class="post-container" data-year="2025" data-theme="perceive" style="--theme-order: 12;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/geometrycrafter-poster.jpg"><source src="img/video/geometrycrafter.webm" type="video/webm"><source src="img/video/geometrycrafter.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">GeometryCrafter: Consistent Geometry Estimation for Open-world
@@ -610,15 +671,14 @@
                                     <a href="https://geometrycrafter.github.io/">Project</a>
                                     <a href="https://arxiv.org/abs/2504.01016">Paper</a>
                                     <a href="https://github.com/TencentARC/GeometryCrafter">Code</a>
-                                    <a href="https://github.com/TencentARC/GeometryCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/GeometryCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/GeometryCrafter" class="gh-stars" data-repo="TencentARC/GeometryCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/spaces/TencentARC/GeometryCrafter">Demo</a>
+                                    <button class="cite-btn" data-paper-id="geometrycrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2025">
+                        <div class="post-container" data-year="2025" data-theme="perceive" style="--theme-order: 13;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/normalcrafter-poster.jpg"><source src="img/video/normalcrafter.webm" type="video/webm"><source src="img/video/normalcrafter.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">NormalCrafter: Learning Temporally Consistent Normals from
@@ -634,15 +694,14 @@
                                     <a href="https://normalcrafter.github.io/">Project</a>
                                     <a href="https://arxiv.org/abs/2504.11427">Paper</a>
                                     <a href="https://github.com/Binyr/NormalCrafter">Code</a>
-                                    <a href="https://github.com/Binyr/NormalCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/Binyr/NormalCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/Binyr/NormalCrafter" class="gh-stars" data-repo="Binyr/NormalCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/spaces/Yanrui95/NormalCrafter">Demo</a>
+                                    <button class="cite-btn" data-paper-id="normalcrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2025">
+                        <div class="post-container flagship" data-year="2025" data-theme="generate" style="--theme-order: 22;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/TrajectoryCrafter-poster.jpg"><source src="img/video/TrajectoryCrafter.webm" type="video/webm"><source src="img/video/TrajectoryCrafter.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">TrajectoryCrafter: Redirecting Camera Trajectory for Monocular
@@ -658,16 +717,14 @@
                                     <a href="https://trajectorycrafter.github.io/">Project</a>
                                     <a href="https://arxiv.org/pdf/2503.05638">Paper</a>
                                     <a href="https://github.com/TrajectoryCrafter/TrajectoryCrafter">Code</a>
-                                    <a href="https://github.com/TrajectoryCrafter/TrajectoryCrafter"
-                                        class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TrajectoryCrafter/TrajectoryCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TrajectoryCrafter/TrajectoryCrafter" class="gh-stars" data-repo="TrajectoryCrafter/TrajectoryCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/spaces/Doubiiu/TrajectoryCrafter">Demo</a>
+                                    <button class="cite-btn" data-paper-id="trajectorycrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2025">
+                        <div class="post-container flagship" data-year="2025" data-theme="perceive" style="--theme-order: 10;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/depthcrafter-poster.jpg"><source src="img/video/depthcrafter.webm" type="video/webm"><source src="img/video/depthcrafter.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">DepthCrafter: Generating Consistent Long Depth Sequences for
@@ -680,21 +737,20 @@
                                     <em>IEEE Conference on Computer Vision and Pattern Recognition</em> (<b>CVPR</b>),
                                     2025
                                     <span class="remark">Highlight</span>
-                                    <span class="remark">Best Paper @ PixFoundation</span>
+                                    <span class="award-badge" title="Best Paper at PixFoundation Workshop, CVPR 2025">Best Paper @ PixFoundation</span>
                                 </div>
                                 <div class="paper-links">
                                     <a href="https://depthcrafter.github.io/">Project</a>
                                     <a href="https://arxiv.org/abs/2409.02095">Paper</a>
                                     <a href="https://github.com/wbhu/DepthCrafter">Code</a>
-                                    <a href="https://github.com/wbhu/DepthCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/wbhu/DepthCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/wbhu/DepthCrafter" class="gh-stars tier1k" data-repo="wbhu/DepthCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/spaces/tencent/DepthCrafter">Demo</a>
+                                    <button class="cite-btn" data-paper-id="depthcrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2025">
+                        <div class="post-container flagship" data-year="2025" data-theme="generate" style="--theme-order: 20;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/viewcrafter-poster.jpg"><source src="img/video/viewcrafter.webm" type="video/webm"><source src="img/video/viewcrafter.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">ViewCrafter: Taming Video Diffusion Models for High-fidelity
@@ -713,15 +769,14 @@
                                     <a href="https://arxiv.org/abs/2409.02048">Paper</a>
                                     <a href="https://www.youtube.com/watch?v=WGIEmu9eXmU">Video</a>
                                     <a href="https://github.com/Drexubery/ViewCrafter">Code</a>
-                                    <a href="https://github.com/Drexubery/ViewCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/Drexubery/ViewCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/Drexubery/ViewCrafter" class="gh-stars tier1k" data-repo="Drexubery/ViewCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://huggingface.co/spaces/Doubiiu/ViewCrafter">Demo</a>
+                                    <button class="cite-btn" data-paper-id="viewcrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2024">
+                        <div class="post-container" data-year="2024" data-theme="perceive" style="--theme-order: 15;">
                             <div class="post-thumb"><picture><source srcset="img/thumb/stereocrafter.webp" type="image/webp"><img src="img/thumb/stereocrafter.jpg" alt="StereoCrafter overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">StereoCrafter: Diffusion-based Generation of Long and
@@ -738,14 +793,13 @@
                                     <a href="https://stereocrafter.github.io/">Project</a>
                                     <a href="https://arxiv.org/abs/2409.07447">Paper</a>
                                     <a href="https://github.com/TencentARC/StereoCrafter">Code</a>
-                                    <a href="https://github.com/TencentARC/StereoCrafter" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/TencentARC/StereoCrafter?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/TencentARC/StereoCrafter" class="gh-stars" data-repo="TencentARC/StereoCrafter" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="stereocrafter">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2024">
+                        <div class="post-container" data-year="2024" data-theme="represent" style="--theme-order: 31;">
                             <div class="post-thumb"><picture><source srcset="img/thumb/pixel-gs.webp" type="image/webp"><img src="img/thumb/pixel-gs.jpg" alt="Pixel-GS overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Pixel-GS: Density Control with Pixel-aware Gradient for 3D
@@ -761,14 +815,13 @@
                                     <a href="https://pixelgs.github.io">Project</a>
                                     <a href="https://arxiv.org/pdf/2403.15530.pdf">Paper</a>
                                     <a href="https://github.com/zhengzhang01/Pixel-GS">Code</a>
-                                    <a href="https://github.com/zhengzhang01/Pixel-GS" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/zhengzhang01/Pixel-GS?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/zhengzhang01/Pixel-GS" class="gh-stars" data-repo="zhengzhang01/Pixel-GS" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="pixel-gs">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2024">
+                        <div class="post-container" data-year="2024" data-theme="represent" style="--theme-order: 32;">
                             <div class="post-thumb"><picture><source srcset="img/thumb/analytic-splatting.webp" type="image/webp"><img src="img/thumb/analytic-splatting.jpg" alt="Analytic-Splatting overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Analytic-Splatting: Anti-Aliased 3D Gaussian Splatting via
@@ -784,15 +837,14 @@
                                     <a href="https://lzhnb.github.io/project-pages/analytic-splatting">Project</a>
                                     <a href="https://arxiv.org/pdf/2403.11056.pdf">Paper</a>
                                     <a href="https://github.com/lzhnb/Analytic-Splatting">Code</a>
-                                    <a href="https://github.com/lzhnb/Analytic-Splatting" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/lzhnb/Analytic-Splatting?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/lzhnb/Analytic-Splatting" class="gh-stars" data-repo="lzhnb/Analytic-Splatting" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="analytic-splatting">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2024">
-                            <div class="post-thumb"><img src="img/texture-gs.jpg" alt="Texture-GS overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2024" data-theme="represent" style="--theme-order: 34;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/texture-gs.webp" type="image/webp"><img src="img/texture-gs.jpg" alt="Texture-GS overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Texture-GS: Disentangling the Geometry and Texture for 3D
                                     Gaussian Splatting Editing</h3>
@@ -807,15 +859,14 @@
                                     <a href="https://slothfulxtx.github.io/TexGS">Project</a>
                                     <a href="https://arxiv.org/abs/2403.10050">Paper</a>
                                     <a href="https://github.com/slothfulxtx/Texture-GS">Code</a>
-                                    <a href="https://github.com/slothfulxtx/Texture-GS" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/slothfulxtx/Texture-GS?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/slothfulxtx/Texture-GS" class="gh-stars" data-repo="slothfulxtx/Texture-GS" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="texture-gs">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2024">
-                            <div class="post-thumb"><img src="img/ripnerf.jpg" alt="Rip-NeRF overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2024" data-theme="represent" style="--theme-order: 33;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/ripnerf.webp" type="image/webp"><img src="img/ripnerf.jpg" alt="Rip-NeRF overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Rip-NeRF: Anti-aliasing Radiance Fields with Ripmap-Encoded
                                     Platonic Solids</h3>
@@ -825,21 +876,21 @@
                                 </div>
                                 <div class="paper-venue">
                                     <em>ACM SIGGRAPH</em>, 2024
+                                    <span class="remark">SIGGRAPH</span>
                                 </div>
                                 <div class="paper-links">
                                     <a href="https://junchenliu77.github.io/Rip-NeRF/">Project</a>
                                     <a href="https://junchenliu77.github.io/Rip-NeRF/resources/Rip-NeRF.pdf">Paper</a>
                                     <a href="https://github.com/JunchenLiu77/Rip-NeRF">Code</a>
-                                    <a href="https://github.com/JunchenLiu77/Rip-NeRF" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/JunchenLiu77/Rip-NeRF?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/JunchenLiu77/Rip-NeRF" class="gh-stars" data-repo="JunchenLiu77/Rip-NeRF" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://drive.google.com/file/d/1lmLJ7VN-Fbyohgdcrl7WMDj3gPk3WgUg">Data</a>
+                                    <button class="cite-btn" data-paper-id="ripnerf">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2024">
-                            <div class="post-thumb"><img src="img/pbr-nerf.jpg" alt="PBR-NeRF overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2024" data-theme="represent" style="--theme-order: 35;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/pbr-nerf.webp" type="image/webp"><img src="img/pbr-nerf.jpg" alt="PBR-NeRF overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Inverse Rendering of Glossy Objects via the Neural Plenoptic
                                     Function and Radiance Fields</h3>
@@ -855,15 +906,14 @@
                                     <a href="https://www.whyy.site/paper/nep">Project</a>
                                     <a href="pdf/PBR-NeRF.pdf">Paper</a>
                                     <a href="https://github.com/onpix/NeP">Code</a>
-                                    <a href="https://github.com/onpix/NeP" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/onpix/NeP?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/onpix/NeP" class="gh-stars" data-repo="onpix/NeP" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
                                     <a href="https://www.whyy.site/paper/nep">Data</a>
+                                    <button class="cite-btn" data-paper-id="pbr-nerf">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2023">
+                        <div class="post-container flagship" data-year="2023" data-theme="represent" style="--theme-order: 30;">
                             <div class="post-thumb"><picture><source srcset="img/thumb/trimip.webp" type="image/webp"><img src="img/thumb/trimip.jpg" alt="Tri-MipRF overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Tri-MipRF: Tri-Mip Representation for Efficient Anti-Aliasing
@@ -874,21 +924,20 @@
                                 <div class="paper-venue">
                                     <em>IEEE International Conference on Computer Vision</em> (<b>ICCV</b>), 2023
                                     <span class="remark">Oral</span>
-                                    <span class="remark">Best Paper Finalist (17/8260)</span>
+                                    <span class="award-badge" title="ICCV 2023 Best Paper Finalist (17 of 8260 submissions)">Best Paper Finalist (17/8260)</span>
                                 </div>
                                 <div class="paper-links">
                                     <a href="projects/Tri-MipRF/index.html">Project</a>
                                     <a href="pdf/Tri-MipRF.pdf">Paper</a>
                                     <a href="https://github.com/wbhu/Tri-MipRF">Code</a>
-                                    <a href="https://github.com/wbhu/Tri-MipRF" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/wbhu/Tri-MipRF?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/wbhu/Tri-MipRF" class="gh-stars" data-repo="wbhu/Tri-MipRF" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="trimip">Cite</button>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="post-container" data-year="2023">
+                        <div class="post-container" data-year="2023" data-theme="earlier" style="--theme-order: 42;">
                             <div class="post-thumb"><video autoplay loop muted playsinline preload="none" poster="img/video/aidn-poster.jpg"><source src="img/video/aidn.webm" type="video/webm"><source src="img/video/aidn.mp4" type="video/mp4"></video></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Scale-arbitrary Invertible Image Downscaling</h3>
@@ -902,15 +951,14 @@
                                     <a href="https://doubiiu.github.io/projects/aidn/">Project</a>
                                     <a href="https://arxiv.org/abs/2201.12576">Paper</a>
                                     <a href="https://github.com/Doubiiu/AIDN">Code</a>
-                                    <a href="https://github.com/Doubiiu/AIDN" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/Doubiiu/AIDN?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/Doubiiu/AIDN" class="gh-stars" data-repo="Doubiiu/AIDN" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="aidn">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2022">
-                            <div class="post-thumb"><img src="img/disColor.jpeg" alt="Disentangled Colorization overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2022" data-theme="earlier" style="--theme-order: 44;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/disColor.webp" type="image/webp"><img src="img/disColor.jpeg" alt="Disentangled Colorization overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Disentangled Image Colorization via Global Anchors</h3>
                                 <div class="paper-authors">
@@ -924,15 +972,13 @@
                                     <a href="https://menghanxia.github.io/projects/disco.html">Project</a>
                                     <a href="https://menghanxia.github.io/projects/disco/disco_main.pdf">Paper</a>
                                     <a href="https://github.com/MenghanXia/DisentangledColorization">Code</a>
-                                    <a href="https://github.com/MenghanXia/DisentangledColorization"
-                                        class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/MenghanXia/DisentangledColorization?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/MenghanXia/DisentangledColorization" class="gh-stars" data-repo="MenghanXia/DisentangledColorization" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="discolor">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2021">
+                        <div class="post-container" data-year="2021" data-theme="earlier" style="--theme-order: 45;">
                             <div class="post-thumb"><picture><source srcset="img/thumb/invHalftone.webp" type="image/webp"><img src="img/thumb/invHalftone.jpg" alt="Deep Halftoning overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Deep Halftoning with Reversible Binary Pattern</h3>
@@ -948,16 +994,14 @@
                                     <a
                                         href="http://appsrv.cse.cuhk.edu.hk/~ttwong/cgi-bin/paper-download/download.cgi?path=invhalftone&dl=invhalftone.pdf">Paper</a>
                                     <a href="https://github.com/MenghanXia/ReversibleHalftoning">Code</a>
-                                    <a href="https://github.com/MenghanXia/ReversibleHalftoning"
-                                        class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/MenghanXia/ReversibleHalftoning?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/MenghanXia/ReversibleHalftoning" class="gh-stars" data-repo="MenghanXia/ReversibleHalftoning" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="invhalftone">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="post-container" data-year="2021">
-                            <div class="post-thumb"><img src="img/CondDGConv.jpg" alt="CondDGConv overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2021" data-theme="earlier" style="--theme-order: 41;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/CondDGConv.webp" type="image/webp"><img src="img/CondDGConv.jpg" alt="CondDGConv overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Conditional Directed Graph Convolution for 3D Human Pose
                                     Estimation</h3>
@@ -970,13 +1014,14 @@
                                 <div class="paper-links">
                                     <a href="projects/CondDGConv/index.html">Project</a>
                                     <a href="./pdf/CondDGConv_update.pdf">Paper</a>
+                                    <button class="cite-btn" data-paper-id="conddgconv">Cite</button>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="post-container" data-year="2021">
-                            <div class="post-thumb"><img src="projects/BPNet/img/bpnet.jpg" alt="BPNet overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2021" data-theme="earlier" style="--theme-order: 40;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/bpnet.webp" type="image/webp"><img src="projects/BPNet/img/bpnet.jpg" alt="BPNet overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Bidirectional Projection Network for Cross Dimensional Scene
                                     Understanding</h3>
@@ -992,16 +1037,15 @@
                                     <a href="projects/BPNet/index.html">Project</a>
                                     <a href="https://arxiv.org/abs/2103.14326">Paper</a>
                                     <a href="https://github.com/wbhu/BPNet">Code</a>
-                                    <a href="https://github.com/wbhu/BPNet" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/wbhu/BPNet?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/wbhu/BPNet" class="gh-stars" data-repo="wbhu/BPNet" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="bpnet">Cite</button>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="post-container" data-year="2020">
-                            <div class="post-thumb"><img src="projects/Mono3D/img/teaser.jpg" alt="Mononizing Binocular Videos overview" loading="lazy" decoding="async" /></div>
+                        <div class="post-container" data-year="2020" data-theme="earlier" style="--theme-order: 43;">
+                            <div class="post-thumb"><picture><source srcset="img/thumb/mono3d.webp" type="image/webp"><img src="projects/Mono3D/img/teaser.jpg" alt="Mononizing Binocular Videos overview" loading="lazy" decoding="async" /></picture></div>
                             <div class="post-content">
                                 <h3 class="paper-title">Mononizing Binocular Videos</h3>
                                 <div class="paper-authors">
@@ -1015,78 +1059,13 @@
                                     <a href="projects/Mono3D/index.html">Project</a>
                                     <a href="https://arxiv.org/abs/2009.01424">Paper</a>
                                     <a href="https://github.com/wbhu/Mono3D">Code</a>
-                                    <a href="https://github.com/wbhu/Mono3D" class="github-stars"><img
-                                            src="https://img.shields.io/github/stars/wbhu/Mono3D?style=social"
-                                            loading="lazy" decoding="async" alt="GitHub stars"></a>
+                                    <a href="https://github.com/wbhu/Mono3D" class="gh-stars" data-repo="wbhu/Mono3D" target="_blank" rel="noopener noreferrer" aria-label="GitHub stars"><svg class="gh-stars-logo" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span class="gh-stars-icon" aria-hidden="true">★</span><span class="gh-stars-count">…</span></a>
+                                    <button class="cite-btn" data-paper-id="mono3d">Cite</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!--        <div class="post-container">-->
-                        <!--            <div class="post-thumb"><img-->
-                        <!--                    src="img/vec.jpg"-->
-                        <!--                    width="380" height="140"/>-->
-                        <!--            </div>-->
-                        <!--            <div class="post-content">-->
-                        <!--                <b>Deep Line Drawing Vectorization via Line Subdivision and Topology Reconstruction</b>-->
-                        <!--                <br>-->
-                        <!--                &nbsp-->
-                        <!--                Yi Guo, Zhuming Zhang, Chu Han, <I>Wenbo Hu,</I> Chengze Li, Tien-Tsin Wong-->
-                        <!--                <br>-->
-                        <!--                <I>Computer Graphics Forum (CGF), <b>Pacific Graphics (PG),</b> 2019</I>-->
-                        <!--                <br>-->
-                        <!--                &nbsp-->
-                        <!--                [<a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/cgf.13818"> Paper</a>]-->
-                        <!--            </div>-->
-                        <!--        </div>-->
-
-                        <!--        <div class="post-container">-->
-                        <!--            <div class="post-thumb"><img-->
-                        <!--                    src="img/DEMC.jpg"-->
-                        <!--                    width="380" height="140"/>-->
-                        <!--            </div>-->
-                        <!--            <div class="post-content">-->
-                        <!--                <b>DEMC: A Deep Dual-Encoder Network for Denoising Monte Carlo Rendering</b>-->
-                        <!--                <br>-->
-                        <!--                &nbsp Xin Yang, <I>Wenbo Hu,</I> Dawei Wang, Lijing Zhao, Baocai Yin, Qiang Zhang,-->
-                        <!--                <br>-->
-                        <!--                &nbsp-->
-                        <!--                Xiaopeng Wei, Hongbo Fu-->
-                        <!--                <br>-->
-                        <!--                <em>Computational Visual Media,</em><b>CVM,</b>2019.-->
-                        <!--                </br>-->
-                        <!--                &nbsp-->
-                        <!--                [<a href="https://sites.google.com/view/dutdemc"> Project</a>]-->
-                        <!--                [<a href="https://arxiv.org/pdf/1905.03908.pdf"> Paper</a>]-->
-                        <!--                &lt;!&ndash;                [<a href="bib/DEMC.bib"> Bib</a> ]&ndash;&gt;-->
-                        <!--                [<a href="https://drive.google.com/drive/folders/1sBDN5vHykSB-YNU_pvzzV1u5WLLgw7X-?usp=sharing">-->
-                        <!--                Dataset</a> ]-->
-                        <!--                [<a href="https://github.com/wbhu/DEMC"> Code</a> ]-->
-
-                        <!--            </div>-->
-                        <!--        </div>-->
-
-                        <!--        <div class="post-container">-->
-                        <!--            <div class="post-thumb"><img-->
-                        <!--                    src="img/FRMC.gif"-->
-                        <!--                    width="380" height="140"/>-->
-                        <!--            </div>-->
-                        <!--            <div class="post-content">-->
-                        <!--                <b>Fast Reconstruction for Monte Carlo Rendering Using Deep Convolutional Networks</b>-->
-                        <!--                <br>-->
-                        <!--                &nbsp-->
-                        <!--                Xin Yang, Dawei Wang, <I>Wenbo Hu,</I> Lijing Zhao, Xinglin Piao, Dongsheng Zhou,-->
-                        <!--                <br>-->
-                        <!--                &nbsp-->
-                        <!--                Qiang Zhang, Baocai Yin, Qiang Cai, Xiaopeng Wei-->
-                        <!--                <br>-->
-                        <!--                <I>IEEE Access, 2018</I>-->
-                        <!--                <br>-->
-                        <!--                &nbsp-->
-                        <!--                [<a href="https://ieeexplore.ieee.org/abstract/document/8571234"> Paper</a>]-->
-                        <!--                &lt;!&ndash;                [<a href="bib/FRMC.bib"> Bib</a> ]&ndash;&gt;-->
-                        <!--            </div>-->
-                        <!--        </div>-->
+                        <!--  Earlier publications removed (not Wenbo-led)  -->
                     </div>
 
 
@@ -1097,6 +1076,7 @@
                     <h2 class="section-heading">Education</h2>
                     <hr class="line" />
 
+                    <div class="exp-timeline">
                     <div class="exp-container">
                         <div class="exp-logo"><img src="img/cuhk_logo.jpeg" alt="CUHK" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
@@ -1118,15 +1098,18 @@
                         </div>
                     </div>
 
+                    </div>
+
                     <div class="section-divider"></div>
                     <h2 class="section-heading">Work Experience</h2>
                     <hr class="line" />
 
-                    <div class="exp-container">
+                    <div class="exp-timeline">
+                    <div class="exp-container current">
                         <div class="exp-logo"><img src="img/TencentAILab.jpeg" alt="Tencent" loading="lazy" decoding="async" /></div>
                         <div class="exp-content">
                             <div class="exp-period">Dec. 2023 - Present</div>
-                            <div class="exp-org"><a href="https://ai.tencent.com">Tencent AI Lab (ARC)</a></div>
+                            <div class="exp-org"><a href="https://ai.tencent.com">Tencent ARC Lab</a></div>
                             <div class="exp-role">Senior Researcher</div>
                         </div>
                     </div>
@@ -1177,12 +1160,13 @@
                             <div class="exp-role">Software Engineer Intern</div>
                         </div>
                     </div>
+                    </div>
 
                 </div>
 
                 <!--  Miscellaneous -->
                 <div class="mainText" id="mis">
-                    <h2 class="section-heading">Miscellaneous</h2>
+                    <h2 class="section-heading">In the Community</h2>
                     <hr class="line" />
 
                     <div class="tweet-container">
@@ -1291,6 +1275,7 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="data/bibtex.js" defer></script>
     <script type="text/javascript" src="./script.js" defer></script>
 
 </body>
