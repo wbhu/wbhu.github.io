@@ -98,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set sticky top for pub year filter based on actual menu height
     const menuEl = document.getElementById('menu');
-    const pubYearFilterEl = document.querySelector('.pub-year-filter');
-    if (menuEl && pubYearFilterEl) {
+    const pubFilterEls = document.querySelectorAll('.pub-year-filter, .pub-theme-filter');
+    if (menuEl && pubFilterEls.length) {
         const updateStickyTop = () => {
-            pubYearFilterEl.style.top = menuEl.offsetHeight + 'px';
+            pubFilterEls.forEach((el) => { el.style.top = menuEl.offsetHeight + 'px'; });
         };
         updateStickyTop();
         window.addEventListener('resize', updateStickyTop);
@@ -267,32 +267,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewToggle = document.querySelector('.pub-view-toggle');
     const pubScroll = document.querySelector('.pub-scroll');
     if (viewToggle && pubScroll) {
-        const THEMES = [
-            { id: 'perceive',  label: 'Perceiving Worlds: depth, geometry & motion from video', order: 10 },
-            { id: 'generate',  label: 'Generating Worlds: controllable 4D content & video',     order: 20 },
-            { id: 'represent', label: 'Representing Worlds: neural 3D substrates',              order: 30 },
-            { id: 'earlier',   label: 'Earlier Work',                                            order: 40 }
-        ];
-
-        const cards = pubScroll.querySelectorAll('.post-container[data-theme]');
-        const themeCounts = {};
-        cards.forEach((c) => {
-            const t = c.dataset.theme;
-            themeCounts[t] = (themeCounts[t] || 0) + 1;
-        });
-
-        // Inject one header per theme above its first card (for theme view); kept hidden in year view
-        THEMES.forEach((theme) => {
-            const count = themeCounts[theme.id] || 0;
-            if (count === 0) return;
-            const h = document.createElement('div');
-            h.className = 'theme-group-header';
-            h.dataset.themeId = theme.id;
-            // header uses (theme.order - 1) so it appears above its cards (cards have order >= theme.order)
-            h.style.setProperty('--theme-order', theme.order - 1);
-            h.innerHTML = `<span class="theme-label">${theme.label}</span><span class="theme-count">${count} paper${count > 1 ? 's' : ''}</span>`;
-            pubScroll.appendChild(h);
-        });
+        // Cards carry multiple cross-cutting theme keywords (data-themes) and a fame+recency
+        // rank (--theme-order). In theme view the flexbox order sorts them by that rank; the
+        // theme-filter buttons filter by keyword. No per-theme group headers (papers are multi-label).
+        const cards = pubScroll.querySelectorAll('.post-container[data-themes]');
 
         // Inject year-group headers (By-Year view landmarks); hidden in theme view via CSS.
         // Cards are in descending-year DOM order, so insert a header before each year's first card.
@@ -317,6 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const viewButtons = viewToggle.querySelectorAll('.view-btn');
         const yearFilter = document.getElementById('pub-year-filter');
         const yearButtons = yearFilter ? yearFilter.querySelectorAll('.pub-year-btn') : [];
+        const themeFilter = document.getElementById('pub-theme-filter');
+        const themeButtons = themeFilter ? themeFilter.querySelectorAll('.pub-theme-btn') : [];
         const allCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
 
         const resetYearFilter = () => {
@@ -326,6 +306,27 @@ document.addEventListener('DOMContentLoaded', () => {
             yearButtons.forEach((b) => b.classList.toggle('active', b.dataset.year === 'all'));
         };
 
+        const resetThemeFilter = () => {
+            // Show every card; mark "All" as the active theme button
+            allCards.forEach((c) => c.classList.remove('theme-hidden'));
+            themeButtons.forEach((b) => b.classList.toggle('active', b.dataset.theme === 'all'));
+        };
+
+        // Theme filter (mirrors the year filter; only visible in theme view). Multi-label:
+        // a card matches if its data-themes list contains the selected keyword.
+        if (themeFilter) {
+            themeFilter.addEventListener('click', (e) => {
+                const btn = e.target.closest('.pub-theme-btn');
+                if (!btn) return;
+                const theme = btn.dataset.theme;
+                themeButtons.forEach((b) => b.classList.toggle('active', b === btn));
+                document.querySelectorAll('.pub-scroll .post-container[data-themes]').forEach((card) => {
+                    const themes = (card.dataset.themes || '').split(/\s+/);
+                    card.classList.toggle('theme-hidden', !(theme === 'all' || themes.includes(theme)));
+                });
+            });
+        }
+
         const setView = (mode) => {
             document.body.classList.toggle('view-theme', mode === 'theme');
             viewButtons.forEach((b) => {
@@ -333,9 +334,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 b.classList.toggle('active', active);
                 b.setAttribute('aria-selected', String(active));
             });
-            // Whenever the view mode changes, reset the year filter to a clean "All" state.
-            // Prevents previously-applied year filtering from hiding cards in the other view.
+            // Whenever the view mode changes, reset both filters to a clean "All" state.
+            // Prevents previously-applied filtering from hiding cards in the other view.
             resetYearFilter();
+            resetThemeFilter();
             try { localStorage.setItem('pubView', mode); } catch (_) {}
         };
 
@@ -345,10 +347,8 @@ document.addEventListener('DOMContentLoaded', () => {
             setView(btn.dataset.view);
         });
 
-        // Restore preference
-        let savedView = 'year';
-        try { savedView = localStorage.getItem('pubView') || 'year'; } catch (_) {}
-        if (savedView === 'theme') setView('theme');
+        // Always default to the By-Year view on load (do not restore a saved theme view).
+        setView('year');
     }
 
     // ────────── BibTeX modal ──────────
@@ -418,9 +418,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = Date.now();
         const fresh = (entry) => entry && (now - entry.t) < TTL_MS;
 
+        // Parse a shields.io star string ("1.6k", "856", "2.1m") to a number.
+        const parseStars = (v) => {
+            const s = String(v).trim().toLowerCase();
+            if (s.endsWith('k')) return parseFloat(s) * 1e3;
+            if (s.endsWith('m')) return parseFloat(s) * 1e6;
+            return parseFloat(s.replace(/,/g, '')) || 0;
+        };
+
         const setCount = (anchor, value) => {
             const el = anchor.querySelector('.gh-stars-count');
             if (el) el.textContent = value;
+            // Highlight (tier1k) ONLY when the live count is >= 1000; otherwise plain.
+            anchor.classList.toggle('tier1k', parseStars(value) >= 1000);
         };
 
         const fetchStars = async (anchor) => {

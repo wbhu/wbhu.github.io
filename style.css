@@ -443,8 +443,8 @@ img {
 
 /* --- Visitor Map --- */
 .visitor-map-section {
-    margin-top: 20px;
-    padding-top: 18px;
+    margin-top: 28px;
+    padding-top: 22px;
     border-top: 1px solid var(--mist-200);
 }
 
@@ -467,7 +467,7 @@ img {
 }
 
 .visitor-globe-wrap {
-    width: 160px;
+    width: 180px;
     margin: 0 auto;
 }
 
@@ -552,6 +552,16 @@ img {
     font-weight: 600;
 }
 
+/* Marker highlight for the few core thesis phrases (a teal "highlighter" swipe) */
+.key-mark {
+    background: linear-gradient(180deg, transparent 55%, rgba(14, 143, 145, 0.22) 55%);
+    color: var(--brand-700);
+    padding: 0 1px;
+    font-weight: 600;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
 .key-role {
     color: var(--ink-900);
     font-weight: 600;
@@ -571,9 +581,9 @@ img {
 }
 
 .highlight-award {
-    color: #6b3e00;
-    background: linear-gradient(135deg, #f7d889 0%, #ecbb58 100%);
-    border: 1px solid rgba(217, 136, 0, 0.4);
+    color: #5d3c11;
+    background: linear-gradient(135deg, #f1d79a 0%, #e6bd73 100%);
+    border: 1px solid rgba(190, 135, 35, 0.42);
     border-radius: 999px;
     padding: 2px 10px;
     font-weight: 700;
@@ -591,183 +601,16 @@ img {
     font-style: normal;
 }
 
-/* ────────── Research Vision card ────────── */
-.research-vision {
-    margin: 28px 0 0;
-    padding: 22px 24px 20px;
-    background: linear-gradient(135deg, rgba(14, 143, 145, 0.06) 0%, rgba(217, 136, 0, 0.04) 100%);
-    border: 1px solid rgba(14, 143, 145, 0.18);
-    border-radius: 18px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 24px -18px rgba(0, 94, 99, 0.35);
-}
-
-.research-vision::before {
-    content: '';
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 4px;
-    background: linear-gradient(180deg, var(--brand-500) 0%, var(--sun-400) 100%);
-}
-
-.vision-heading {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--brand-700);
-    margin: 0 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.vision-icon {
-    color: var(--sun-400);
-    font-size: 1.1rem;
-    transform: rotate(0deg);
-    display: inline-block;
-}
-
-.vision-tagline {
-    font-family: 'Source Serif 4', serif;
-    font-size: 1.15rem;
-    line-height: 1.5;
-    color: var(--ink-900);
-    margin: 0 0 14px;
-}
-
-.vision-tagline b {
-    color: var(--brand-700);
-    font-weight: 700;
-}
-
-.vision-tagline em {
-    font-style: italic;
-    color: var(--brand-700);
-    font-weight: 600;
-}
-
-.vision-rationale {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.92rem;
-    line-height: 1.5;
-    color: var(--ink-700);
-    margin: 0 0 12px;
-}
-
-.vision-pillars {
-    list-style: none;
-    margin: 0 0 16px;
-    padding: 0;
-    counter-reset: pillar-counter;
-    display: grid;
-    gap: 10px;
-}
-
-.vision-pillars > li {
-    counter-increment: pillar-counter;
-    position: relative;
-    padding: 10px 14px 10px 46px;
-    background: rgba(255, 255, 255, 0.62);
-    border: 1px solid rgba(14, 143, 145, 0.18);
-    border-radius: 12px;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.92rem;
-    line-height: 1.5;
-    color: var(--ink-900);
-    transition: all var(--ease);
-}
-
-.vision-pillars > li::before {
-    content: counter(pillar-counter);
-    position: absolute;
-    left: 12px;
-    top: 11px;
-    width: 24px;
-    height: 24px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
-    color: #ffffff;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    box-shadow: 0 2px 6px -2px rgba(5, 80, 84, 0.5);
-}
-
-.vision-pillars > li:hover {
-    border-color: rgba(14, 143, 145, 0.4);
-    background: rgba(255, 255, 255, 0.85);
-    transform: translateY(-1px);
-}
-
-.pillar-tag {
-    display: inline-block;
-    padding: 2px 10px;
-    margin-right: 8px;
-    border-radius: 999px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    vertical-align: 1px;
-    border: 1px solid transparent;
-}
-
-.pillar-tag.pillar-perceive,
-.pillar-tag.pillar-generate,
-.pillar-tag.pillar-represent {
-    background: rgba(14, 143, 145, 0.10);
-    color: var(--brand-700);
-    border-color: rgba(14, 143, 145, 0.26);
-}
-
-.pillar-papers {
-    display: block;
-    margin-top: 6px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    color: var(--ink-500);
-    letter-spacing: 0.01em;
-}
-
-.vision-longterm {
-    margin: 0;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.92rem;
-    line-height: 1.55;
-    color: var(--ink-700);
-    border-top: 1px dashed rgba(14, 143, 145, 0.2);
-    padding-top: 12px;
-}
-
-.vision-longterm b {
-    color: var(--brand-700);
-    font-weight: 700;
-}
-
-.vision-longterm em {
-    font-style: italic;
-    color: var(--ink-900);
-    font-weight: 600;
-}
-
 .bestpaper-thumb {
-    max-width: 70px;
-    margin-left: 10px;
-    vertical-align: middle;
-    display: inline-block;
+    float: right;
+    max-width: 64px;
+    margin: 0 0 6px 12px;
     border-radius: 8px;
     border: 1px solid rgba(217, 136, 0, 0.34);
 }
 
-.pub-year-filter {
+.pub-year-filter,
+.pub-theme-filter {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
@@ -785,7 +628,8 @@ img {
     box-shadow: 0 6px 14px -10px rgba(24, 32, 58, 0.18);
 }
 
-.pub-year-btn {
+.pub-year-btn,
+.pub-theme-btn {
     display: inline-flex;
     align-items: center;
     padding: 5px 14px;
@@ -800,21 +644,33 @@ img {
     transition: all var(--ease);
 }
 
-.pub-year-btn:hover {
+.pub-year-btn:hover,
+.pub-theme-btn:hover {
     border-color: var(--brand-200);
     background: var(--brand-100);
     color: var(--brand-700);
 }
 
-.pub-year-btn.active {
+.pub-year-btn.active,
+.pub-theme-btn.active {
     border-color: transparent;
     background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-700) 100%);
     color: #ffffff;
     box-shadow: 0 6px 12px -8px rgba(5, 80, 84, 0.7);
 }
 
-.post-container.year-hidden {
+.post-container.year-hidden,
+.post-container.theme-hidden {
     display: none;
+}
+
+/* Theme filter: hidden in year view, shown in theme view (mirrors year filter) */
+.pub-theme-filter {
+    display: none;
+}
+
+body.view-theme .pub-theme-filter {
+    display: flex;
 }
 
 /* ────────── View toggle (Year ↔ Theme) ────────── */
@@ -881,51 +737,6 @@ body.view-theme .post-container {
     margin-bottom: 16px;
 }
 
-/* Theme group headers — JS injects them with data-theme-id */
-.theme-group-header {
-    display: none;
-    /* hidden by default; only shown in theme view */
-}
-
-body.view-theme .theme-group-header {
-    order: var(--theme-order, 99);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--brand-700);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin: 18px 0 10px;
-    padding-bottom: 6px;
-    border-bottom: 1.5px solid rgba(14, 143, 145, 0.22);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-body.view-theme .theme-group-header:first-of-type {
-    margin-top: 4px;
-}
-
-.theme-group-header::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: linear-gradient(135deg, var(--brand-500), var(--sun-400));
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.theme-group-header .theme-count {
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.78rem;
-    font-weight: 400;
-    color: var(--ink-500);
-    text-transform: none;
-    letter-spacing: 0;
-    margin-left: auto;
-}
-
 /* Show-earlier toggle removed — earlier non-Wenbo-led publications dropped intentionally */
 
 /* ────────── Year-group headers (By-Year view landmarks) ────────── */
@@ -984,10 +795,10 @@ body.view-theme .year-group-header,
     letter-spacing: 0.02em;
     vertical-align: middle;
     white-space: nowrap;
-    background: linear-gradient(135deg, #f8dd92 0%, #edc063 100%);
-    color: #4a2700;
-    box-shadow: 0 1px 3px -1px rgba(217, 136, 0, 0.32);
-    border: 1px solid rgba(217, 136, 0, 0.4);
+    background: linear-gradient(135deg, #f1d79a 0%, #e6bd73 100%);
+    color: #5d3c11;
+    box-shadow: 0 1px 3px -1px rgba(190, 135, 35, 0.28);
+    border: 1px solid rgba(190, 135, 35, 0.42);
 }
 
 .award-badge::before {
@@ -1016,7 +827,6 @@ body.view-theme .year-group-header,
     vertical-align: middle;
     white-space: nowrap;
     transition: all var(--ease);
-    box-shadow: 0 1px 2px -1px rgba(24, 32, 58, 0.08);
 }
 
 .gh-stars:hover {
@@ -1028,7 +838,7 @@ body.view-theme .year-group-header,
 }
 
 .gh-stars-icon {
-    color: #b86b00;
+    color: inherit;
     font-size: 0.86rem;
     line-height: 1;
     margin-right: 1px;
@@ -1056,16 +866,33 @@ body.view-theme .year-group-header,
     min-width: 0;
 }
 
-/* Tier-1K (≥1000): quiet teal-tinted pill — gold is reserved for awards only */
+/* Tier-1K (≥1000): clearly highlighted, FILLED teal pill that stands out from the
+   plain teal-tinted link pills. Gold stays reserved for awards. */
 .gh-stars.tier1k {
-    border: 1px solid rgba(14, 143, 145, 0.4);
-    background: var(--brand-100);
-    color: var(--brand-700);
+    border: 1px solid #0aa6a8;
+    background: linear-gradient(135deg, #16b8ba 0%, var(--brand-500) 55%, var(--brand-700) 100%);
+    color: #ffffff;
     font-weight: 700;
+    padding: 3px 12px 3px 9px;
+    box-shadow: 0 3px 12px -2px rgba(14, 143, 145, 0.65), 0 0 0 1px rgba(14, 143, 145, 0.12);
 }
 
-.gh-stars.tier1k .gh-stars-logo {
-    color: var(--brand-700);
+.gh-stars.tier1k .gh-stars-logo,
+.gh-stars.tier1k .gh-stars-icon {
+    color: #ffffff;
+}
+
+.gh-stars.tier1k:hover {
+    border-color: var(--brand-700);
+    background: linear-gradient(135deg, var(--brand-700) 0%, var(--brand-500) 100%);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px -5px rgba(5, 80, 84, 0.65);
+}
+
+.gh-stars.tier1k:hover .gh-stars-logo,
+.gh-stars.tier1k:hover .gh-stars-icon {
+    color: #ffffff;
 }
 
 /* ────────── BibTeX cite button + modal ────────── */
@@ -1333,7 +1160,7 @@ body.view-theme .year-group-header,
 }
 
 .paper-authors {
-    margin-bottom: 4px;
+    margin-bottom: 7px;
     font-size: 0.88rem;
 }
 
@@ -1385,14 +1212,15 @@ body.view-theme .year-group-header,
 .remark {
     display: inline-block;
     margin-left: 4px;
-    margin-top: 3px;
-    padding: 1px 8px;
+    padding: 1px 9px;
     font-size: 0.74rem;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     border-radius: 999px;
-    color: #0b585a;
-    background: rgba(14, 143, 145, 0.10);
+    color: #a62a44;
+    background: #fbe7ec;
+    border: 1px solid rgba(191, 61, 83, 0.38);
+    vertical-align: middle;
 }
 
 /* Vertical timeline rail — chronology becomes the visual story */
@@ -1483,6 +1311,12 @@ body.view-theme .year-group-header,
 
 .exp-role {
     font-style: italic;
+}
+
+.exp-detail {
+    margin-top: 4px;
+    font-style: normal;
+    color: var(--ink-700);
 }
 
 .exp-role .highlight {
@@ -1762,7 +1596,8 @@ body.view-theme .year-group-header,
     }
 
     .pub-view-toggle,
-    .pub-year-filter {
+    .pub-year-filter,
+    .pub-theme-filter {
         flex-wrap: wrap;
         gap: 6px;
     }
@@ -1778,25 +1613,10 @@ body.view-theme .year-group-header,
     }
 
     .view-btn,
-    .pub-year-btn {
+    .pub-year-btn,
+    .pub-theme-btn {
         font-size: 0.78rem;
         padding: 8px 12px;
-    }
-
-    .research-vision {
-        margin: 22px -8px 0;
-        padding: 18px 16px 16px;
-        border-radius: 14px;
-    }
-
-    .vision-pillars > li {
-        padding: 10px 12px 10px 40px;
-        font-size: 0.88rem;
-    }
-
-    .pillar-tag {
-        display: block;
-        margin: 0 0 5px;
     }
 
     .bibtex-modal {

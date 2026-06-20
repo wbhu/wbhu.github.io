@@ -8,10 +8,10 @@ window.PAPER_BIBTEX = {
   booktitle={ACM SIGGRAPH},
   year={2026}
 }`,
-    "track4world": `@article{lu2026track4world,
+    "track4world": `@inproceedings{lu2026track4world,
   title={Track4World: Feedforward World-Centric Dense 3D Tracking of All Pixels},
   author={Lu, Jiahao and Xu, Jiayi and Hu, Wenbo and Zhu, Ruijie and Zhao, Chengfeng and Yeung, Sai-Kit and Shan, Ying and Liu, Yuan},
-  journal={arXiv preprint arXiv:2603.02573},
+  booktitle={European Conference on Computer Vision (ECCV)},
   year={2026}
 }`,
     "versecrafter": `@inproceedings{zheng2026versecrafter,
