@@ -406,19 +406,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ────────── GitHub stars (live count via shields.io JSON, 6h cache) ──────────
+    // ────────── GitHub stars: real-time counts (no stale caching) ──────────
+    // Revalidates on every load so the number always tracks GitHub.
+    //  1) GitHub API  -> EXACT live count (e.g. "1,632"), when the visitor's IP
+    //     still has unauthenticated budget (60/hr/IP; home networks usually do).
+    //  2) shields.io  -> robust fallback (server-side proxy, no per-visitor GitHub
+    //     limit), fresh (no force-cache), only hit when the API call fails — e.g.
+    //     on a shared office NAT whose GitHub budget is exhausted. Rounded ("1.6k").
+    //  localStorage only paints an instant first value and survives offline; it
+    //  never gates a fetch, so it can't make the number stale. tier1k highlight is
+    //  driven by the numeric count >= 1000.
     const ghStarAnchors = document.querySelectorAll('.gh-stars[data-repo]');
     if (ghStarAnchors.length) {
-        const CACHE_KEY = 'ghStarsCache_v1';
-        const TTL_MS = 6 * 60 * 60 * 1000; // 6 hours
+        const CACHE_KEY = 'ghStarsCache_v2';
         let cache = {};
         try {
             cache = JSON.parse(localStorage.getItem(CACHE_KEY) || '{}');
         } catch (_) { cache = {}; }
-        const now = Date.now();
-        const fresh = (entry) => entry && (now - entry.t) < TTL_MS;
 
-        // Parse a shields.io star string ("1.6k", "856", "2.1m") to a number.
+        const fmt = (n) => Number(n).toLocaleString('en-US'); // 1632 -> "1,632"
+        // Parse a star string ("1.6k", "856", "2.1m") back to a number.
         const parseStars = (v) => {
             const s = String(v).trim().toLowerCase();
             if (s.endsWith('k')) return parseFloat(s) * 1e3;
@@ -426,36 +433,53 @@ document.addEventListener('DOMContentLoaded', () => {
             return parseFloat(s.replace(/,/g, '')) || 0;
         };
 
-        const setCount = (anchor, value) => {
+        const setCount = (anchor, display, numeric) => {
             const el = anchor.querySelector('.gh-stars-count');
-            if (el) el.textContent = value;
-            // Highlight (tier1k) ONLY when the live count is >= 1000; otherwise plain.
-            anchor.classList.toggle('tier1k', parseStars(value) >= 1000);
+            if (el) el.textContent = display || '';
+            anchor.classList.toggle('tier1k', Number(numeric) >= 1000);
+        };
+        const store = (anchor, repo, display, numeric) => {
+            setCount(anchor, display, numeric);
+            cache[repo] = { display, n: numeric, t: Date.now() };
         };
 
         const fetchStars = async (anchor) => {
             const repo = anchor.dataset.repo;
             const cached = cache[repo];
-            if (fresh(cached)) {
-                setCount(anchor, cached.v);
-                return;
-            }
+            // Instant paint from last-known value so there's no empty flash.
+            if (cached) setCount(anchor, cached.display, cached.n);
+
+            // 1) Exact, real-time.
             try {
-                const r = await fetch(`https://img.shields.io/github/stars/${repo}.json`, { cache: 'force-cache' });
-                if (!r.ok) throw new Error('HTTP ' + r.status);
-                const json = await r.json();
-                const value = json.message || json.value || '?';
-                setCount(anchor, value);
-                cache[repo] = { v: value, t: now };
-            } catch (e) {
-                // Fallback to last cached value if any; else leave empty so the
-                // static ★ icon isn't doubled (the pill still links to the repo).
-                if (cached) {
-                    setCount(anchor, cached.v);
-                } else {
-                    setCount(anchor, '');
+                const r = await fetch(`https://api.github.com/repos/${repo}`, {
+                    headers: { 'Accept': 'application/vnd.github+json' },
+                    cache: 'no-store',
+                });
+                if (r.ok) {
+                    const j = await r.json();
+                    if (typeof j.stargazers_count === 'number') {
+                        store(anchor, repo, fmt(j.stargazers_count), j.stargazers_count);
+                        return;
+                    }
                 }
-            }
+            } catch (_) { /* fall through to the proxy */ }
+
+            // 2) Robust fallback (rounded but fresh; survives an exhausted IP).
+            try {
+                const r = await fetch(`https://img.shields.io/github/stars/${repo}.json`, { cache: 'no-store' });
+                if (r.ok) {
+                    const j = await r.json();
+                    const str = j.message || j.value;
+                    if (str && str !== 'invalid') {
+                        store(anchor, repo, str, parseStars(str));
+                        return;
+                    }
+                }
+            } catch (_) { /* keep whatever we painted from cache */ }
+
+            // 3) Both sources failed — leave the cached value, or empty if none
+            //    (the static ★ icon stays and the pill still links to the repo).
+            if (!cached) setCount(anchor, '', 0);
         };
 
         Promise.all(Array.from(ghStarAnchors).map(fetchStars)).then(() => {
