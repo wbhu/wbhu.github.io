@@ -1477,15 +1477,36 @@ body.view-theme .year-group-header,
     }
 }
 
-/* Hide the header credentials aside before the 3-column header gets cramped;
-   the awards still appear in the bio below. */
+/* When the 3-column header collapses, do NOT hide the award credentials —
+   mobile is the most common device, so this stays visible. Instead drop them
+   to a centered full-width row at the bottom of the header. Google Scholar is
+   omitted here since it's already one of the social icons above. */
 @media (max-width: 980px) {
     #header {
         grid-template-columns: auto 1fr;
     }
 
     .header-aside {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-self: center;
+        gap: 6px 20px;
+        margin-top: 2px;
+        text-align: center;
+    }
+
+    .header-aside .header-cred-link {
         display: none;
+    }
+
+    .header-cred {
+        justify-content: center;
+    }
+
+    .header-cred .cred-icon {
+        order: 0;
     }
 }
 
