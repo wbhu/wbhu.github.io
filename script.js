@@ -197,7 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Lazy-load ClustrMaps 3D globe when visitor section enters viewport
+    // Lazy-load the visitor 3D globe when the section enters the viewport.
+    // ClustrMaps was rebranded to MapMyVisitors and clustrmaps.com was retired
+    // (no DNS), so the globe now loads from mapmyvisitors.com. The map ID is
+    // unchanged, so the accumulated visitor count carries over.
     const globeWrap = document.getElementById('visitor-globe-wrap');
     if (globeWrap) {
         const globeObserver = new IntersectionObserver((entries, observer) => {
@@ -208,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const injectGlobe = () => {
                     const s = document.createElement('script');
                     s.id = 'clstr_globe';
-                    s.src = '//clustrmaps.com/globe.js?d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw';
+                    s.src = '//mapmyvisitors.com/globe.js?d=EBYPWQy20NjXizST4__XUvNIbKpzqPE2D7NuYf0xQMw';
                     s.async = true;
                     globeWrap.appendChild(s);
                 };
