@@ -107,15 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateStickyTop);
     }
 
-    // Publication year filter. "All" sits last in the pill row; the view opens on the
-    // most recent year instead, so the landing state shows the newest work rather than
-    // the whole list. Single source of truth for year filtering — setView() reuses it.
+    // Publication year filter. "All" sits last in the pill row but is the default, so
+    // the year view opens on the complete chronological list — the individual years
+    // narrow it down. Single source of truth for year filtering; setView() reuses it.
     const yearFilter = document.getElementById('pub-year-filter');
     const yearButtons = yearFilter ? yearFilter.querySelectorAll('.pub-year-btn') : [];
     const pubCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
 
-    const years = [...pubCards].map((c) => Number(c.dataset.year)).filter(Number.isFinite);
-    const DEFAULT_YEAR = years.length ? String(Math.max(...years)) : 'all';
+    const DEFAULT_YEAR = 'all';
 
     const applyYear = (year) => {
         yearButtons.forEach((b) => b.classList.toggle('active', b.dataset.year === year));
