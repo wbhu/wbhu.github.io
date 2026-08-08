@@ -107,31 +107,35 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateStickyTop);
     }
 
-    // Publication year filter
+    // Publication year filter. "All" sits last in the pill row; the view opens on the
+    // most recent year instead, so the landing state shows the newest work rather than
+    // the whole list. Single source of truth for year filtering — setView() reuses it.
     const yearFilter = document.getElementById('pub-year-filter');
-    if (yearFilter) {
-        const yearButtons = yearFilter.querySelectorAll('.pub-year-btn');
-        const pubCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
+    const yearButtons = yearFilter ? yearFilter.querySelectorAll('.pub-year-btn') : [];
+    const pubCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
 
+    const years = [...pubCards].map((c) => Number(c.dataset.year)).filter(Number.isFinite);
+    const DEFAULT_YEAR = years.length ? String(Math.max(...years)) : 'all';
+
+    const applyYear = (year) => {
+        yearButtons.forEach((b) => b.classList.toggle('active', b.dataset.year === year));
+
+        pubCards.forEach((card) => {
+            card.classList.toggle('year-hidden', !(year === 'all' || card.dataset.year === year));
+        });
+
+        // Show only the matching year-group header (or all when "All"). Headers are
+        // injected later by the view-toggle block, so this is queried at call time.
+        document.querySelectorAll('.year-group-header').forEach((h) => {
+            h.classList.toggle('year-hidden', !(year === 'all' || h.dataset.year === year));
+        });
+    };
+
+    if (yearFilter) {
         yearFilter.addEventListener('click', (e) => {
             const btn = e.target.closest('.pub-year-btn');
             if (!btn) return;
-
-            const year = btn.dataset.year;
-            yearButtons.forEach((b) => b.classList.toggle('active', b === btn));
-
-            pubCards.forEach((card) => {
-                if (year === 'all' || card.dataset.year === year) {
-                    card.classList.remove('year-hidden');
-                } else {
-                    card.classList.add('year-hidden');
-                }
-            });
-
-            // Show only the matching year-group header (or all when "All")
-            document.querySelectorAll('.year-group-header').forEach((h) => {
-                h.classList.toggle('year-hidden', !(year === 'all' || h.dataset.year === year));
-            });
+            applyYear(btn.dataset.year);
         });
     }
 
@@ -296,37 +300,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const viewButtons = viewToggle.querySelectorAll('.view-btn');
-        const yearFilter = document.getElementById('pub-year-filter');
-        const yearButtons = yearFilter ? yearFilter.querySelectorAll('.pub-year-btn') : [];
         const themeFilter = document.getElementById('pub-theme-filter');
         const themeButtons = themeFilter ? themeFilter.querySelectorAll('.pub-theme-btn') : [];
         const allCards = document.querySelectorAll('.pub-scroll .post-container[data-year]');
 
-        const resetYearFilter = () => {
-            // Show every card and year header; mark "All" as the active year button
-            allCards.forEach((c) => c.classList.remove('year-hidden'));
-            document.querySelectorAll('.year-group-header').forEach((h) => h.classList.remove('year-hidden'));
-            yearButtons.forEach((b) => b.classList.toggle('active', b.dataset.year === 'all'));
+        // Theme view has no "All" pill — exactly one theme is always selected, and the
+        // By-Year view is where the complete list lives. Multi-label: a card matches if
+        // its data-themes list contains the selected keyword.
+        const DEFAULT_THEME = 'world-models';
+
+        const applyTheme = (theme) => {
+            themeButtons.forEach((b) => b.classList.toggle('active', b.dataset.theme === theme));
+            allCards.forEach((card) => {
+                const themes = (card.dataset.themes || '').split(/\s+/);
+                card.classList.toggle('theme-hidden', !themes.includes(theme));
+            });
         };
 
-        const resetThemeFilter = () => {
-            // Show every card; mark "All" as the active theme button
+        // Leaving theme view must clear theme-hidden outright: the CSS rule that hides
+        // those cards is view-agnostic, so a leftover filter would blank out the year view.
+        const clearThemeFilter = () => {
             allCards.forEach((c) => c.classList.remove('theme-hidden'));
-            themeButtons.forEach((b) => b.classList.toggle('active', b.dataset.theme === 'all'));
+            themeButtons.forEach((b) => b.classList.remove('active'));
         };
 
-        // Theme filter (mirrors the year filter; only visible in theme view). Multi-label:
-        // a card matches if its data-themes list contains the selected keyword.
         if (themeFilter) {
             themeFilter.addEventListener('click', (e) => {
                 const btn = e.target.closest('.pub-theme-btn');
                 if (!btn) return;
-                const theme = btn.dataset.theme;
-                themeButtons.forEach((b) => b.classList.toggle('active', b === btn));
-                document.querySelectorAll('.pub-scroll .post-container[data-themes]').forEach((card) => {
-                    const themes = (card.dataset.themes || '').split(/\s+/);
-                    card.classList.toggle('theme-hidden', !(theme === 'all' || themes.includes(theme)));
-                });
+                applyTheme(btn.dataset.theme);
             });
         }
 
@@ -337,10 +339,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 b.classList.toggle('active', active);
                 b.setAttribute('aria-selected', String(active));
             });
-            // Whenever the view mode changes, reset both filters to a clean "All" state.
-            // Prevents previously-applied filtering from hiding cards in the other view.
-            resetYearFilter();
-            resetThemeFilter();
+            // Whenever the view mode changes, reset filtering so leftover state from the
+            // other view can never hide cards. Each view opens on its own default:
+            // the newest year, or the headline theme.
+            if (mode === 'theme') {
+                applyYear('all');
+                applyTheme(DEFAULT_THEME);
+            } else {
+                clearThemeFilter();
+                applyYear(DEFAULT_YEAR);
+            }
             try { localStorage.setItem('pubView', mode); } catch (_) {}
         };
 
