@@ -2,6 +2,12 @@
 // Keys MUST match data-paper-id on each .cite-btn.
 window.PAPER_BIBTEX = {
     // ============ 2026 ============
+    "scope": `@article{yin2026scope,
+  title={SCoPE: Sightline-Coordinate Positional Encoding for Video Diffusion Transformers},
+  author={Yin, Minghao and Lu, Jiahao and Hu, Wenbo and Zhao, Wang and Shan, Ying and Han, Kai},
+  journal={arXiv preprint arXiv:2606.27345},
+  year={2026}
+}`,
     "pixal3d": `@inproceedings{li2026pixal3d,
   title={Pixal3D: Pixel-Aligned 3D Generation from Images},
   author={Li, Dong-Yang and Zhao, Wang and Chen, Yuxin and Hu, Wenbo and Guo, Meng-Hao and Zhang, Fang-Lue and Shan, Ying and Hu, Shi-Min},
