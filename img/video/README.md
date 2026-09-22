@@ -17,14 +17,16 @@ muted MP4 (H.264) and WebM (VP9) loops with JPEG poster frames.
 ## GAE
 
 - Project: https://jiah-cloud.github.io/GAE.github.io/
-- RGB: https://jiah-cloud.github.io/GAE.github.io/assets/i2v/videos/re10k_038_rgb.mp4
-- Geometry: https://jiah-cloud.github.io/GAE.github.io/assets/i2v/videos/re10k_038_progressive.mp4
-- Both sources contain 81 corresponding frames. RGB is 16 fps and geometry
-  is 12 fps: use `settb=1/12,setpts=N` on both before composing, producing
-  a synchronized 6.75-second loop.
+- Case: `world-089`, Village Street, selected by the project owner from
+  21–27 seconds of `03_GAE_Native_Latent_30s_No_Music.mp4` (V4_World089).
+- RGB: https://jiah-cloud.github.io/GAE.github.io/assets/teaser-sync/world-089_rgb.mp4
+- Geometry: https://jiah-cloud.github.io/GAE.github.io/assets/teaser-sync/world-089_progressive.mp4
+- Both original sources contain 81 corresponding frames at 13.5 fps. Use
+  `settb=2/27,setpts=N` on both before composing a synchronized 6-second loop.
+  Source hashes were checked against the supplied video's edit manifest.
 - Render geometry at 640x360, with a 272x153 RGB inset, a 4-pixel teal border,
-  and an RGB label at the upper left. Poster: 4.5 seconds into the loop.
-- The inset covers the source's small diagnostic counter, leaving the room,
+  and an RGB label at the upper left. Poster: 2 seconds into the loop.
+- The inset covers the source's small diagnostic counter, leaving the car,
   progressive point cloud, and camera trajectory visible at thumbnail size.
 
 H.264 uses CRF 26 (WorldCrafter) / 23 (GAE), `yuv420p`, and `+faststart`;
