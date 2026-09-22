@@ -2,6 +2,24 @@
 // Keys MUST match data-paper-id on each .cite-btn.
 window.PAPER_BIBTEX = {
     // ============ 2026 ============
+    "worldcrafter": `@misc{yu2026worldcrafterconsistentvideoworld,
+  title={WorldCrafter: Consistent Video World Model with Implicit 3D-aware Memory},
+  author={Wangbo Yu and Kunhao Liu and Wenbo Hu and Shenghai Yuan and Chaoran Feng and Haiyang Zhou and Yukun Huang and Yiran Wang and Wang Zhao and Yingmin Luo and Ying Shan},
+  year={2026},
+  eprint={2609.24984},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2609.24984}
+}`,
+    "gae": `@misc{lu2026gaelearninggeometrynativelatent,
+  title={GAE: Learning a Geometry-Native Latent Space for 3D-Consistent World Generation},
+  author={Jiahao Lu and Minghao Yin and Wenbo Hu and Hengyu Liu and Wang Zhao and Sai-Kit Yeung and Ying Shan and Yuan Liu},
+  year={2026},
+  eprint={2609.24981},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2609.24981}
+}`,
     "scope": `@article{yin2026scope,
   title={SCoPE: Sightline-Coordinate Positional Encoding for Video Diffusion Transformers},
   author={Yin, Minghao and Lu, Jiahao and Hu, Wenbo and Zhao, Wang and Shan, Ying and Han, Kai},

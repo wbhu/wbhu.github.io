@@ -1021,6 +1021,28 @@ body.view-theme .year-group-header,
     cursor: pointer;
 }
 
+.teaser-caption {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    max-width: calc(100% - 14px);
+    padding: 3px 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(16, 35, 36, 0.8);
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.64rem;
+    font-weight: 600;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+.teaser-caption span {
+    margin-left: 5px;
+    color: #b8e9e5;
+}
+
 .post-thumb .video-overlay {
     position: absolute;
     top: 8px;
