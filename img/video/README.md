@@ -6,11 +6,16 @@ muted MP4 (H.264) and WebM (VP9) loops with JPEG poster frames.
 ## WorldCrafter
 
 - Project: https://drexubery.github.io/WorldCrafter/
-- Source: https://drexubery.github.io/WorldCrafter/assets/consistency/pavilion/output.mp4
-- Preserve the full 51.4-second exploration and revisit, played at 2x speed
-  (also labeled on the card); encode at 18 fps.
-- Fit the 640x384 source into 480x270 without cropping or stretching, using
-  15-pixel side padding. Poster: 1 second into the encoded loop.
+- Source: the project owner's supplied `WorldCrafter_Interactive_Demo.mp4`.
+- Case: the classroom with “WorldCrafter” written on its blackboard; select
+  75.6–90.85 seconds, excluding the transitions to adjacent cases. The 15.25-second
+  loop preserves the room exploration, return to the blackboard, and look up.
+- The supplied demo labels this sequence as 6x speed. Retain its timing without
+  further acceleration, label 6x on the card, and encode at 24 fps without audio.
+- Crop the 1920x1080 source to its generated viewport (`1352:806:278:108`),
+  keeping the keyboard overlays while removing the outer presentation margin
+  and small runtime statistics. Scale proportionally to 604x360 and pad to
+  640x360. Poster: 0.4 seconds into the encoded loop.
 - The clip shows generated RGB video, not an explicit internal memory or a
   reconstruction of that memory.
 
@@ -29,6 +34,6 @@ muted MP4 (H.264) and WebM (VP9) loops with JPEG poster frames.
 - The inset covers the source's small diagnostic counter, leaving the car,
   progressive point cloud, and camera trajectory visible at thumbnail size.
 
-H.264 uses CRF 26 (WorldCrafter) / 23 (GAE), `yuv420p`, and `+faststart`;
-VP9 uses CRF 38 / 34 respectively with zero target bitrate. These clips illustrate qualitative
+H.264 uses CRF 25 (WorldCrafter) / 23 (GAE), `yuv420p`, and `+faststart`;
+VP9 uses CRF 35 / 34 respectively with zero target bitrate. These clips illustrate qualitative
 behavior; the paper and project links provide the method and evaluation.

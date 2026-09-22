@@ -1043,6 +1043,11 @@ body.view-theme .year-group-header,
     color: #b8e9e5;
 }
 
+.teaser-caption-top {
+    top: 7px;
+    bottom: auto;
+}
+
 .post-thumb .video-overlay {
     position: absolute;
     top: 8px;
