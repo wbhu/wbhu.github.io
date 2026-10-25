@@ -37,3 +37,13 @@ muted MP4 (H.264) and WebM (VP9) loops with JPEG poster frames.
 H.264 uses CRF 25 (WorldCrafter) / 23 (GAE), `yuv420p`, and `+faststart`;
 VP9 uses CRF 35 / 34 respectively with zero target bitrate. These clips illustrate qualitative
 behavior; the paper and project links provide the method and evaluation.
+
+## Looking Ahead (October 2026)
+
+- Project: https://hellorpg.github.io/looking-ahead/
+- Official hero video: https://hellorpg.github.io/looking-ahead/assets/hero/r13-00064-42.mp4
+- Official poster: https://hellorpg.github.io/looking-ahead/assets/hero/r13-00064-42.jpg
+- Case: `r13-00064-42`, Domino chain reaction. Preserve the complete five-second,
+  640x360, 24 fps source loop and its timing. The MP4 and JPEG are unchanged;
+  WebM is encoded locally with VP9, CRF 35, zero target bitrate, without audio.
+- This is a qualitative project demonstration, not a benchmark comparison.

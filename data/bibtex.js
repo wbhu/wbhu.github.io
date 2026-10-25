@@ -2,6 +2,15 @@
 // Keys MUST match data-paper-id on each .cite-btn.
 window.PAPER_BIBTEX = {
     // ============ 2026 ============
+    "looking-ahead": `@misc{gao2026lookingahead,
+  title={Looking Ahead: Modeling Future Evolution in Autoregressive Video Generation},
+  author={Gao, Ruopeng and Huang, Yukun and Hu, Jiarui and Wang, Shuai and Hu, Wenbo and Shan, Ying and Wang, Limin},
+  year={2026},
+  eprint={2610.29989},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.29989}
+}`,
     "worldcrafter": `@misc{yu2026worldcrafterconsistentvideoworld,
   title={WorldCrafter: Consistent Video World Model with Implicit 3D-aware Memory},
   author={Wangbo Yu and Kunhao Liu and Wenbo Hu and Shenghai Yuan and Chaoran Feng and Haiyang Zhou and Yukun Huang and Yiran Wang and Wang Zhao and Yingmin Luo and Ying Shan},
